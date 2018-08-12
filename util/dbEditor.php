@@ -17,7 +17,7 @@ class dbEditor {
 
     public function insert($keyword, $text, $type = 'plain', $password = '') {
         $sql = $this->connection->prepare("INSERT INTO `pasteme` VALUES (?, ?, ?, ?)");
-        $sql->bind_param('dsss', $keyword, $text, $type, $password);
+        $sql->bind_param('ssss', $keyword, $text, $type, $password);
         if ($sql->execute()) return True;
         return $this->error();
     }
@@ -49,6 +49,7 @@ class dbEditor {
 
     public function exists($keyword) {
         $sql = $this->connection->prepare("SELECT `keyword` FROM `pasteme` WHERE `keyword` = ?");
+        $this->error();
         $sql->bind_param('s', $keyword);
         $sql->execute();
         $sql->store_result();
