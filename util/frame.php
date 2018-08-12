@@ -111,12 +111,12 @@ function home() {
         </div>
         <div class="col-md-2">
         </div>
+    </div>
     <?php
 }
 
 function foot() {
     ?>
-            </div>
         </div>
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
@@ -130,4 +130,42 @@ function foot() {
     </html>
     <?php
 }
+
+function show($text, $type) {
+    ?>
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <link rel="stylesheet" type="text/css" href="/css/prism.css">
+            <script src="/js/prism.js"></script>
+            <script src="/js/prism.select-all.js"></script>
+            <pre><code class="language-<?php echo $type; ?> line-numbers-rows"><?php echo $text; ?></code></pre>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>
+    <?php
+}
+function passwordCertification($keyword, $placeholder) {
+    ?>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <form class="form-horizontal" action="/<?php echo $keyword; ?>" method="post">
+                <div class="form-group">
+                    <label for="pswdusr">此文本已加密，请输入密码：</label>
+                    <input type="password" class="form-control" id="pswdusr" name="password_user" placeholder="<?php echo $placeholder; ?>">
+                </div>
+                <button type="submit" class="btn btn-primary">提交</button>
+            </form>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    <?php
+}
 ?>
+
+
