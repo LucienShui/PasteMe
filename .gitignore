@@ -1,5 +1,5 @@
 .well-known
 .file
 .idea
+*test.*
 favicon.ico
-SQLTest.php
