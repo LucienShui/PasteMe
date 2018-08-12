@@ -49,11 +49,17 @@ class dbEditor {
 
     public function exists($keyword) {
         $sql = $this->connection->prepare("SELECT `keyword` FROM `pasteme` WHERE `keyword` = ?");
-        $this->error();
         $sql->bind_param('s', $keyword);
         $sql->execute();
         $sql->store_result();
         return $sql->num_rows > 0;
+    }
+
+    public function remove($keyword) {
+        $sql = $this->connection->prepare("DELETE FROM `pasteme` WHERE `keyword` = ?");
+        $sql->bind_param('s', $keyword);
+        if ($sql->execute()) return True;
+        return False;
     }
 
     public function get_id() {

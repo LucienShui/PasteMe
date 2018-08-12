@@ -4,7 +4,7 @@
  * Date: 2018/7/25
  * Time: 23:18
  */
-function head() {
+function head($color = '') {
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -17,7 +17,7 @@ function head() {
         <script src="/js/tools.js"></script>
     </head>
 
-    <body>
+    <body <?php echo $color; ?>>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -65,7 +65,8 @@ function head() {
                 <br><br><br><br>
     <?php
 }
-function home() {
+
+function home($placeholder = '写点什么进来吧') {
     ?>
     <div class="row">
         <div class="col-md-2">
@@ -102,7 +103,7 @@ function home() {
                 <div class="form-group">
                 <textarea class="form-control" required="required" name='text' rows='10'
                           style="resize: none"
-                          placeholder="写点什么进来吧"></textarea>
+                          placeholder="<?php echo $placeholder; ?>"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">保存</button>
             </div>
@@ -147,6 +148,7 @@ function show($text, $type) {
     </div>
     <?php
 }
+
 function passwordCertification($keyword, $placeholder) {
     ?>
     <div class="row">
