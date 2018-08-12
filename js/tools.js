@@ -10,6 +10,7 @@ function check(ch) {
 
 function stringCheck(str) {
     let len = str.length;
+    if (len > 20) return false;
     for (let i = 0; i < len; i++) {
         let buf = str.charAt(i);
         if (!check(buf)) return false;
@@ -23,6 +24,6 @@ function redirect() {
         alert("索引串不能为空");
     } else {
         if (stringCheck(id)) window.location.href = id;
-        else alert("索引串只能由大小写英文字母或数字组成");
+        else alert("索引串只能由大小写英文字母或数字组成且长度小于20");
     }
 }
