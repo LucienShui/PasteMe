@@ -35,9 +35,6 @@ function head($color = '') {
                                     其它工具
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-                                    <div class="dropdown-header">网络剪贴板</div>
-                                    <a class="dropdown-item" href="http://www.lucien.ink/go/clip">ClipMe</a>
-                                    <div class="dropdown-divider"></div>
                                     <div class="dropdown-header">在线二维码生成</div>
                                     <a class="dropdown-item" href="http://qrcode.lucien.ink">QRCode Generator</a>
                                 </div>
@@ -56,23 +53,40 @@ function head($color = '') {
                                    data-toggle="dropdown">联系我</a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink2">
                                     <div class="dropdown-header">Email</div>
-                                    <a class="dropdown-item">lucien@lucien.ink</a>
+                                    <a class="dropdown-item" href="mailto:lucien@lucien.ink">lucien@lucien.ink</a>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="dropdown-header">Donate</div>
+                                    <a class="dropdown-item" id='modal-74921' href='#modal-container-74921' role='button' data-toggle='modal'>Money Code</a>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </nav>
+                <div class='modal fade' id='modal-container-74921' role='dialog' aria-labelledby='myModalLabel'
+                 aria-hidden='true'>
+                    <div class='modal-dialog' role='document'>
+                        <div class='modal-content'>
+                            <div class='modal-header'>
+                                <button type='button' class='close' data-dismiss='modal'>
+                                    <span aria-hidden='true'>&times;</span></button>
+                            </div>
+                            <div class='modal-body'>
+                                <img src="money.png" style="width: 100%; height: auto;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <br><br><br><br>
     <?php
 }
 
-function home($placeholder = '写点什么进来吧') {
+function home($placeholder = '写点什么进来吧', $action = '/util/submit.php') {
     ?>
     <div class="row">
         <div class="col-md-2">
         </div>
         <div class="col-md-8">
-    <form class="form-horizontal" action="util/submit.php" method="post">
+    <form class="form-horizontal" action="<?php echo $action; ?>" method="post">
         <div class="col-sm-5">
             <div class="form-group">
                 <div class="input-group">
@@ -164,6 +178,35 @@ function passwordCertification($keyword, $placeholder) {
             </form>
         </div>
         <div class="col-md-4">
+        </div>
+    </div>
+    <?php
+}
+
+function success($keyword, $url) {
+    ?>
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <div class="jumbotron">
+                <h2>
+                    保存成功
+                </h2>
+                <p>
+                    欲访问索引串<b><?php echo $keyword?></b>所对应的剪贴板：
+                </p>
+                <ul>
+                    <li>在主页中输入索引串</li>
+                    <li>在浏览器中访问：<a href="<?php echo $url?>"><?php echo $url?></a></li>
+                    <li><a href = 'http://qrcode.lucien.ink?text=<?php echo $url?>&tag=PasteMe' target='_blank'>扫描二维码</a></li>
+                </ul>
+                <p>
+                    <a class="btn btn-primary btn-large" href="/">返回主页</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-2">
         </div>
     </div>
     <?php

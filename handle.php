@@ -52,7 +52,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
         if ($chFlag) {  // 临时空间
             require 'util/frame.php';
             head("style=\"background: #A0A0A0;\"");
-            home('这里是隐私模式，上传的内容阅后即焚');
+            home('这里是隐私模式，上传的内容阅后即焚', "/util/submit.php?keyword={$keyword}");
             foot();
         } else {  // 永久空间
             echo "<script> alert('请确认索引是否存在') </script>";
