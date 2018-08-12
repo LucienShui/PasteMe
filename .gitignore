@@ -1,5 +1,6 @@
 .well-known
 .file
 .idea
-test.*
+test.html
+test.php
 favicon.ico
