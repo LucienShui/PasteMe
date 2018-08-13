@@ -1,6 +1,6 @@
 <?php
 /**
- * User: Lucien Shui
+ * Author: Lucien Shui
  * Date: 2018/7/26
  * Time: 0:03
  */
@@ -41,7 +41,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
             if (!$passwordRight && isset($password_user)) $placeholder = "密码错误";
         }
         require 'util/frame.php';
-        head();
+        head($chFlag ? "style='background: #A0A0A0;'" : "");
         if ($passwordRight) {
             $content = $it->content($keyword);
             show($content['text'], $content['type']);
@@ -51,7 +51,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
     } else {  // 索引串不存在
         if ($chFlag) {  // 临时空间
             require 'util/frame.php';
-            head("style=\"background: #A0A0A0;\"");
+            head("style='background: #A0A0A0;'");
             home('这里是隐私模式，上传的内容阅后即焚', "/util/submit.php?keyword={$keyword}");
             foot();
         } else {  // 永久空间

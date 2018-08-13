@@ -50,20 +50,22 @@ function head($color = '') {
                         <ul class="navbar-nav ml-md-auto">
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2"
-                                   data-toggle="dropdown">联系我</a>
+                                   data-toggle="dropdown">使用指南</a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink2">
-                                    <div class="dropdown-header">Email</div>
-                                    <a class="dropdown-item" href="mailto:lucien@lucien.ink">lucien@lucien.ink</a>
+                                    <div class="dropdown-header">帮助</div>
+                                    <a class="dropdown-item" id='modal-74922' href='#modal-container-74922' data-toggle='modal'>使用指南</a>
                                     <div class="dropdown-divider"></div>
-                                    <div class="dropdown-header">Donate</div>
-                                    <a class="dropdown-item" id='modal-74921' href='#modal-container-74921' role='button' data-toggle='modal'>Money Code</a>
+                                    <div class="dropdown-header">邮箱</div>
+                                    <a class="dropdown-item" href="mailto:lucien@lucien.ink">联系我</a>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="dropdown-header">捐赠</div>
+                                    <a class="dropdown-item" id='modal-74921' href='#modal-container-74921' data-toggle='modal'>谢谢老板</a>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </nav>
-                <div class='modal fade' id='modal-container-74921' role='dialog' aria-labelledby='myModalLabel'
-                 aria-hidden='true'>
+                <div class='modal fade' id='modal-container-74921' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
                     <div class='modal-dialog' role='document'>
                         <div class='modal-content'>
                             <div class='modal-header'>
@@ -71,7 +73,32 @@ function head($color = '') {
                                     <span aria-hidden='true'>&times;</span></button>
                             </div>
                             <div class='modal-body'>
-                                <img src="money.png" style="width: 100%; height: auto;">
+                                <img src="/money.png" style="width: 100%; height: auto;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='modal fade' id='modal-container-74922' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+                    <div class='modal-dialog' role='document'>
+                        <div class='modal-content'>
+                            <div class='modal-header'>
+                                <h5 class='modal-title' id='myModalLabel'>使用指南</h5>
+                                <button type='button' class='close' data-dismiss='modal'>
+                                    <span aria-hidden='true'>&times;</span></button>
+                            </div>
+                            <div class='modal-body'>
+                                <p>索引串：</p>
+                                <p>每一个被上传的文本都有一个字符串去对其进行唯一标识，就像是门牌号一样，我称它为“索引串”。纯数字的索引串对应永久空间的文本，包含字母的索引串对应临时空间的文本。</p>
+                                对于别人分享的文本：
+                                <ul>
+                                    <li>可直接通过网页链接访问。</li>
+                                    <li>可在主页左上角的输入框输入索引串进行访问。</li>
+                                </ul>
+                                对于上传的文本有两种选择：
+                                <ul>
+                                    <li><b>永久保存</b>：直接在主页进行上传。</li>
+                                    <li><b>阅后即焚</b>：在左上角输入含有字母的索引串，前往相应的临时空间，页面会变成灰色，并开始对索引串进行索引。若索引至一个已存在的内容则进行“<a style="color: green;">阅读</a>”，若索引至一个“空地”则进行“<a style="color: red;">创建</a>”。</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -82,51 +109,51 @@ function head($color = '') {
 
 function home($placeholder = '写点什么进来吧', $action = '/util/submit.php') {
     ?>
-    <div class="row">
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-8">
-    <form class="form-horizontal" action="<?php echo $action; ?>" method="post">
-        <div class="col-sm-5">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">高亮</span>
-                    </div>
-                    <select name="type" class="form-control" title="language">
-                        <option value="plain">纯文本</option>
-                        <option value="cpp">C/C++</option>
-                        <option value="java">Java</option>
-                        <option value="python">Python</option>
-                    </select>
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <form class="form-horizontal" action="<?php echo $action; ?>" method="post">
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">高亮</span>
+                                    </div>
+                                    <select name="type" class="form-control" title="language">
+                                        <option value="plain">纯文本</option>
+                                        <option value="cpp">C/C++</option>
+                                        <option value="java">Java</option>
+                                        <option value="python">Python</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">加密</span>
+                                    </div>
+                                    <input class="form-control" name="password" placeholder="无需加密请留空">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                <textarea class="form-control" required="required" name='text' rows='10'
+                                          style="resize: none"
+                                          placeholder="<?php echo $placeholder; ?>"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">保存</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-2">
                 </div>
             </div>
-        </div>
-        <div class="col-sm-5">
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">加密</span>
-                    </div>
-                    <input class="form-control" name="password" placeholder="无需加密请留空">
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-12">
-                <div class="form-group">
-                <textarea class="form-control" required="required" name='text' rows='10'
-                          style="resize: none"
-                          placeholder="<?php echo $placeholder; ?>"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">保存</button>
-            </div>
-        </div>
-    </form>
-        </div>
-        <div class="col-md-2">
-        </div>
-    </div>
     <?php
 }
 
@@ -139,7 +166,7 @@ function foot() {
     </body>
     <footer>
         <div style="text-align: center;">
-            <p>&copy; 2018 版权所有 <a href='http://www.lucien.ink' target='_blank'>Lucien Shui</a></p>
+            <p>Copyright &copy; 2017-<?php echo date('Y'); ?> <a href='http://www.lucien.ink' target='_blank'>Lucien Shui</a></p>
         </div>
     </footer>
     </html>
@@ -194,12 +221,12 @@ function success($keyword, $url) {
                     保存成功
                 </h2>
                 <p>
-                    欲访问索引串<b><?php echo $keyword?></b>所对应的剪贴板：
+                    欲访问索引串<b><?php echo $keyword?></b>所对应的文本：
                 </p>
                 <ul>
                     <li>在主页中输入索引串</li>
                     <li>在浏览器中访问：<a href="<?php echo $url?>"><?php echo $url?></a></li>
-                    <li><a href = 'http://qrcode.lucien.ink?text=<?php echo $url?>&tag=PasteMe' target='_blank'>扫描二维码</a></li>
+                    <li><a href = 'http://qrcode.lucien.ink?text=<?php echo $url?>&tag=PasteMe - 可能是最low的文本分享平台' target='_blank'>扫描二维码</a></li>
                 </ul>
                 <p>
                     <a class="btn btn-primary btn-large" href="/">返回主页</a>

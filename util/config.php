@@ -4,6 +4,6 @@ return array(
     'username' => 'root',
     'password' => 'root',
     'dbname' => 'pasteme',
-    'website' => '/',
+    'website' => 'http://localhost/',
 );
 ?>
