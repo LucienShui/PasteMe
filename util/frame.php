@@ -41,7 +41,7 @@ function head($color = '') {
                             </li>
                         </ul>
                         <div class="form-inline" onkeyup="enterJudge()">
-                        	<input style="display: none;">
+                            <input style="display: none;">
                             <input name="keyword" id="keyword" class="form-control mr-sm-2" type="text" title="请填入纯数字的索引串"
                                    required="required" pattern="[0-9]*" placeholder="索引串"/>
                             <button class="btn btn-primary my-2 my-sm-0" onclick="redirect()">
