@@ -21,7 +21,6 @@ Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键�
 ```
 web_root
  ├─ index.php
- ├─ handle.php
  ├─ success.php
  ├─ favicon.ico (if you have)
  ├─ util
@@ -39,9 +38,9 @@ web_root
      └─ prism.select-all.js
 ```
 
-修改`web_root/util/config.php`中的数据库相关的信息，并将`website`项更改为服务器的域名。
+将`config.example.php`复制一份并重命名为`config.php`，修改`config.php`中数据库相关的信息，并将`website`项更改为服务器的域名。
 
-然后第一次启动网页时，执行`web_root/util/init.php`来初始化数据库。
+然后在浏览器中访问`web_root/util/init.php`来初始化数据库。
 
 ## Rewrite（必要）
 
@@ -49,7 +48,7 @@ web_root
 
 ```
 if (!-e $request_filename) {
-    rewrite ^(.*)$ /handle.php$1 last;
+    rewrite ^(.*)$ /index.php$1 last;
 }
 ```
 
@@ -61,7 +60,7 @@ if (!-e $request_filename) {
     RewriteBase /
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ handle.php [L,E=PATH_INFO:$1]
+    RewriteRule ^(.*)$ index.php [L,E=PATH_INFO:$1]
 </IfModule>
 ```
 
