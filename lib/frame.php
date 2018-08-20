@@ -37,8 +37,8 @@ function head($color = '', $title = 'PasteMe') {
                             </button>
                         </div>
                         <ul class="navbar-nav ml-md-auto">
-                            <li class="nav-item"><a class="nav-link" id='modal-74921' href='#modal-container-74921' data-toggle='modal'>捐助</a></li>
-                            <li class="nav-item"><a class="nav-link" id='modal-74922' href='#modal-container-74922' data-toggle='modal'>帮助</a></li>
+                            <li class="nav-item"><a class="nav-link" href='#modal-container-74921' data-toggle='modal'>捐助</a></li>
+                            <li class="nav-item"><a class="nav-link" href='#modal-container-74922' data-toggle='modal'>使用指南</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -141,9 +141,16 @@ function foot() {
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     </body>
+    <style>
+    a:link, a:visited {
+        color: #38488f;
+        /*color: dimgray;*/
+    }
+    </style>
     <footer>
         <div style="text-align: center;">
-            <p>Copyright &copy; 2017-<?php echo date('Y'); ?> <a href='http://www.lucien.ink' target='_blank'>Lucien Shui</a></p>
+            <p><a href='http://www.lucien.ink' target='_blank'>Lucien's Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.lucien.ink/go/csdn" target='_blank'>CSDN</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/LucienShui" target="_blank">GitHub</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target='_blank'>鲁ICP备18007563号</a></p>
+            <p>Copyright &copy; 2017-<?php echo date('Y'); ?> <a href='mailto:lucien@lucien.ink'>Lucien Shui</a> All Rights Reserved</p>
         </div>
     </footer>
     </html>
