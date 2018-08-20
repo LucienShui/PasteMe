@@ -97,7 +97,7 @@ function home($placeholder = '写点什么进来吧', $action = '/util/submit.ph
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">高亮</span>
                                     </div>
-                                    <select name="type" class="form-control" title="language">
+                                    <select name="type" class="form-control" title="language" style="-webkit-appearance: none;-moz-appearance: none;appearance: none;">
                                         <option value="plain">纯文本</option>
                                         <option value="cpp">C/C++</option>
                                         <option value="java">Java</option>
