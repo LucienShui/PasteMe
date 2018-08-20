@@ -21,6 +21,10 @@ $otherFlag = False;  // 是否有其它字符
 function isalpha($ch) { return ($ch >= 'a' && $ch <= 'z' ) || ($ch >= 'A' && $ch <= 'Z'); }
 function isdigit($ch) { return $ch >= '0' && $ch <= '9'; }
 for ($i = 0; $i < $len; $i++) {
+    if ($keyword[$i] == '?') {
+        $keyword = substr($keyword, 0, $i);
+        break;
+    }
     if (isalpha($keyword[$i])) $chFlag = True;
     else if (!isdigit($keyword[$i])) {
         $otherFlag = True;
@@ -41,7 +45,8 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
             if (!$passwordRight && isset($password_user)) $placeholder = "密码错误";
         }
         require 'util/frame.php';
-        head($chFlag ? "style='background: #A0A0A0;'" : "");
+        if ($chFlag) head("style='background: #A0A0A0;'", "PasteMe - 隐私模式");
+        else head();
         if ($passwordRight) {
             $content = $it->content($keyword);
             show($content['text'], $content['type']);
@@ -51,7 +56,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
     } else {  // 索引串不存在
         if ($chFlag) {  // 临时空间
             require 'util/frame.php';
-            head("style='background: #A0A0A0;'");
+            head("style='background: #A0A0A0;'", "PasteMe - 隐私模式");
             home('这里是隐私模式，上传的内容阅后即焚', "/util/submit.php?keyword={$keyword}");
             foot();
         } else {  // 永久空间
