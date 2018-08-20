@@ -74,7 +74,7 @@ if (!-e $request_filename) {
 
 # 版权所有
 
-[Lucien Shui](http://www.lucien.ink)
+Copyright © 2017-2018 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 # 捐助
 
