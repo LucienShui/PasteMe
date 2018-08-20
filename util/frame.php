@@ -4,7 +4,7 @@
  * Date: 2018/7/25
  * Time: 23:18
  */
-function head($color = '') {
+function head($color = '', $title = 'PasteMe') {
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -12,7 +12,7 @@ function head($color = '') {
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>PasteMe</title>
+        <title><?php echo $title; ?></title>
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css"/>
         <script src="/js/tools.js"></script>
     </head>
@@ -28,20 +28,8 @@ function head($color = '') {
                     </button>
                     <a class="navbar-brand" href="<?php $config = require 'config.php'; echo $config['website'];?>">PasteMe</a>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1"
-                                   data-toggle="dropdown">
-                                    其它工具
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-                                    <div class="dropdown-header">在线二维码生成</div>
-                                    <a class="dropdown-item" href="http://qrcode.lucien.ink">QRCode Generator</a>
-                                </div>
-                            </li>
-                        </ul>
                         <div class="form-inline" onkeyup="enterJudge()">
-                            <input style="display: none;">
+                            <input style="display: none;" title="">
                             <input name="keyword" id="keyword" class="form-control mr-sm-2" type="text" title="请填入纯数字的索引串"
                                    required="required" pattern="[0-9]*" placeholder="索引串"/>
                             <button class="btn btn-primary my-2 my-sm-0" onclick="redirect()">
@@ -49,20 +37,8 @@ function head($color = '') {
                             </button>
                         </div>
                         <ul class="navbar-nav ml-md-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2"
-                                   data-toggle="dropdown">使用指南</a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink2">
-                                    <div class="dropdown-header">帮助</div>
-                                    <a class="dropdown-item" id='modal-74922' href='#modal-container-74922' data-toggle='modal'>使用指南</a>
-                                    <div class="dropdown-divider"></div>
-                                    <div class="dropdown-header">邮箱</div>
-                                    <a class="dropdown-item" href="mailto:lucien@lucien.ink">联系我</a>
-                                    <div class="dropdown-divider"></div>
-                                    <div class="dropdown-header">捐赠</div>
-                                    <a class="dropdown-item" id='modal-74921' href='#modal-container-74921' data-toggle='modal'>谢谢老板</a>
-                                </div>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" id='modal-74921' href='#modal-container-74921' data-toggle='modal'>捐助</a></li>
+                            <li class="nav-item"><a class="nav-link" id='modal-74922' href='#modal-container-74922' data-toggle='modal'>帮助</a></li>
                         </ul>
                     </div>
                 </nav>
