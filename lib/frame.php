@@ -84,7 +84,7 @@ function head($color = '', $title = 'PasteMe') {
     <?php
 }
 
-function home($placeholder = '写点什么进来吧', $action = '/util/submit.php') {
+function home($placeholder = '写点什么进来吧', $action = '/lib/submit.php') {
     ?>
             <div class="row">
                 <div class="col-md-2">

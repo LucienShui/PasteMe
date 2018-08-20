@@ -4,10 +4,10 @@
  * Date: 2018/7/23
  * Time: 20:55
  */
-require 'util/frame.php';
+require 'lib/frame.php';
 if (isset($_GET['keyword'])) {
     $keyword = $_GET['keyword'];
-    $config = include_once('util/config.php');
+    $config = include_once('lib/config.php');
     head();
     success($keyword, $config['website'] . $keyword);
     foot();

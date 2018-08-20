@@ -6,7 +6,7 @@
  */
 $keyword = str_replace('/', '', $_SERVER["REQUEST_URI"]); // 取当前路由的后缀
 if ($keyword == '') {
-	require 'util/frame.php';
+	require 'lib/frame.php';
 	head();
 	home();
 	foot();
@@ -41,7 +41,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
     echo "<script>alert('请确认索引串是否存在，永久空间的索引串由纯数字组成，临时空间的索引串由大小写英文字母及数字组成') </script>";
     header("Refresh:0;url=/");
 } else {
-    require 'util/tableEditor.php';
+    require 'lib/tableEditor.php';
     $it = new tableEditor();
     if ($it->exists($keyword)) {  // 索引串存在
         $password = $it->password($keyword);
@@ -50,7 +50,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
             if ($password_user != $password) $passwordRight = False;
             if (!$passwordRight && isset($password_user)) $placeholder = "密码错误";
         }
-        require 'util/frame.php';
+        require 'lib/frame.php';
         if ($chFlag) head("style='background: #A0A0A0;'", "PasteMe - 隐私模式");
         else head();
         if ($passwordRight) {
@@ -61,9 +61,9 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
         foot();
     } else {  // 索引串不存在
         if ($chFlag) {  // 临时空间
-            require 'util/frame.php';
+            require 'lib/frame.php';
             head("style='background: #A0A0A0;'", "PasteMe - 隐私模式");
-            home('这里是隐私模式，上传的内容阅后即焚', "/util/submit.php?keyword={$keyword}");
+            home('这里是隐私模式，上传的内容阅后即焚', "/lib/submit.php?keyword={$keyword}");
             foot();
         } else {  // 永久空间
             echo "<script> alert('请确认索引是否存在') </script>";
