@@ -141,7 +141,14 @@ function foot() {
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     </body>
-    <style>a:link, a:visited { color: #38488f; }</style>
+    <style>
+        footer {
+            font-size: 0.8em;
+        }
+        footer a:link, footer a:visited {
+            color: #38488f;
+        }
+    </style>
     <footer>
         <div style="text-align: center;">
             <p><a href='http://www.lucien.ink' target='_blank'>Lucien's Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.lucien.ink/go/csdn" target='_blank'>CSDN</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/LucienShui" target="_blank">GitHub</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target='_blank'>鲁ICP备18007563号</a></p>
