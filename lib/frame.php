@@ -28,6 +28,10 @@ function head($color = '', $title = 'PasteMe') {
                     </button>
                     <a class="navbar-brand" href="<?php $config = require 'config.php'; echo $config['website'];?>">PasteMe</a>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link active" href='#modal-container-74922' data-toggle='modal'>使用指南</a></li>
+                            <li><a class="nav-link"></a></li>
+                        </ul>
                         <div class="form-inline" onkeyup="enterJudge()">
                             <input style="display: none;" title="">
                             <input name="keyword" id="keyword" class="form-control mr-sm-2" type="text" title="请填入纯数字的索引串"
@@ -38,7 +42,6 @@ function head($color = '', $title = 'PasteMe') {
                         </div>
                         <ul class="navbar-nav ml-md-auto">
                             <li class="nav-item"><a class="nav-link" href='#modal-container-74921' data-toggle='modal'>捐助</a></li>
-                            <li class="nav-item"><a class="nav-link" href='#modal-container-74922' data-toggle='modal'>使用指南</a></li>
                         </ul>
                     </div>
                 </nav>
