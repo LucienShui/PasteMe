@@ -13,6 +13,8 @@ function head($color = '', $title = 'PasteMe') {
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title><?php echo $title; ?></title>
+        <link rel="icon" href="https://cdn.lucien.ink/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="https://cdn.lucien.ink/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css"/>
         <script src="/js/tools.js"></script>
     </head>
@@ -53,7 +55,7 @@ function head($color = '', $title = 'PasteMe') {
                                     <span aria-hidden='true'>&times;</span></button>
                             </div>
                             <div class='modal-body'>
-                                <img src="/money.png" style="width: 100%; height: auto;">
+                                <img src="https://cdn.lucien.ink/money.png" style="width: 100%; height: auto;">
                             </div>
                         </div>
                     </div>
