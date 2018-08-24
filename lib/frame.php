@@ -172,14 +172,8 @@ function show($text, $type) {
             <link rel="stylesheet" type="text/css" href="https://cdn.lucien.ink/css/prism.css">
             <script src="https://cdn.lucien.ink/js/prism.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-<!--            <script src="https://cdn.lucien.ink/js/prism.select-all.js"></script>-->
-<!--            <script src="/js/prism.select-all.js"></script>-->
             <script src="https://cdn.lucien.ink/js/prism.copy-all.js"></script>
-<!--            <script src="/js/prism.copy-all.js"></script>-->
             <pre><code id="code" class="language-<?php echo $type; ?> line-numbers-rows"><?php echo $text; ?></code></pre>
-<!--            <button class="btn btn-primary btn-copy" data-clipboard-target="code">复制</button>-->
-            <script type="text/javascript">
-            </script>
         </div>
         <div class="col-md-1">
         </div>
