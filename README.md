@@ -78,4 +78,4 @@ Copyright © 2017-2018 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 # 捐助
 
-![谢谢老板](https://github.com/LucienShui/PasteMe/blob/master/money.png)
+![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/money.png)
