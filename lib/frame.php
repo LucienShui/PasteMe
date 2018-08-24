@@ -34,8 +34,7 @@ function head($color = '', $title = 'PasteMe') {
                             <li><a class="nav-link"></a></li>
                         </ul>
                         <div class="form-inline" onkeyup="enterJudge()">
-                            <input style="display: none;" title="">
-                            <input name="keyword" id="keyword" class="form-control mr-sm-2" type="text" title="请填入纯数字的索引串"
+                            <input name="keyword" autocomplete="off" id="keyword" class="form-control mr-sm-2" title="请填入纯数字的索引串"
                                    required="required" pattern="[0-9]*" placeholder="索引串"/>
                             <button class="btn btn-primary my-2 my-sm-0" onclick="redirect()">
                                 前往
@@ -88,7 +87,7 @@ function head($color = '', $title = 'PasteMe') {
     <?php
 }
 
-function home($placeholder = '写点什么进来吧', $action = '/lib/submit.php') {
+function home($seed, $placeholder = '写点什么进来吧', $action = '/lib/submit.php') {
     ?>
             <div class="row">
                 <div class="col-md-2">
@@ -116,7 +115,7 @@ function home($placeholder = '写点什么进来吧', $action = '/lib/submit.php
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">加密</span>
                                     </div>
-                                    <input class="form-control" name="password" placeholder="无需加密请留空">
+                                    <input class="form-control" type="password" name="password" placeholder="无需加密请留空">
                                 </div>
                             </div>
                         </div>
@@ -130,6 +129,7 @@ function home($placeholder = '写点什么进来吧', $action = '/lib/submit.php
                                 <button type="submit" class="btn btn-primary">保存</button>
                             </div>
                         </div>
+                        <input type="hidden" value="<?php echo $seed; ?>" name="seed" style="display: none" title="">
                     </form>
                 </div>
                 <div class="col-md-2">

@@ -7,15 +7,16 @@
 $keyword = str_replace('/', '', $_SERVER["REQUEST_URI"]); // 取当前路由的后缀
 if ($keyword == '') {
 	require 'lib/frame.php';
+	require 'lib/postVerify.php';
 	head();
-	home();
+	home(seed());
 	foot();
 	die();
 }
 $password_user = null;
 $placeholder = null;
 if (isset($_POST['password_user'])) {
-    $password_user = $_POST['password_user'];
+    $password_user = md5($_POST['password_user']);
 }
 $len = strlen($keyword);
 if ($len > 20) {
@@ -46,7 +47,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
     if ($it->exists($keyword)) {  // 索引串存在
         $password = $it->password($keyword);
         $passwordRight = True;  // 密码是否正确
-        if ($password != null && $password != '') {
+        if ($password != null) {
             if ($password_user != $password) $passwordRight = False;
             if (!$passwordRight && isset($password_user)) $placeholder = "密码错误";
         }
@@ -62,8 +63,9 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
     } else {  // 索引串不存在
         if ($chFlag) {  // 临时空间
             require 'lib/frame.php';
+            require 'lib/postVerify.php';
             head("style='background: #A0A0A0;'", "PasteMe - 隐私模式");
-            home('这里是隐私模式，上传的内容阅后即焚', "/lib/submit.php?keyword={$keyword}");
+            home(seed(), '这里是隐私模式，上传的内容阅后即焚', "/lib/submit.php?keyword={$keyword}");
             foot();
         } else {  // 永久空间
             echo "<script> alert('请确认索引是否存在') </script>";
