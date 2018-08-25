@@ -5,6 +5,8 @@ return array(
     'password' => 'root',
     'dbname' => 'pasteme',
     'website' => 'http://localhost/',
-    'seed' => 'asldfasjgalknfklwjehlkasjdfnl'
+    'cdn' => '',
+    'favicon' => '',
+    'seed' => 'asldfasjgalknfklwjehlkasjdfnl',
 );
 ?>

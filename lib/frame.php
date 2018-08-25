@@ -4,7 +4,10 @@
  * Date: 2018/7/25
  * Time: 23:18
  */
+$config = require('config.php');
+
 function head($color = '', $title = 'PasteMe') {
+    global $config;
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -13,9 +16,9 @@ function head($color = '', $title = 'PasteMe') {
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title><?php echo $title; ?></title>
-        <link rel="shortcut icon" href="https://cdn.lucien.ink/favicon.ico" type="image/x-icon" />
-        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css"/>
-        <script src="https://cdn.lucien.ink/js/tools.js"></script>
+        <?php if (!empty($config['favicon'])) {?><link rel="shortcut icon" href="<?php echo $config['favicon']; ?>" type="image/x-icon" />
+        <?php }?><link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css"/>
+        <script src="<?php echo $config['cdn']; ?>/js/tools.js"></script>
     </head>
 
     <body <?php echo $color; ?>>
@@ -27,7 +30,7 @@ function head($color = '', $title = 'PasteMe') {
                             data-target="#bs-example-navbar-collapse-1">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php $config = require 'config.php'; echo $config['website'];?>">PasteMe</a>
+                    <a class="navbar-brand" href="<?php echo $config['website'];?>">PasteMe</a>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="navbar-nav">
                             <li class="nav-item"><a class="nav-link active" href='#modal-container-74922' data-toggle='modal'>使用指南</a></li>
@@ -53,7 +56,7 @@ function head($color = '', $title = 'PasteMe') {
                                     <span aria-hidden='true'>&times;</span></button>
                             </div>
                             <div class='modal-body'>
-                                <img src="https://cdn.lucien.ink/money.png" style="width: 100%; height: auto;">
+                                <img src="<?php echo $config['cdn']; ?>/money.png" style="width: 100%; height: auto;">
                             </div>
                         </div>
                     </div>
@@ -164,15 +167,16 @@ function foot() {
 }
 
 function show($text, $type) {
+    global $config;
     ?>
     <div class="row">
         <div class="col-md-1">
         </div>
         <div class="col-md-10">
-            <link rel="stylesheet" type="text/css" href="https://cdn.lucien.ink/css/prism.css">
-            <script src="https://cdn.lucien.ink/js/prism.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
-            <script src="https://cdn.lucien.ink/js/prism.copy-all.js"></script>
+            <link rel="stylesheet" type="text/css" href="<?php echo $config['cdn']?>/css/prism.css">
+            <script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+            <script src="<?php echo $config['cdn']; ?>/js/prism.js"></script>
+            <script src="<?php echo $config['cdn'];?>/js/prism.copy-all.js"></script>
             <pre><code id="code" class="language-<?php echo $type; ?> line-numbers-rows"><?php echo $text; ?></code></pre>
         </div>
         <div class="col-md-1">
