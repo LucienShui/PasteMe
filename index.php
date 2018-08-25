@@ -49,7 +49,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
         $passwordRight = True;  // 密码是否正确
         if (!empty($password)) {
             if ($password_user != $password) $passwordRight = False;
-            if (!$passwordRight && isset($password_user)) $placeholder = "密码错误";
+            if (!$passwordRight && !empty($password_user)) $placeholder = "密码错误";
         }
         require 'lib/frame.php';
         if ($chFlag) head("style='background: #A0A0A0;'", "PasteMe - 隐私模式");
