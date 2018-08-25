@@ -24,7 +24,7 @@ function head($color = '', $title = 'PasteMe') {
     <body <?php echo $color; ?>>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="padding-top: 4.5em;">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark fixed-top">
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#bs-example-navbar-collapse-1">
@@ -91,7 +91,7 @@ function head($color = '', $title = 'PasteMe') {
 
 function home($seed, $placeholder = '写点什么进来吧', $action = '/lib/submit.php') {
     ?>
-            <div class="row" style="margin-top: 4.5em;">
+            <div class="row">
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-8">
@@ -168,7 +168,7 @@ function foot() {
 function show($text, $type) {
     global $config;
     ?>
-    <div class="row" style="margin-top: 4.5em">
+    <div class="row">
         <div class="col-md-1">
         </div>
         <div class="col-md-10">
@@ -186,7 +186,7 @@ function show($text, $type) {
 
 function passwordCertification($keyword, $placeholder) {
     ?>
-    <div class="row" style="margin-top: 4.5em">
+    <div class="row">
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
