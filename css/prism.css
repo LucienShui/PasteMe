@@ -173,7 +173,7 @@ div.code-toolbar > .toolbar {
 	/*top: .3em;*/
 	top: .4em;
 	/*right: .2em;*/
-	right: .5em;
+	right: .6em;
 	/*transition: opacity 0.3s ease-in-out;*/
 	/*opacity: 0;*/
 	opacity: 1;
@@ -209,9 +209,9 @@ div.code-toolbar > .toolbar button,
 div.code-toolbar > .toolbar span {
 	color: #bbb;
 	/*font-size: .8em;*/
-	font-size: .9em;
+	font-size: .8em;
 	/*padding: 0 .5em;*/
-	padding: .05em .5em .05em .5em;
+	padding: .1em .5em .1em .5em;
 	background: #f5f2f0;
 	background: rgba(224, 224, 224, 0.2);
 	box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
