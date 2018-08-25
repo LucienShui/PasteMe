@@ -23,9 +23,10 @@ web_root
  ├─ index.php
  ├─ success.php
  ├─ favicon.ico (if you have)
- ├─ util
+ ├─ lib
  │   ├─ config.php
  │   ├─ init.php
+ │   ├─ frame.php
  │   ├─ tableEditor.php
  │   ├─ dbEditor.php
  │   ├─ util.php
@@ -35,12 +36,12 @@ web_root
  └─ js
      ├─ prism.js
      ├─ tools.js
-     └─ prism.select-all.js
+     └─ prism.copy-all.js
 ```
 
-将`config.example.php`复制一份并重命名为`config.php`，修改`config.php`中数据库相关的信息，并将`website`项更改为服务器的域名。
+进入`lib`文件夹，将`config.example.php`复制一份并重命名为`config.php`，修改`config.php`中数据库相关的信息，并将`website`项更改为服务器的域名。
 
-然后在浏览器中访问`web_root/util/init.php`来初始化数据库。
+然后在浏览器中访问`web_root/lib/init.php`来初始化数据库。
 
 ## Rewrite（必要）
 
