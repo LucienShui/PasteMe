@@ -11,6 +11,7 @@ if (isset($_POST['seed']) && verify($_POST['seed'])) {
     $it = new tableEditor();
     $text = htmlspecialchars($_POST['text']);
     $type = $_POST['type'];
+    if ($type == 'plain' && strpos($text, "#include") !== false) $type = 'cpp';
     $password = $_POST['password'];
     if (!empty($password)) $password = md5($password);
     if (!empty($_GET['keyword'])) {
