@@ -47,7 +47,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
     if ($it->exists($keyword)) {  // 索引串存在
         $password = $it->password($keyword);
         $passwordRight = True;  // 密码是否正确
-        if ($password != null) {
+        if (!empty($password)) {
             if ($password_user != $password) $passwordRight = False;
             if (!$passwordRight && isset($password_user)) $placeholder = "密码错误";
         }

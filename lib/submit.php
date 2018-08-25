@@ -11,9 +11,12 @@ if (isset($_POST['seed']) && verify($_POST['seed'])) {
     $it = new tableEditor();
     $text = htmlspecialchars($_POST['text']);
     $type = $_POST['type'];
+    if ($type == 'plain') {
+        if (strpos($text, "#include") !== false) $type = 'cpp';
+    }
     $password = $_POST['password'];
-    if ($password != null) $password = md5($password);
-    if (isset($_GET['keyword'])) {
+    if (!empty($password)) $password = md5($password);
+    if (!empty($_GET['keyword'])) {
         $keyword = $_GET['keyword'];
         $it->temporaryInsert($keyword, $text, $type, $password);
     } else {
