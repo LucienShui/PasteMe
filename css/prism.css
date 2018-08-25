@@ -225,7 +225,8 @@ div.code-toolbar > .toolbar button:hover,
 div.code-toolbar > .toolbar button:focus,
 div.code-toolbar > .toolbar span:hover,
 div.code-toolbar > .toolbar span:focus {
-	color: inherit;
+	/*color: inherit;*/
+    color: whitesmoke;
 	text-decoration: none;
 }
 
