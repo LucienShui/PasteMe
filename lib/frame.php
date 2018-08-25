@@ -168,7 +168,7 @@ function foot() {
 function show($text, $type) {
     global $config;
     ?>
-    <div class="row">
+    <div class="row" style="margin-top: 4.5em">
         <div class="col-md-1">
         </div>
         <div class="col-md-10">
@@ -186,7 +186,7 @@ function show($text, $type) {
 
 function passwordCertification($keyword, $placeholder) {
     ?>
-    <div class="row">
+    <div class="row" style="margin-top: 4.5em">
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
