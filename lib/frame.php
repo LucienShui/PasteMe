@@ -204,7 +204,9 @@ function passwordCertification($keyword, $placeholder) {
     <?php
 }
 
-function success($keyword, $url) {
+function success($keyword) {
+    global $config;
+    $url = $config['website'] . $keyword;
     ?>
     <div class="row">
         <div class="col-md-2">

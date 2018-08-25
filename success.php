@@ -7,9 +7,8 @@
 require 'lib/frame.php';
 if (isset($_GET['keyword'])) {
     $keyword = $_GET['keyword'];
-    $config = include_once('lib/config.php');
     head();
-    success($keyword, $config['website'] . $keyword);
+    success($keyword);
     foot();
 }
 ?>
