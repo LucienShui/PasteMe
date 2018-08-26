@@ -223,18 +223,11 @@ div.code-toolbar > .toolbar span {
 div.code-toolbar > .toolbar a:hover,
 div.code-toolbar > .toolbar a:focus,
 div.code-toolbar > .toolbar button:hover,
-/*div.code-toolbar > .toolbar button:focus,*/
+div.code-toolbar > .toolbar button:focus,
 div.code-toolbar > .toolbar span:hover,
 div.code-toolbar > .toolbar span:focus {
 	/*color: inherit;*/
-    color: black;
-    background: darkgray;
+    cursor: pointer;
 	text-decoration: none;
-}
-
-div.code-toolbar > .toolbar button:active {
-	position: relative;
-	top: .12em;
-	left: .12em;
 }
 
