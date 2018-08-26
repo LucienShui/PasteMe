@@ -38,6 +38,7 @@
     Prism.plugins.toolbar.registerButton('copy-to-clipboard', function (env) {
         let button = document.createElement('button');
         button.textContent = '复制';
+        button.setAttribute('tabindex', '1');
 
         if (!ClipboardJS) {
             callbacks.push(registerClipboard);

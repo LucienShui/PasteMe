@@ -38,7 +38,7 @@ function head($color = '', $title = 'PasteMe') {
                         </ul>
                         <div class="form-inline" onkeyup="enterJudge()">
                             <input name="keyword" autocomplete="off" id="keyword" class="form-control mr-sm-2" title="请填入纯数字的索引串"
-                                   required="required" pattern="[0-9]*" placeholder="索引串"/>
+                                   required="required" tabindex="10" pattern="[0-9]*" placeholder="索引串"/>
                             <button class="btn btn-primary my-2 my-sm-0" onclick="redirect()">
                                 前往
                             </button>
@@ -102,7 +102,7 @@ function home($seed, $placeholder = '写点什么进来吧', $action = '/lib/sub
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">高亮</span>
                                     </div>
-                                    <select name="type" class="form-control" title="language" style="-webkit-appearance: none;-moz-appearance: none;appearance: none;">
+                                    <select name="type" tabindex="11" class="form-control" title="language" style="-webkit-appearance: none;-moz-appearance: none;appearance: none;">
                                         <option value="plain">纯文本</option>
                                         <option value="cpp">C/C++</option>
                                         <option value="java">Java</option>
@@ -117,18 +117,18 @@ function home($seed, $placeholder = '写点什么进来吧', $action = '/lib/sub
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">加密</span>
                                     </div>
-                                    <input class="form-control" type="password" name="password" placeholder="无需加密请留空">
+                                    <input class="form-control" tabindex="12" type="password" name="password" placeholder="无需加密请留空">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                <textarea class="form-control" required="required" name='text' rows='10'
+                                <textarea class="form-control" tabindex="13" required="required" name='text' rows='10'
                                           style="resize: none"
                                           placeholder="<?php echo $placeholder; ?>"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">保存</button>
+                                <button type="submit" tabindex="14" class="btn btn-primary">保存</button>
                             </div>
                         </div>
                         <input type="hidden" value="<?php echo $seed; ?>" name="seed" style="display: none" title="">
@@ -193,9 +193,9 @@ function passwordCertification($keyword, $placeholder) {
             <form class="form-horizontal" action="/<?php echo $keyword; ?>" method="post">
                 <div class="form-group">
                     <label for="pswdusr">此文本已加密，请输入密码：</label>
-                    <input type="password" class="form-control" id="pswdusr" name="password_user" placeholder="<?php echo $placeholder; ?>">
+                    <input type="password" tabindex="1" class="form-control" id="pswdusr" name="password_user" placeholder="<?php echo $placeholder; ?>">
                 </div>
-                <button type="submit" class="btn btn-primary">提交</button>
+                <button type="submit" tabindex="2" class="btn btn-primary">提交</button>
             </form>
         </div>
         <div class="col-md-4">
@@ -225,7 +225,7 @@ function success($keyword) {
                     <li><a href = 'http://api.lucien.ink/qrcode/?text=<?php echo $url?>&tag=PasteMe - 可能是最low的文本分享平台' target='_blank'>扫描二维码</a></li>
                 </ul>
                 <p>
-                    <a class="btn btn-primary btn-large" href="/">返回主页</a>
+                    <a class="btn btn-primary btn-large" tabindex="1" href="/">返回主页</a>
                 </p>
             </div>
         </div>
