@@ -36,8 +36,8 @@
     }
 
     Prism.plugins.toolbar.registerButton('copy-to-clipboard', function (env) {
-        let linkCopy = document.createElement('a');
-        linkCopy.textContent = '复制';
+        let button = document.createElement('button');
+        button.textContent = '复制';
 
         if (!ClipboardJS) {
             callbacks.push(registerClipboard);
@@ -45,22 +45,22 @@
             registerClipboard();
         }
 
-        return linkCopy;
+        return button;
 
         function registerClipboard() {
-            let clip = new ClipboardJS(linkCopy, {
+            let clip = new ClipboardJS(button, {
                 'text': function () {
                     return env.code;
                 }
             });
 
             clip.on('success', function() {
-                linkCopy.textContent = '复制成功';
+                button.textContent = '复制成功';
 
                 resetText();
             });
             clip.on('error', function () {
-                linkCopy.textContent = '复制失败';
+                button.textContent = '复制失败';
 
                 resetText();
             });
@@ -68,7 +68,7 @@
 
         function resetText() {
             setTimeout(function () {
-                linkCopy.textContent = '复制';
+                button.textContent = '复制';
             }, 2000);
         }
     });
