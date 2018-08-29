@@ -22,4 +22,4 @@ if (isset($_GET['keyword'])) {
         } else echo 'password wrong';
     } else echo 'keyword not found';
 } else echo 'wrong args';
-echo '<br>';
+echo PHP_EOL;
