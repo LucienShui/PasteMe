@@ -24,9 +24,8 @@ if (isset($_GET['keyword'])) {
         } else $flag = true;
         if ($flag) {
             $content = $it->content($keyword);
-            echo str_replace("\r", "", htmlspecialchars_decode($content['text']));
+            echo str_replace("\r", "", htmlspecialchars_decode($content['text'])) . "\n";
             if ($chFlag) $it->remove($keyword);
         } else echo 'password wrong';
     } else echo 'keyword not found';
 } else echo 'wrong args';
-echo PHP_EOL;
