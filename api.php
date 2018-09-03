@@ -7,6 +7,12 @@
 require ('lib/tableEditor.php');
 if (isset($_GET['keyword'])) {
     $keyword = $_GET['keyword'];
+    $len = strlen($keyword);
+    $chFlag = false;
+    for ($i = 0; $i < $len; $i++) if ($keyword[$i] < '0' || $keyword[$i] > '9') {
+            $chFlag = true;
+            break;
+        }
     $it = new tableEditor();
     if ($it->exists($keyword)) {
         $flag = false;
@@ -18,7 +24,10 @@ if (isset($_GET['keyword'])) {
         } else $flag = true;
         if ($flag) {
             $content = $it->content($keyword);
-            echo htmlspecialchars_decode($content['text']);
+            $text = htmlspecialchars_decode($content['text']);
+            $text = str_replace("\r", "", $text);
+            echo $text;
+            if ($chFlag) $it->remove($keyword);
         } else echo 'password wrong';
     } else echo 'keyword not found';
 } else echo 'wrong args';
