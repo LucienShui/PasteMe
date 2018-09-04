@@ -21,6 +21,7 @@ if (isset($_POST['seed']) && verify($_POST['seed'])) {
         $keyword = $it->insert($text, $type, $password);
         if (~$keyword) $url = '';
     }
-    header("Refresh:0;url=/success.php?keyword=" . $keyword);
+    if ($keyword == -1) echo "Sorry, there is something wrong with SQL.";
+    else header("Refresh:0;url=/success.php?keyword=" . $keyword);
 }
 ?>
