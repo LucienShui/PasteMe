@@ -63,7 +63,7 @@ class dbEditor {
     }
 
     public function get_id() {
-        $array = mysqli_fetch_array(mysqli_query($this->connection, "SELECT * FROM `id`"));
+        $array = mysqli_fetch_array(mysqli_query($this->connection, "SELECT `id` FROM `id` WHERE `name` = 'id'"));
         return $array['id'];
     }
 
@@ -71,4 +71,3 @@ class dbEditor {
         mysqli_query($this->connection, "UPDATE `id` set `id` = `id` + 1");
     }
 }
-?>
