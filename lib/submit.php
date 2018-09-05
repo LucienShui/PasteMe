@@ -22,6 +22,6 @@ if (isset($_POST['seed']) && verify($_POST['seed'])) {
         if (~$keyword) $url = '';
     }
     if ($keyword == -1) echo "Sorry, there is something wrong with SQL.";
-    else header("Refresh:0;url=/success.php?keyword=" . $keyword);
+    else header("Refresh:0;url=/success?keyword=" . $keyword);
 }
 ?>

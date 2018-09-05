@@ -212,6 +212,7 @@ function success($keyword) {
         <div class="col-md-2">
         </div>
         <div class="col-md-8">
+            <script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
             <div class="jumbotron">
                 <h2>
                     保存成功
@@ -221,17 +222,31 @@ function success($keyword) {
                 </p>
                 <ul>
                     <li>在主页中输入索引串</li>
-                    <li>在浏览器中访问：<a href="<?php echo $url?>"><?php echo $url?></a></li>
+                    <li>在浏览器中访问：<a id="url" href="<?php echo $url?>"><?php echo $url?></a> <a tabindex="1" id="copy" href="#">复制链接</a></li>
                     <li><a href = 'http://api.lucien.ink/qrcode/?text=<?php echo $url?>&tag=PasteMe - 可能是最low的文本分享平台' target='_blank'>扫描二维码</a></li>
                 </ul>
                 <p>
-                    <a class="btn btn-primary btn-large" tabindex="1" href="/">返回主页</a>
+                    <a class="btn btn-primary btn-large" tabindex="2" href="/">返回主页</a>
                 </p>
             </div>
         </div>
         <div class="col-md-2">
         </div>
     </div>
+    <script type="text/javascript">
+        let url = document.getElementById('url');
+        let copyLink = document.getElementById('copy');
+        copyLink.setAttribute("data-clipboard-text", url.innerText);
+        const clipboard = new ClipboardJS('#copy');
+        clipboard.on('success', function() {
+            copyLink.innerText = '复制成功';
+            window.setTimeout(function () {copyLink.innerText = '复制链接'}, 2000);
+        });
+        clipboard.on('error', function() {
+            copyLink.innerText = '复制失败';
+            window.setTimeout(function () {copyLink.innerText = '复制链接'}, 2000);
+        });
+    </script>
     <?php
 }
 ?>
