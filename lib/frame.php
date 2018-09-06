@@ -6,7 +6,7 @@
  */
 $config = require('config.php');
 
-function head($color = '', $title = 'PasteMe') {
+function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文本分享平台') {
     global $config;
     ?>
     <!DOCTYPE html>
