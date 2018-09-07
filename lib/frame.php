@@ -30,20 +30,28 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                             data-target="#bs-example-navbar-collapse-1">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo $config['website'];?>">PasteMe</a>
+                    <a class="navbar-brand" href="<?php echo $config['website'];?>" title="返回主页">PasteMe</a>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link active" href='#modal-container-74922' data-toggle='modal'>使用指南</a></li>
-                            <li><a class="nav-link"></a></li>
-                        </ul>
                         <div class="form-inline" onkeyup="enterJudge()">
-                            <input name="keyword" autocomplete="off" id="keyword" class="form-control mr-sm-2" title="请填入纯数字的索引串"
-                                   required="required" tabindex="10" pattern="[0-9]*" placeholder="索引串"/>
-                            <button class="btn btn-primary my-2 my-sm-0" onclick="redirect()">
-                                前往
-                            </button>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <?php echo $config['website']; ?>
+                                    </span>
+                                </div>
+                                <input name="keyword" autocomplete="off" id="keyword" class="form-control" title="输入任意字母以进入隐私模式"
+                                       required="required" tabindex="10" placeholder="索引串或隐私串"/>
+                                <span class="input-group-append">
+                                    <button class="btn btn-primary" type="button" onclick="redirect()">
+                                        前往
+                                    </button>
+                                </span>
+                            </div>
                         </div>
                         <ul class="navbar-nav ml-md-auto">
+                            <li class="nav-item"><a class="nav-link" href='http://api.pasteme.cn' target="_blank">API</a></li>
+                            <li class="nav-item"><a class="nav-link" href='http://blog.pasteme.cn' target="_blank">博客</a></li>
+                            <li class="nav-item"><a class="nav-link" href='#modal-container-74922' data-toggle='modal'>使用指南</a></li>
                             <li class="nav-item"><a class="nav-link" href='#modal-container-74921' data-toggle='modal'>捐助</a></li>
                         </ul>
                     </div>
@@ -158,7 +166,7 @@ function foot() {
     <footer>
         <div style="text-align: center; margin-top: .8em;">
             <p><a href='http://www.lucien.ink' target='_blank'>Lucien's Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.lucien.ink/go/csdn" target='_blank'>CSDN</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/LucienShui" target="_blank">GitHub</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target='_blank'>鲁ICP备18007563号</a></p>
-            <p>&copy; 2017-<?php echo date('Y'); ?> <a href='mailto:lucien@lucien.ink'>Lucien Shui</a>. All rights reserved.</p>
+            <p>&copy; 2017-<?php echo date('Y'); ?> <a href='mailto:lucien@lucien.ink'>Lucien Shui</a> All rights reserved</p>
         </div>
     </footer>
     </html>
