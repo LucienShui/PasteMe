@@ -4,7 +4,7 @@
  * Date: 2018/7/26
  * Time: 0:03
  */
-$keyword = str_replace('/', '', $_SERVER["REQUEST_URI"]); // 取当前路由的后缀
+$keyword = substr($_SERVER["REQUEST_URI"], 1, strlen($_SERVER["REQUEST_URI"])); // 取当前路由的后缀
 if ($keyword == '') {
 	require 'lib/frame.php';
 	require 'lib/postVerify.php';
@@ -20,7 +20,8 @@ if (isset($_POST['password_user'])) {
 }
 $len = strlen($keyword);
 if ($len > 20) {
-    header("Refresh:0;url=/" . substr($keyword, 0, 20));
+    echo "<script>alert('隐私串长度不得超过20') </script>";
+    header("Refresh:0;url=/");
     die();
 }
 $chFlag = False;  // 是否包含字母
