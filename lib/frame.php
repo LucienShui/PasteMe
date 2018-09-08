@@ -36,7 +36,7 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
-                                        <?php echo $config['website']; ?>
+                                        <?php echo substr($config['website'], strpos($config['website'], "//") + 2); ?>
                                     </span>
                                 </div>
                                 <input name="keyword" autocomplete="off" id="keyword" class="form-control" title="输入任意字母以进入隐私模式"
