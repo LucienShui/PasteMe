@@ -32,7 +32,7 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                     </button>
                     <a class="navbar-brand" href="<?php echo $config['website'];?>" title="返回主页">PasteMe</a>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <div class="form-inline" onkeyup="enterJudge()">
+                        <div class="form-inline" onkeyup="enterJudge(event)">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">

@@ -1,7 +1,5 @@
-function enterJudge() {
-    if (window.event.keyCode === 13) {
-        redirect();
-    }
+function enterJudge(event) {
+    if ((window.event ? event.keyCode : event.which) === 13) redirect();
 }
 
 function check(ch) {
@@ -20,9 +18,8 @@ function stringCheck(str) {
 
 function redirect() {
     const id = document.getElementById("keyword").value;
-    if (id.length === 0) {
-        alert("索引串不能为空");
-    } else {
+    if (id.length === 0) alert("索引串不能为空");
+    else {
         if (stringCheck(id)) window.location.href = id;
         else alert("索引串只能由大小写英文字母或数字组成且长度小于20");
     }
