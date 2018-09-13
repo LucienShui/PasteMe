@@ -4,7 +4,7 @@
  * Date: 2018/7/26
  * Time: 0:03
  */
-$keyword = substr($_SERVER["REQUEST_URI"], 1, strlen($_SERVER["REQUEST_URI"])); // 取当前路由的后缀
+$keyword = substr($_SERVER["REQUEST_URI"], 1, strlen($_SERVER["REQUEST_URI"]) - 1); // 取当前路由的后缀
 if ($keyword == '') {
 	require 'lib/frame.php';
 	require 'lib/postVerify.php';
@@ -13,10 +13,10 @@ if ($keyword == '') {
 	foot();
 	die();
 }
-$password_user = null;
-$placeholder = null;
-if (isset($_POST['password_user'])) {
-    $password_user = md5($_POST['password_user']);
+if (($pos = strpos($keyword, '?')) !== False) {
+    $dst = substr($keyword, 0, $pos);
+    header("Refresh:0;url=/" . $dst);
+    die();
 }
 $len = strlen($keyword);
 if ($len > 20) {
@@ -29,10 +29,6 @@ $otherFlag = False;  // 是否有其它字符
 function isalpha($ch) { return ($ch >= 'a' && $ch <= 'z' ) || ($ch >= 'A' && $ch <= 'Z'); }
 function isdigit($ch) { return $ch >= '0' && $ch <= '9'; }
 for ($i = 0; $i < $len; $i++) {
-    if ($keyword[$i] == '?') {
-        header("Refresh:0;url=/" . substr($keyword, 0, $i));
-        die();
-    }
     if (isalpha($keyword[$i])) $chFlag = True;
     else if (!isdigit($keyword[$i])) {
         $otherFlag = True;
@@ -43,6 +39,9 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
     echo "<script>alert('请确认索引串是否存在，永久空间的索引串由纯数字组成，临时空间的索引串由大小写英文字母及数字组成') </script>";
     header("Refresh:0;url=/");
 } else {
+    $password_user = null;
+    $placeholder = null;
+    if (isset($_POST['password_user'])) $password_user = md5($_POST['password_user']);
     require 'lib/tableEditor.php';
     $it = new tableEditor();
     if ($it->exists($keyword)) {  // 索引串存在
