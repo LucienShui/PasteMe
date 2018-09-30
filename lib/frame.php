@@ -182,7 +182,7 @@ function show($text, $type) {
         </div>
         <div class="col-md-10">
             <link rel="stylesheet" type="text/css" href="<?php echo $config['cdn']?>/css/prism.css">
-            <script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+            <script src="<?php echo $config['cdn']; ?>/js/clipboard.min.js"></script>
             <script src="<?php echo $config['cdn']; ?>/js/prism.js"></script>
             <script src="<?php echo $config['cdn'];?>/js/prism.copy-all.js"></script>
             <pre><code id="code" class="language-<?php echo $type; ?> line-numbers-rows"><?php echo $text; ?></code></pre>
@@ -221,7 +221,7 @@ function success($keyword) {
         <div class="col-md-2">
         </div>
         <div class="col-md-8">
-            <script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
+            <script src="<?php echo $config['cdn']; ?>/js/clipboard.min.js"></script>
             <div class="jumbotron">
                 <h2>
                     保存成功
