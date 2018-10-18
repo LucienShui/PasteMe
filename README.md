@@ -1,6 +1,11 @@
+# Demo
+
+[pasteme.cn](http://www.lucien.ink/go/pasteme)
+
 # PasteMe
 
 Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键复制，上传的内容可以选择**永久保存**或者是**即阅即焚**。
+
 
 ## 索引串
 
@@ -68,10 +73,6 @@ if (!-e $request_filename) {
 # 其它
 
 + 代码写的很烂，望轻喷。
-
-# Demo
-
-[PasteMe](http://www.lucien.ink/go/pasteme)
 
 # 版权所有
 
