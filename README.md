@@ -1,6 +1,6 @@
 # Demo
 
-[pasteme.cn](http://www.lucien.ink/go/pasteme)
+[https://pasteme.cn](http://www.lucien.ink/go/pasteme)
 
 # PasteMe
 
