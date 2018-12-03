@@ -157,7 +157,7 @@ function foot() {
     <script src="<?php echo $config['cdn']; ?>/js/bootstrap.min.js"></script>
     <script src="<?php echo $config['cdn']; ?>/js/dao.voice.object.js"></script>
 
-    <?php include_once($config['cdn'] . "lib/baiduJsPush.php"); ?>
+    <?php include_once($config['cdn'] . "/lib/baiduJsPush.php"); ?>
 
     </body>
     <style>
