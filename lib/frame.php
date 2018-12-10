@@ -15,9 +15,14 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="apple-mobile-web-app-title" content="PasteMe">
         <title><?php echo $title; ?></title>
-        <?php if (!empty($config['favicon'])) {?><link rel="shortcut icon" href="<?php echo $config['favicon']; ?>" type="image/x-icon" />
-        <?php }?><link rel="stylesheet" href="<?php echo $config['cdn']; ?>/css/bootstrap.min.css"/>
+        <link rel="shortcut icon" href="<?php echo $config['cdn']; ?>/favicon.ico"/>
+        <link rel="apple-touch-icon" sizes="60x60"  href="<?php echo $config['cdn']; ?>/img/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo $config['cdn']; ?>/img/touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo $config['cdn']; ?>/img/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo $config['cdn']; ?>/img/touch-icon-ipad-retina.png">
+        <link rel="stylesheet" href="<?php echo $config['cdn']; ?>/css/bootstrap.min.css"/>
     </head>
 
     <body <?php echo $color; ?>>

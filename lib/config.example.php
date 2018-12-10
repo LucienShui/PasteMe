@@ -6,7 +6,6 @@ return array(
     'dbname' => 'pasteme',
     'website' => 'http://localhost/',
     'cdn' => '',
-    'favicon' => '',
     'seed' => 'asldfasjgalknfklwjehlkasjdfnl',
 );
 ?>
