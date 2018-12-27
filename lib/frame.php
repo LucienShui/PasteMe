@@ -5,7 +5,7 @@
  * Time: 23:18
  */
 $config = require('config.php');
-require('lib/oneWord.php');
+require('oneWord.php');
 
 function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文本分享平台') {
     global $config;
@@ -23,7 +23,7 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
         <link rel="apple-touch-icon" sizes="76x76" href="<?php echo $config['cdn']; ?>/img/touch-icon-ipad.png">
         <link rel="apple-touch-icon" sizes="120x120" href="<?php echo $config['cdn']; ?>/img/touch-icon-iphone-retina.png">
         <link rel="apple-touch-icon" sizes="152x152" href="<?php echo $config['cdn']; ?>/img/touch-icon-ipad-retina.png">
-        <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="<?php echo $config['cdn']; ?>/css/bootstrap.min.css"/>
     </head>
 
     <body <?php echo $color; ?>>
@@ -54,7 +54,7 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                             </div>
                         </div>
                         <ul class="navbar-nav ml-md-auto">
-                            <li class="nav-item"><a class="nav-link" href='http://api.pasteme.cn' target="_blank">API</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href='http://api.pasteme.cn' target="_blank">API</a></li> -->
                             <li class="nav-item"><a class="nav-link" href='https://www.lucien.ink/pasteme_log.html' target="_blank">更新日志</a></li>
                             <li class="nav-item"><a class="nav-link" href='#modal-container-74922' data-toggle='modal'>使用指南</a></li>
                             <li class="nav-item"><a class="nav-link" href='#modal-container-74921' data-toggle='modal'>捐助</a></li>
@@ -159,10 +159,10 @@ function foot() {
         </div>
     </div>
     <script src="<?php echo $config['cdn']; ?>/js/tools.js"></script>
+    <script src="<?php echo $config['cdn']; ?>/js/jquery.min.js"></script>
+    <script src="<?php echo $config['cdn']; ?>/js/bootstrap.min.js"></script>
     <script src="<?php echo $config['cdn']; ?>/js/dao.voice.object.js"></script>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
-    <?php include_once("baiduJsPush.php"); ?>
+    <?php include_once("usr/js.php"); ?>
     </body>
     <style>
         footer {
@@ -203,12 +203,13 @@ function show($text, $type) {
 }
 
 function passwordCertification($keyword, $placeholder) {
+    global $config;
     ?>
     <div class="row">
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-            <form class="form-horizontal" action="/<?php echo $keyword; ?>" method="post">
+            <form class="form-horizontal" action="<?php echo $config['website'] . $keyword; ?>" method="post">
                 <div class="form-group">
                     <label for="pswdusr">此文本已加密，请输入密码：</label>
                     <input type="password" tabindex="1" class="form-control" id="pswdusr" name="password_user" placeholder="<?php echo $placeholder; ?>">
