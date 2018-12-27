@@ -20,10 +20,10 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
         <title><?php echo $title; ?></title>
         <link rel="shortcut icon" href="<?php echo $config['cdn']; ?>/favicon.ico"/>
         <link rel="apple-touch-icon" sizes="60x60"  href="<?php echo $config['cdn']; ?>/img/touch-icon-iphone.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo $config['cdn']; ?>/img/touch-icon-ipad.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo $config['cdn']; ?>/img/touch-icon-iphone-retina.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo $config['cdn']; ?>/img/touch-icon-ipad-retina.png">
-        <link rel="stylesheet" href="<?php echo $config['cdn']; ?>/css/bootstrap.min.css"/>
+        <link rel="apple-touch-icon" sizes="76x76" href="<?php echo $config['cdn']; ?>/img/touch-icon-ipad.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="<?php echo $config['cdn']; ?>/img/touch-icon-iphone-retina.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="<?php echo $config['cdn']; ?>/img/touch-icon-ipad-retina.png">
+        <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css"/>
     </head>
 
     <body <?php echo $color; ?>>
@@ -159,9 +159,9 @@ function foot() {
         </div>
     </div>
     <script src="<?php echo $config['cdn']; ?>/js/tools.js"></script>
-    <script src="<?php echo $config['cdn']; ?>/js/jquery.min.js"></script>
-    <script src="<?php echo $config['cdn']; ?>/js/bootstrap.min.js"></script>
     <script src="<?php echo $config['cdn']; ?>/js/dao.voice.object.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <?php include_once("baiduJsPush.php"); ?>
     </body>
     <style>
