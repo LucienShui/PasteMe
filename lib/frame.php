@@ -209,7 +209,7 @@ function passwordCertification($keyword, $placeholder) {
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-            <form class="form-horizontal" action="<?php echo $config['website'] . $keyword; ?>" method="post">
+            <form class="form-horizontal" action="/<?php echo $keyword; ?>" method="post">
                 <div class="form-group">
                     <label for="pswdusr">此文本已加密，请输入密码：</label>
                     <input type="password" tabindex="1" class="form-control" id="pswdusr" name="password_user" placeholder="<?php echo $placeholder; ?>">
