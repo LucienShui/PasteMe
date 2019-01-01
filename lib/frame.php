@@ -176,7 +176,7 @@ function foot() {
         <div style="text-align: center; margin-top: .8em;">
             <p><a><?php echo(one_word()); ?></a></p>
             <p><a href='http://www.lucien.ink' target='_blank'>Lucien's Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.lucien.ink/go/csdn" target='_blank'>CSDN</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/LucienShui" target="_blank">GitHub</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target='_blank'>鲁ICP备18007563号</a></p>
-            <p>&copy; <?php echo date('Y'); ?> <a href='mailto:lucien@lucien.ink'>Lucien Shui</a> All rights reserved</p>
+            <p>&copy; 2018 - <?php echo date('Y'); ?> <a href='mailto:lucien@lucien.ink'>Lucien Shui</a> All rights reserved</p>
         </div>
     </footer>
     </html>
