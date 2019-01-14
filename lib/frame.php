@@ -5,7 +5,7 @@
  * Time: 23:18
  */
 $config = require('config.php');
-require('oneWord.php');
+require_once('oneWord.php');
 
 function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文本分享平台') {
     global $config;
@@ -18,12 +18,12 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="apple-mobile-web-app-title" content="PasteMe">
         <title><?php echo $title; ?></title>
-        <link rel="shortcut icon" href="<?php echo $config['cdn']; ?>/favicon.ico"/>
-        <link rel="apple-touch-icon" sizes="60x60"  href="<?php echo $config['cdn']; ?>/img/touch-icon-iphone.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="<?php echo $config['cdn']; ?>/img/touch-icon-ipad.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="<?php echo $config['cdn']; ?>/img/touch-icon-iphone-retina.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="<?php echo $config['cdn']; ?>/img/touch-icon-ipad-retina.png">
-        <link rel="stylesheet" href="<?php echo $config['cdn']; ?>/css/bootstrap.min.css"/>
+        <link rel="shortcut icon" href="<?php echo $config['cdn']; ?>favicon.ico"/>
+        <link rel="apple-touch-icon" sizes="60x60"  href="<?php echo $config['cdn']; ?>img/touch-icon-iphone.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="<?php echo $config['cdn']; ?>img/touch-icon-ipad.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="<?php echo $config['cdn']; ?>img/touch-icon-iphone-retina.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="<?php echo $config['cdn']; ?>img/touch-icon-ipad-retina.png">
+        <link rel="stylesheet" href="<?php echo $config['cdn']; ?>css/bootstrap.min.css"/>
     </head>
 
     <body <?php echo $color; ?>>
@@ -35,13 +35,13 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                             data-target="#bs-example-navbar-collapse-1">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="<?php echo $config['website'];?>" title="返回主页">PasteMe</a>
+                    <a class="navbar-brand" href="<?php echo "{$config['protocol']}{$config['domain']}{$config['path']}";?>" title="返回主页">PasteMe</a>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <div class="form-inline" onkeyup="enterJudge(event)">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
-                                        <?php echo substr($config['website'], strpos($config['website'], "//") + 2); ?>
+                                        <?php echo "{$config['domain']}{$config['path']}"; ?>
                                     </span>
                                 </div>
                                 <input name="keyword" autocomplete="off" id="keyword" class="form-control" title="输入任意字母以进入隐私模式"
@@ -69,7 +69,7 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                                     <span aria-hidden='true'>&times;</span></button>
                             </div>
                             <div class='modal-body'>
-                                <img src="<?php echo $config['cdn']; ?>/money.png" style="width: 100%; height: auto;">
+                                <img src="<?php echo $config['cdn']; ?>img/money.png" style="width: 100%; height: auto;">
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
     <?php
 }
 
-function home($seed, $placeholder = '写点什么进来吧', $action = '/lib/submit.php') {
+function home($seed, $placeholder = '写点什么进来吧', $action = 'lib/submit.php') {
     ?>
             <div class="row">
                 <div class="col-md-2">
@@ -158,11 +158,11 @@ function foot() {
     ?>
         </div>
     </div>
-    <script src="<?php echo $config['cdn']; ?>/js/tools.js"></script>
-    <script src="<?php echo $config['cdn']; ?>/js/jquery.min.js"></script>
-    <script src="<?php echo $config['cdn']; ?>/js/bootstrap.min.js"></script>
-    <script src="<?php echo $config['cdn']; ?>/js/dao.voice.object.js"></script>
-    <?php include_once("usr/js.php"); ?>
+    <script src="<?php echo $config['cdn']; ?>js/tools.js"></script>
+    <script src="<?php echo $config['cdn']; ?>js/jquery.min.js"></script>
+    <script src="<?php echo $config['cdn']; ?>js/bootstrap.min.js"></script>
+    <script src="<?php echo $config['cdn']; ?>js/dao.voice.object.js"></script>
+    <?php require_once("usr/js.php"); ?>
     </body>
     <style>
         footer {
@@ -190,10 +190,10 @@ function show($text, $type) {
         <div class="col-md-1">
         </div>
         <div class="col-md-10">
-            <link rel="stylesheet" type="text/css" href="<?php echo $config['cdn']?>/css/prism.css">
-            <script src="<?php echo $config['cdn']; ?>/js/clipboard.min.js"></script>
-            <script src="<?php echo $config['cdn']; ?>/js/prism.js"></script>
-            <script src="<?php echo $config['cdn'];?>/js/prism.copy-all.js"></script>
+            <link rel="stylesheet" type="text/css" href="<?php echo $config['cdn']?>css/prism.css">
+            <script src="<?php echo $config['cdn']; ?>js/clipboard.min.js"></script>
+            <script src="<?php echo $config['cdn']; ?>js/prism.js"></script>
+            <script src="<?php echo $config['cdn'];?>js/prism.copy-all.js"></script>
             <pre><code id="code" class="language-<?php echo $type; ?> line-numbers-rows"><?php echo $text; ?></code></pre>
         </div>
         <div class="col-md-1">
@@ -209,7 +209,7 @@ function passwordCertification($keyword, $placeholder) {
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-            <form class="form-horizontal" action="/<?php echo $keyword; ?>" method="post">
+            <form class="form-horizontal" action="<?php echo "{$config['path']}{$keyword}"; ?>" method="post">
                 <div class="form-group">
                     <label for="pswdusr">此文本已加密，请输入密码：</label>
                     <input type="password" tabindex="1" class="form-control" id="pswdusr" name="password_user" placeholder="<?php echo $placeholder; ?>">
@@ -225,13 +225,13 @@ function passwordCertification($keyword, $placeholder) {
 
 function success($keyword) {
     global $config;
-    $url = $config['website'] . $keyword;
+    $url = "{$config['protocol']}{$config['domain']}{$config['path']}{$keyword}";
     ?>
     <div class="row">
         <div class="col-md-2">
         </div>
         <div class="col-md-8">
-            <script src="<?php echo $config['cdn']; ?>/js/clipboard.min.js"></script>
+            <script src="<?php echo $config['cdn']; ?>js/clipboard.min.js"></script>
             <div class="jumbotron">
                 <h2>
                     保存成功

@@ -4,10 +4,10 @@
  * Date: 2018/7/24
  * Time: 18:46
  */
-require ('postVerify.php');
+require_once('postVerify.php');
 if (isset($_POST['seed']) && verify($_POST['seed'])) {
     $keyword = '';
-    require 'tableEditor.php';
+    require_once('tableEditor.php');
     $it = new tableEditor();
     $text = htmlspecialchars($_POST['text']);
     $type = $_POST['type'];
@@ -22,6 +22,9 @@ if (isset($_POST['seed']) && verify($_POST['seed'])) {
         if (~$keyword) $url = '';
     }
     if ($keyword == -1) echo "Sorry, there is something wrong with SQL.";
-    else header("Refresh:0;url=/success.php?keyword=" . $keyword);
+    else {
+        $config = require('config.php');
+        header("Refresh:0;url={$config['path']}success.php?keyword={$keyword}");
+    }
 }
 ?>
