@@ -1,11 +1,16 @@
-# Demo
+# Demo 
+
+## Stable
 
 [https://pasteme.cn](http://www.lucien.ink/go/pasteme)
+
+## Lastest
+
+[https://www.lucien.ink/pasteme](https://www.lucien.ink/pasteme)
 
 # PasteMe
 
 Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键复制，上传的内容可以选择**永久保存**或者是**即阅即焚**。
-
 
 ## 索引串
 
@@ -25,28 +30,46 @@ Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键�
 
 ```
 web_root
- ├─ index.php
- ├─ success.php
- ├─ favicon.ico (if you have)
+ ├─ css
+ │   ├─ bootstrap.min.css
+ │   ├─ bootstrap.min.css.map
+ │   └─ prism.css
+ ├─ img
+ │   ├─ money.png
+ │   ├─ touch-icon-ipad-retina.png
+ │   ├─ touch-icon-ipad.png
+ │   ├─ touch-icon-iphone-retina.png
+ │   └─ touch-icon-iphone.png
+ ├─ js
+ │   ├─ bootstrap.min.js
+ │   ├─ bootstrap.min.js.map
+ │   ├─ clipboard.min.js
+ │   ├─ dao.voice.object.js
+ │   ├─ jquery.min.js
+ │   ├─ prism.copy-all.js
+ │   ├─ prism.js
+ │   └─ tools.js
  ├─ lib
  │   ├─ config.php
- │   ├─ init.php
- │   ├─ frame.php
- │   ├─ tableEditor.php
  │   ├─ dbEditor.php
- │   ├─ util.php
- │   └─ submit.php
- ├─ css
- │   └─ prism.css
- └─ js
-     ├─ prism.js
-     ├─ tools.js
-     └─ prism.copy-all.js
+ │   ├─ frame.php
+ │   ├─ init.php
+ │   ├─ oneWord.php
+ │   ├─ postVerify.php
+ │   ├─ submit.php
+ │   └─ tableEditor.php
+ └─ usr
+ │   └─ js.php
+ ├─ api.php
+ ├─ favicon.ico
+ ├─ index.php
+ └─ success.php
+
 ```
 
-进入`lib`文件夹，将`config.example.php`复制一份并重命名为`config.php`，修改`config.php`中数据库相关的信息，并将`website`项更改为服务器的域名。
+进入 `lib` 文件夹，将 `config.example.php` 复制一份并重命名为 `config.php` ，修改 `config.php` 中相关的信息。
 
-然后在浏览器中访问`web_root/lib/init.php`来初始化数据库。
+然后在浏览器中访问 `web_root/lib/init.php` 来初始化数据库。
 
 ## Rewrite（必要）
 
@@ -78,6 +101,17 @@ if (!-e $request_filename) {
 
 Copyright © 2017-2018 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
+# 免责声明
+
+本工具只提供文本分享的载体部分，对于所有的文本内容均没有任何联系。
+
+# 待完善
+
+[x] 支持子目录部署
+[] 支持举报不当的文本存档
+[] 支持删除指定文本存档的建议后台
+[] 分离存档和永久存档的数据库
+
 # 捐助
 
-![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/money.png)
+![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/img/money.png)
