@@ -4,7 +4,7 @@
  * Date: 2018/8/26
  * Time: 11:03
  */
-require ('lib/tableEditor.php');
+require_once('lib/tableEditor.php');
 if (isset($_GET['keyword'])) {
     $keyword = $_GET['keyword'];
     $len = strlen($keyword);
