@@ -1,10 +1,16 @@
+# 注意
+
+为了实现 [部署问题 #1](https://github.com/LucienShui/PasteMe/issues/1) ，文件树发生了变化。因此，若要从 `v1.0` 升级至 `dev` 版本请务必重新修改一次 `config.php` 。
+
+使用老版本请下载 `release` 版本：https://github.com/LucienShui/PasteMe/releases
+
 # Demo 
 
-## Stable
+## Release
 
 [https://pasteme.cn](http://www.lucien.ink/go/pasteme)
 
-## Lastest
+## Dev
 
 [https://www.lucien.ink/pasteme](https://www.lucien.ink/pasteme)
 
@@ -107,11 +113,17 @@ Copyright © 2017-2018 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 # 待完善
 
-[x] 支持子目录部署
-[] 支持举报不当的文本存档
-[] 支持删除指定文本存档的建议后台
-[] 分离存档和永久存档的数据库
++ [x] 支持子目录部署
+
++ [ ] 支持举报不当的文本存档
+
++ [ ] 支持删除指定文本存档的建议后台
+
++ [ ] 分离存档和永久存档的数据库
+
++ [ ] 重写 `api`
 
 # 捐助
 
-![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/img/money.png)
+![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/money.png)
+
