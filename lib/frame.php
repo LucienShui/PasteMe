@@ -245,7 +245,7 @@ function success($keyword) {
                     <li><a href = 'http://api.lucien.ink/qrcode/?text=<?php echo $url?>&tag=PasteMe - 可能是最low的文本分享平台' target='_blank'>扫描二维码</a></li>
                 </ul>
                 <p>
-                    <a class="btn btn-primary btn-large" tabindex="2" href="/">返回主页</a>
+                    <a class="btn btn-primary btn-large" tabindex="2" href="<?php echo "{$config['protocol']}{$config['domain']}{$config['path']}";?>">返回主页</a>
                 </p>
             </div>
         </div>

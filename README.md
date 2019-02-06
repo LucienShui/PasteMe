@@ -12,7 +12,7 @@
 
 ## Dev
 
-[https://www.lucien.ink/pasteme](https://www.lucien.ink/pasteme)
+[http://api.lucien.ink/pasteme](http://api.lucien.ink/pasteme)
 
 # PasteMe
 
