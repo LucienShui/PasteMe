@@ -1,35 +1,35 @@
 <?php
-require_once 'dbEditor.php';
+require_once('dbEditor.php');
 class tableEditor {
     private $db = null;
-    public function insert($text, $type = 'plain', $password = '') {
-        if ($this->db == null) $this->db = new dbEditor();
-        $keyword = $this->db->get_id();
-        if ($this->db->insert($keyword, $text, $type, $password)) {
-            $this->db->inc_id();
-            return $keyword;
-        } return -1;
+    public function __construct() {
+        $this->db = new dbEditor();
     }
-    public function temporaryInsert($keyword, $text, $type = 'plain', $password = '') {
-        if ($this->db == null) $this->db = new dbEditor();
-        if ($this->db->insert($keyword, $text, $type, $password)) return $keyword;
+    public function insert($text, $type, $password, $key = null) {
+        if ($key === null) {
+            $key = $this->db->get_id();
+            $buf = $key % 10;
+            if ($this->db->insert("perm{$buf}", 'i', $key, $text, $type, $password, 1)) {
+                $this->db->inc_id();
+                return $key;
+            }
+        } else {
+            if ($this->db->insert("temp", "s", $key, $text, $type, $password, 1)) return $key;
+        }
         return -1;
     }
-    public function password($keyword) {
-        if ($this->db == null) $this->db = new dbEditor();
-        return $this->db->get_password($keyword);
+    
+    public function query($key) {
+        if (filter_var($key, FILTER_VALIDATE_INT) === False) {
+            return $this->db->query("temp", "s", $key);
+        } else {
+            $buf = $key % 10;
+            return $this->db->query("perm{$buf}", "i", $key);
+        }
     }
-    public function content($keykeyword) {
-        if ($this->db == null) $this->db = new dbEditor();
-        return $this->db->get_array($keykeyword);
-    }
-    public function exists($keyword) {
-        if ($this->db == null) $this->db = new dbEditor();
-        return $this->db->exists($keyword);
-    }
-    public function remove($keyword) {
-        if ($this->db == null) $this->db = new dbEditor();
-        return $this->db->remove($keyword);
+
+    public function remove($key) {
+        return $this->db->remove($key);
     }
 }
 ?>

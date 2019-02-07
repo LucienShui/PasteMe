@@ -5,27 +5,35 @@
  * Time: 11:03
  */
 require_once('lib/tableEditor.php');
-if (isset($_GET['keyword'])) {
-    $keyword = $_GET['keyword'];
-    $len = strlen($keyword);
+if (isset($_GET['token'])) {
+    $token = $_GET['token'];
+    $key = '';
+    $passwd = '';
+    $pos = strpos($token, ",");
+    if ($pos === false) {
+        $key = $token;
+    } else {
+        $key = substr($token, 0, $pos);
+        $passwd = substr($token, $pos + 1, strlen($token) - $pos + 1);
+    }
+    $len = strlen($key);
     $chFlag = false;
-    for ($i = 0; $i < $len; $i++) if ($keyword[$i] < '0' || $keyword[$i] > '9') {
+    for ($i = 0; $i < $len; $i++) if ($key[$i] < '0' || $key[$i] > '9') {
             $chFlag = true;
             break;
-        }
+    }
     $it = new tableEditor();
-    if ($it->exists($keyword)) {
+    $array = $it->query($key);
+    if ($array === false) echo "key not found\n";
+    else {
         $flag = false;
-        $password = $it->password($keyword);
-        if (!empty($password)) {
-            if (isset($_GET['password']) && md5($_GET['password']) == $password) {
-                $flag = true;
-            }
+        $sys_passwd = $array['passwd'];
+        if (!empty($sys_passwd)) {
+            if (!empty($sys_passwd) && md5($passwd) == $sys_passwd) $flag = true;
         } else $flag = true;
         if ($flag) {
-            $content = $it->content($keyword);
-            echo str_replace("\r", "", htmlspecialchars_decode($content['text'])) . "\n";
-            if ($chFlag) $it->remove($keyword);
-        } else echo 'password wrong';
-    } else echo 'keyword not found';
-} else echo 'wrong args';
+            echo str_replace("\r", "", htmlspecialchars_decode($array['text'])) . "\n";
+            if ($chFlag) $it->remove($key);
+        } else echo "passwd wrong\n";
+    }
+} else echo "wrong args\n";

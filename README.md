@@ -117,9 +117,9 @@ Copyright © 2017-2018 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 + [ ] 支持举报不当的文本存档
 
-+ [ ] 支持删除指定文本存档的建议后台
++ [ ] 支持删除指定文本存档的后台
 
-+ [ ] 分离存档和永久存档的数据库
++ [x] 分离存档和永久存档的数据库
 
 + [ ] 重写 `api`
 
