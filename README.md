@@ -32,6 +32,21 @@ Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键�
 1. **永久保存**：直接在主页进行上传。
 2. **阅后即焚**：在左上角输入含有字母的索引串，前往相应的临时空间，页面会变成灰色，并开始对索引串进行索引。若索引至一个已存在的内容则进行“*阅读*”，若索引至一个“空地”则进行“*创建*”。
 
+# API
+
+```bash
+api.pasteme.cn?token=<key>,<passwd>
+```
+
+其中 `key` 为索引串，`passwd` 为索引串的密码（如果有），中间以英文逗号分隔。
+
+比如：
+
+```bash
+curl 'api.lucien.ink/pasteme/api.php?token=105'
+curl 'api.lucien.ink/pasteme/api.php?token=106,123'
+```
+
 # 部署
 
 ```
@@ -121,7 +136,7 @@ Copyright © 2017-2018 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 + [x] 分离存档和永久存档的数据库
 
-+ [ ] 重写 `api`
++ [x] 重写 `api`
 
 # 捐助
 
