@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author: Lucien Shui
+ * Date: 2018/2/23
+ * Time: 16:09
+ */
 require_once('dbEditor.php');
 class tableEditor {
     private $db = null;
@@ -28,8 +33,12 @@ class tableEditor {
         }
     }
 
-    public function remove($key) {
-        return $this->db->remove($key);
+    public function erase($key) {
+        return $this->db->erase($key);
+    }
+
+    public function invisble($key) {
+        return $this->db->invisble($key);
     }
 }
 ?>

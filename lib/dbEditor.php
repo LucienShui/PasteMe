@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author: Lucien Shui
+ * Date: 2018/3/24
+ * Time: 12:41
+ */
 class dbEditor {
     private $connection = null;
     private $config;
@@ -44,9 +49,17 @@ class dbEditor {
         return False;
     }
 
-    public function remove($key) {
+    public function erase($key) {
         $sql = $this->connection->prepare("DELETE FROM `temp` WHERE `key` = ?");
         $sql->bind_param('s', $key);
+        if ($sql->execute()) return True;
+        return False;
+    }
+
+    public function invisble($key) {
+        $cur = $key % 10;
+        $sql = $this->connection->prepare("UPDATE `perm{$cur}` set `visble` = 0 WHERE `key` = ?");
+        $sql->bind_param('i', $key);
         if ($sql->execute()) return True;
         return False;
     }

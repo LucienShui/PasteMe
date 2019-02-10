@@ -62,6 +62,13 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
             header("Refresh:0;url={$config['path']}");
         }
     } else {  // 索引串存在
+        if ($array['visble'] == 0) {
+            require_once('lib/frame.php');
+            head();
+            notFound();
+            foot();
+            die();
+        }
         $password = $array['passwd'];
         $passwordRight = True;  // 密码是否正确
         if (!empty($password)) {
@@ -73,7 +80,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
         else head();
         if ($passwordRight) {
             show($array['text'], $array['type']);
-            if ($chFlag) $it->remove($keyword);
+            if ($chFlag) $it->erase($keyword);
         } else passwordCertification($keyword, $placeholder);
         foot();
     }
