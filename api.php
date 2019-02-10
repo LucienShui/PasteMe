@@ -33,7 +33,7 @@ if (isset($_GET['token'])) {
         } else $flag = true;
         if ($flag) {
             echo str_replace("\r", "", htmlspecialchars_decode($array['text'])) . "\n";
-            if ($chFlag) $it->remove($key);
+            if ($chFlag) $it->erase($key);
         } else echo "passwd wrong\n";
     }
 } else echo "wrong args\n";
