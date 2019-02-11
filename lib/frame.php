@@ -269,17 +269,17 @@ function success($keyword) {
     <?php
 }
 
-function admin($cur_cnt, $seed) {
+function admin($placeholder, $seed) {
     global $config;
     ?>
     <div class="row">
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-            <form class="form-horizontal" action="<?php echo "{$config['path']}lib/invisble.php"; ?>" method="post">
+            <form class="form-horizontal" action="" method="post">
                 <div class="form-group">
                     <label for="key_id">请输入要删除的索引：</label>
-                    <input tabindex="1" class="form-control" id="key_id" name="key" oninput="value=value.replace(/[^\d]/g,'')" placeholder="当前有 <?php echo $cur_cnt; ?> 个 Paste" required="required">
+                    <input tabindex="1" class="form-control" id="key_id" name="key" oninput="value=value.replace(/[^\d]/g,'')" placeholder="<?php echo $placeholder; ?>" required="required">
                 </div>
                 <input type="hidden" value="<?php echo $seed; ?>" name="seed" style="display: none" title="">
                 <button type="submit" tabindex="2" class="btn btn-primary">提交</button>

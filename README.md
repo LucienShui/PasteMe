@@ -1,6 +1,10 @@
 # 注意
 
-为了实现 [部署问题 #1](https://github.com/LucienShui/PasteMe/issues/1) ，文件树发生了变化。因此，若要从 `v1.0` 升级至 `dev` 版本请务必重新修改一次 `config.php` 。
+为了实现 [部署问题 #1](https://github.com/LucienShui/PasteMe/issues/1) ，文件树发生了变化。因此，若要从 `v1.0` 升级至 `master` 版本请务必重新修改一次 `config.php` 。
+
+从上一个版本开始对数据库进行了分割，为的是提高查询速度，老版本更新到此版本请先使用 [dbTrans](https://github.com/LucienShui/PasteMe/blob/dbTrans/trans_1.0_to_1.1.php) 对数据库进行转化，然后再对 `config.php` 进行更新修改。
+
+如有 `BUG` 请提 `issue` 或在网页中进行反馈。
 
 使用老版本请下载 `release` 版本：https://github.com/LucienShui/PasteMe/releases
 
@@ -18,19 +22,19 @@
 
 Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键复制，上传的内容可以选择**永久保存**或者是**即阅即焚**。
 
-## 索引串
+## 索引
 
-每一个被上传的文本都有一个字符串去对其进行唯一标识，就像是门牌号一样，我称它为“**索引串**”。纯数字的索引串对应永久空间的文本，包含字母的索引串对应临时空间的文本。
+每一个被上传的文本都有一个字符串去对其进行唯一标识，就像是门牌号一样，我称它为“**索引**”。纯数字的索引对应永久空间的文本，包含字母的索引对应临时空间的文本。
 
 ## 对于别人分享的文本
 
 1. 可直接通过网页链接访问。
-2. 可在主页左上角的输入框输入索引串进行访问。
+2. 可在主页左上角的输入框输入索引进行访问。
 
 ## 对于准备上传的文本
 
 1. **永久保存**：直接在主页进行上传。
-2. **阅后即焚**：在左上角输入含有字母的索引串，前往相应的临时空间，页面会变成灰色，并开始对索引串进行索引。若索引至一个已存在的内容则进行“*阅读*”，若索引至一个“空地”则进行“*创建*”。
+2. **阅后即焚**：在左上角输入含有字母的索引，前往相应的临时空间，如果这个索引存在则显示索引内容，不存在则创建一份新的索引。每个索引被阅读一次后就会被立刻删除。
 
 # API
 
@@ -38,14 +42,18 @@ Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键�
 api.pasteme.cn?token=<key>,<passwd>
 ```
 
-其中 `key` 为索引串，`passwd` 为索引串的密码（如果有），中间以英文逗号分隔。
+其中 `key` 为索引，`passwd` 为索引的密码（如果有），中间以英文逗号分隔。
 
 比如：
 
 ```bash
-curl 'api.lucien.ink/pasteme/api.php?token=105'
-curl 'api.lucien.ink/pasteme/api.php?token=106,123'
+curl 'api.pasteme.cn?token=100'
+curl 'api.pasteme.cn?token=101,123'
 ```
+
+# 进入管理界面的方法
+
+访问 `web_root/your_path/admin.php?token=<your_passwd>` 即可。
 
 # 部署
 
@@ -81,6 +89,7 @@ web_root
  │   └─ tableEditor.php
  └─ usr
  │   └─ js.php
+ ├─ admin.php
  ├─ api.php
  ├─ favicon.ico
  ├─ index.php
@@ -90,9 +99,11 @@ web_root
 
 进入 `lib` 文件夹，将 `config.example.php` 复制一份并重命名为 `config.php` ，修改 `config.php` 中相关的信息。
 
-然后在浏览器中访问 `web_root/lib/init.php` 来初始化数据库。
+然后在浏览器中访问 `web_root/your_path/lib/init.php` 来初始化数据库。
 
 ## Rewrite（必要）
+
+如果是安装在子目录中的话需要做相应的修改，详细方法请 Google 或 Baidu 。
 
 ### Nginx
 
@@ -120,19 +131,19 @@ if (!-e $request_filename) {
 
 # 版权所有
 
-Copyright © 2017-2018 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
+Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 # 免责声明
 
-本工具只提供文本分享的载体部分，对于所有的文本内容均没有任何联系。
+本工具只提供文本分享的载体部分，与所有的文本内容均没有任何联系。
 
 # 待完善
 
 + [x] 支持子目录部署
 
-+ [ ] 支持举报不当的文本存档
++ [x] 支持举报不当的文本存档
 
-+ [ ] 支持删除指定文本存档的后台
++ [x] 支持删除指定文本存档的后台
 
 + [x] 分离存档和永久存档的数据库
 

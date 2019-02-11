@@ -40,5 +40,9 @@ class tableEditor {
     public function invisble($key) {
         return $this->db->invisble($key);
     }
+
+    public function size() : int {
+        return $this->db->get_id() - 1;
+    }
 }
 ?>
