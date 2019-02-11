@@ -48,8 +48,8 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
     $placeholder = null;
     if (isset($_POST['password_user'])) $password_user = md5($_POST['password_user']);
     require_once('lib/tableEditor.php');
-    $it = new tableEditor();
-    $array = $it->query($keyword);
+    $table = new tableEditor();
+    $array = $table->query($keyword);
     if ($array === False) {  // 索引串不存在
         if ($chFlag) {  // 临时空间
             require_once('lib/frame.php');
@@ -80,7 +80,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
         else head();
         if ($passwordRight) {
             show($array['text'], $array['type']);
-            if ($chFlag) $it->erase($keyword);
+            if ($chFlag) $table->erase($keyword);
         } else passwordCertification($keyword, $placeholder);
         foot();
     }

@@ -22,8 +22,8 @@ if (isset($_GET['token'])) {
             $chFlag = true;
             break;
     }
-    $it = new tableEditor();
-    $array = $it->query($key);
+    $table = new tableEditor();
+    $array = $table->query($key);
     if ($array === false) echo "key not found\n";
     else {
         $flag = false;
@@ -33,7 +33,7 @@ if (isset($_GET['token'])) {
         } else $flag = true;
         if ($flag) {
             echo str_replace("\r", "", htmlspecialchars_decode($array['text'])) . "\n";
-            if ($chFlag) $it->erase($key);
+            if ($chFlag) $table->erase($key);
         } else echo "passwd wrong\n";
     }
 } else echo "wrong args\n";

@@ -8,13 +8,13 @@ require_once('postVerify.php');
 if (isset($_POST['seed']) && verify($_POST['seed'])) {
     $keyword = '';
     require_once('tableEditor.php');
-    $it = new tableEditor();
+    $table = new tableEditor();
     $text = htmlspecialchars($_POST['text']);
     $type = $_POST['type'];
     if ($type == 'plain' && strpos($text, "#include") !== false) $type = 'cpp';
     $password = $_POST['password'];
     if (!empty($password)) $password = md5($password);
-    $keyword = $it->insert($text, $type, $password, empty($_GET['keyword']) ? null : $_GET['keyword']);
+    $keyword = $table->insert($text, $type, $password, empty($_GET['keyword']) ? null : $_GET['keyword']);
     if ($keyword == -1) echo "Sorry, there is something wrong with SQL.";
     else {
         $config = require('config.php');
