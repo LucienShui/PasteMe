@@ -149,15 +149,7 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 # 待完善
 
-+ [x] 支持子目录部署
-
-+ [x] 支持举报不当的文本存档
-
-+ [x] 支持删除指定文本存档的后台
-
-+ [x] 分离存档和永久存档的数据库
-
-+ [x] 重写 `api`
++ [ ] 重写阅后即焚功能
 
 # 捐助
 
