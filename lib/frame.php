@@ -54,9 +54,8 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                             </div>
                         </div>
                         <ul class="navbar-nav ml-md-auto">
-                            <!-- <li class="nav-item"><a class="nav-link" href='http://api.pasteme.cn' target="_blank">API</a></li> -->
                             <li class="nav-item"><a class="nav-link" href='https://www.lucien.ink/pasteme_log.html' target="_blank">更新日志</a></li>
-                            <li class="nav-item"><a class="nav-link" href='#modal-container-74922' data-toggle='modal'>使用指南</a></li>
+                            <li class="nav-item"><a class="nav-link" href='https://github.com/LucienShui/PasteMe#pasteme' target="_blank">API & 使用指南</a></li>
                             <li class="nav-item"><a class="nav-link" href='#modal-container-74921' data-toggle='modal'>捐助</a></li>
                         </ul>
                     </div>
@@ -70,31 +69,6 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                             </div>
                             <div class='modal-body'>
                                 <img src="<?php echo $config['cdn']; ?>img/money.png" style="width: 100%; height: auto;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class='modal fade' id='modal-container-74922' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
-                    <div class='modal-dialog' role='document'>
-                        <div class='modal-content'>
-                            <div class='modal-header'>
-                                <h5 class='modal-title' id='myModalLabel'>使用指南</h5>
-                                <button type='button' class='close' data-dismiss='modal'>
-                                    <span aria-hidden='true'>&times;</span></button>
-                            </div>
-                            <div class='modal-body'>
-                                <p>索引串：</p>
-                                <p>每一个被上传的文本都有一个字符串去对其进行唯一标识，就像是门牌号一样，我称它为“索引串”。纯数字的索引串对应永久空间的文本，包含字母的索引串对应临时空间的文本。</p>
-                                对于别人分享的文本：
-                                <ul>
-                                    <li>可直接通过网页链接访问。</li>
-                                    <li>可在主页左上角的输入框输入索引串进行访问。</li>
-                                </ul>
-                                对于上传的文本有两种选择：
-                                <ul>
-                                    <li><b>永久保存</b>：直接在主页进行上传。</li>
-                                    <li><b>阅后即焚</b>：在左上角输入含有字母的索引串，前往相应的临时空间，页面会变成灰色，并开始对索引串进行索引。若索引至一个已存在的内容则进行“<a style="color: green;">阅读</a>”，若索引至一个“空地”则进行“<a style="color: red;">创建</a>”。</li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -175,7 +149,7 @@ function foot() {
     <footer>
         <div style="text-align: center; margin-top: .8em;">
             <p><a><?php echo(one_word()); ?></a></p>
-            <p><a href='http://www.lucien.ink' target='_blank'>Lucien's Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.lucien.ink/go/csdn" target='_blank'>CSDN</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/LucienShui" target="_blank">GitHub</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target='_blank'>鲁ICP备18007563号</a></p>
+            <p><a href='http://www.lucien.ink' target='_blank'>Lucien's Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.lucien.ink/go/csdn" target='_blank'>CSDN</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.miitbeian.gov.cn/" target='_blank'>鲁ICP备18007563号</a></p>
             <p>&copy; 2018 - <?php echo date('Y'); ?> <a href='mailto:lucien@lucien.ink'>Lucien Shui</a> All rights reserved</p>
         </div>
     </footer>

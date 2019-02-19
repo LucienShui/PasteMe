@@ -18,6 +18,16 @@
 
 [http://api.lucien.ink/pasteme](http://api.lucien.ink/pasteme)
 
+## 截图
+
+![homePage](https://github.com/LucienShui/gitcdn/blob/master/屏幕快照%202019-02-15%2018.57.51.png?raw=true)
+
+![chat](https://github.com/LucienShui/gitcdn/blob/master/屏幕快照%202019-02-15%2019.06.50.png?raw=true)
+
+![effectiveOnce](https://github.com/LucienShui/gitcdn/blob/master/屏幕快照%202019-02-15%2018.58.28.png?raw=true)
+
+![adminPage](https://github.com/LucienShui/gitcdn/blob/master/屏幕快照%202019-02-15%2018.58.19.png?raw=true)
+
 # PasteMe
 
 Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键复制，上传的内容可以选择**永久保存**或者是**即阅即焚**。
@@ -139,17 +149,9 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 # 待完善
 
-+ [x] 支持子目录部署
-
-+ [x] 支持举报不当的文本存档
-
-+ [x] 支持删除指定文本存档的后台
-
-+ [x] 分离存档和永久存档的数据库
-
-+ [x] 重写 `api`
++ [ ] 重写阅后即焚功能
 
 # 捐助
 
-![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/money.png)
+![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/money.png?raw=true)
 
