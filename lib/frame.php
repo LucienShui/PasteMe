@@ -45,7 +45,7 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                                     </span>
                                 </div>
                                 <input name="keyword" autocomplete="off" id="keyword" class="form-control" title="输入任意字母以进入隐私模式"
-                                       required="required" tabindex="10" placeholder="索引串或隐私串"/>
+                                       required="required" tabindex="10" placeholder="索引或隐私串"/>
                                 <span class="input-group-append">
                                     <button class="btn btn-primary" type="button" onclick="redirect()">
                                         前往
@@ -76,7 +76,7 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
     <?php
 }
 
-function home($seed, $placeholder = '写点什么进来吧', $action = 'lib/submit.php') {
+function home($seed, $placeholder = '写点什么进来吧', $action = 'lib/submit.php', $visibility = '') {
     ?>
             <div class="row">
                 <div class="col-md-2">
@@ -116,6 +116,8 @@ function home($seed, $placeholder = '写点什么进来吧', $action = 'lib/subm
                                           placeholder="<?php echo $placeholder; ?>"></textarea>
                                 </div>
                                 <button type="submit" tabindex="14" class="btn btn-primary">保存</button>
+                                <input type="checkbox" id="read_once" name="read_once" style="margin-left: .5em;" <?php echo $visibility; ?>/>
+                                <label for="read_once" <?php echo $visibility; ?>>阅后即焚</label>
                             </div>
                         </div>
                         <input type="hidden" value="<?php echo $seed; ?>" name="seed" style="display: none" title="">
@@ -211,10 +213,10 @@ function success($keyword) {
                     保存成功
                 </h2>
                 <p>
-                    欲访问索引串<b><?php echo $keyword?></b>所对应的文本：
+                    欲访问索引<b><?php echo $keyword?></b>所对应的文本：
                 </p>
                 <ul>
-                    <li>在主页中输入索引串</li>
+                    <li>在主页中输入索引</li>
                     <li>在浏览器中访问：<a id="url" href="<?php echo $url?>"><?php echo $url?></a> <a tabindex="1" id="copy" href="#">复制链接</a></li>
                     <li><a href = 'http://api.lucien.ink/qrcode/?text=<?php echo $url?>&tag=PasteMe - 可能是最low的文本分享平台' target='_blank'>扫描二维码</a></li>
                 </ul>

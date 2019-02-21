@@ -6,6 +6,7 @@
  */
 require_once('dbEditor.php');
 class tableEditor {
+    private $char_set = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
     private $db = null;
     public function __construct() {
         $this->db = new dbEditor();
@@ -19,6 +20,12 @@ class tableEditor {
                 return $key;
             }
         } else {
+            if ($key === 'read_once') {
+                do {
+                    $key = '';
+                    for ($i = 0; $i < 8; $i++) $key .= $this->char_set[mt_rand(0, 51)];
+                } while ($this->query($key) !== False);
+            }
             if ($this->db->insert("temp", "s", $key, $text, $type, $password, 1)) return $key;
         }
         return -1;

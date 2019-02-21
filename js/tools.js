@@ -18,9 +18,9 @@ function stringCheck(str) {
 
 function redirect() {
     const id = document.getElementById("keyword").value;
-    if (id.length === 0) alert("索引串不能为空");
+    if (id.length === 0) alert("索引不能为空");
     else {
         if (stringCheck(id)) window.location.href = id;
-        else alert("索引串只能由大小写英文字母或数字组成且长度小于20");
+        else alert("索引只能由大小写英文字母或数字组成且长度小于8");
     }
 }
