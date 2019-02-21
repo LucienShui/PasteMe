@@ -6,14 +6,14 @@ $sqlSet = [
     "CREATE DATABASE IF NOT EXISTS {$config['dbname']}",
     "USE {$config['dbname']}",
     "CREATE TABLE IF NOT EXISTS `id` (
-      `name` VARCHAR (107) PRIMARY KEY,
+      `name` VARCHAR (16) PRIMARY KEY,
       `id` BIGINT
     )",
         "INSERT INTO `id` VALUES ('id', 100)",
         "CREATE TABLE IF NOT EXISTS `temp` (
-          `key` BIGINT PRIMARY KEY,
+          `key` VARCHAR(16) PRIMARY KEY,
           `text` TEXT,
-          `type` VARCHAR (107),
+          `type` VARCHAR (16),
           `passwd` VARCHAR (37),
             `visble` BOOLEAN
         )",
@@ -24,7 +24,7 @@ for ($i = 0; $i < 10; $i++) {
         "CREATE TABLE IF NOT EXISTS `perm{$i}` (
           `key` BIGINT PRIMARY KEY,
           `text` TEXT,
-          `type` VARCHAR (107),
+          `type` VARCHAR (16),
           `passwd` VARCHAR (37),
             `visble` BOOLEAN
         )"
