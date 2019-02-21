@@ -11,5 +11,7 @@ function curl_get_https($url){
     return $tmpInfo;    //返回json对象
 }
 function one_word() {
-    return curl_get_https("https://v1.hitokoto.cn?encode=text");
+    $ret = curl_get_https("https://v1.hitokoto.cn?encode=text");
+    while (strlen($ret) > 100) $ret = curl_get_https("https://v1.hitokoto.cn?encode=text");
+    return $ret;
 }
