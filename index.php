@@ -41,7 +41,7 @@ for ($i = 0; $i < $len; $i++) {
     }
 }
 if ($otherFlag) {  // 包含除字母和数字之外的字符
-    echo "<script>alert('请确认索引串是否存在，永久空间的索引串由纯数字组成，临时空间的索引串由大小写英文字母及数字组成') </script>";
+    echo "<script>alert('请确认索引是否存在，永久空间的索引由纯数字组成，临时空间的索引由大小写英文字母及数字组成') </script>";
     header("Refresh:0;url={$config['path']}");
 } else {
     $password_user = null;
@@ -50,18 +50,18 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
     require_once('lib/tableEditor.php');
     $table = new tableEditor();
     $array = $table->query($keyword);
-    if ($array === False) {  // 索引串不存在
+    if ($array === False) {  // 索引不存在
         if ($chFlag) {  // 临时空间
             require_once('lib/frame.php');
             require_once('lib/postVerify.php');
-            head("style='background: #A0A0A0;'", "PasteMe - 隐私模式");
-            home(seed(), '这里是隐私模式，上传的内容阅后即焚', "lib/submit.php?keyword={$keyword}");
+            head("style='background: #A0A0A0;'", "PasteMe - 阅后即焚");
+            home(seed(), '在这里保存的内容阅后即焚', "lib/submit.php?keyword={$keyword}", "hidden");
             foot();
         } else {  // 永久空间
             echo "<script> alert('请确认索引是否存在') </script>";
             header("Refresh:0;url={$config['path']}");
         }
-    } else {  // 索引串存在
+    } else {  // 索引存在
         if ($array['visble'] == 0) {
             require_once('lib/frame.php');
             head();
@@ -76,7 +76,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
             if (!$passwordRight && !empty($password_user)) $placeholder = "密码错误";
         }
         require_once('lib/frame.php');
-        if ($chFlag) head("style='background: #A0A0A0;'", "PasteMe - 隐私模式");
+        if ($chFlag) head("style='background: #A0A0A0;'", "PasteMe - 阅后即焚");
         else head();
         if ($passwordRight) {
             show($array['text'], $array['type']);
