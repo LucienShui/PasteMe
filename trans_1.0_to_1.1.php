@@ -10,8 +10,9 @@ $sqlSet_ = [
 		`text` TEXT,
 		`type` VARCHAR (16),
 		`passwd` VARCHAR (37),
-		  `visble` BOOLEAN
+		`visble` BOOLEAN
 	  )",
+	"ALTER TABLE `temp` CHANGE `key` `key` VARCHAR(16) NOT NULL"
 ];
 foreach ($sqlSet_ as $sql) if (!$connection->query($sql)) echo 'Error: ' . mysqli_error($connection);
 for ($i = 0; $i < 10; $i++) {
