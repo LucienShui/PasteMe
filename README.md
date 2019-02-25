@@ -20,13 +20,13 @@
 
 ## 截图
 
-![homePage](https://github.com/LucienShui/gitcdn/blob/master/屏幕快照%202019-02-15%2018.57.51.png?raw=true)
+![homePage](https://github.com/LucienShui/gitcdn/blob/master/pasteme_home.png?raw=true)
 
-![chat](https://github.com/LucienShui/gitcdn/blob/master/屏幕快照%202019-02-15%2019.06.50.png?raw=true)
+![chat](https://github.com/LucienShui/gitcdn/blob/master/pasteme_chat.png?raw=true)
 
-![effectiveOnce](https://github.com/LucienShui/gitcdn/blob/master/屏幕快照%202019-02-15%2018.58.28.png?raw=true)
+![effectiveOnce](https://github.com/LucienShui/gitcdn/blob/master/pasteme_read_once.png?raw=true)
 
-![adminPage](https://github.com/LucienShui/gitcdn/blob/master/屏幕快照%202019-02-15%2018.58.19.png?raw=true)
+![adminPage](https://github.com/LucienShui/gitcdn/blob/master/pasteme_admin.png?raw=true)
 
 # PasteMe
 
@@ -36,15 +36,24 @@ Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键�
 
 每一个被上传的文本都有一个字符串去对其进行唯一标识，就像是门牌号一样，我称它为“**索引**”。纯数字的索引对应永久空间的文本，包含字母的索引对应临时空间的文本。
 
-## 对于别人分享的文本
+## 对于别人分享的内容
 
 1. 可直接通过网页链接访问。
 2. 可在主页左上角的输入框输入索引进行访问。
 
-## 对于准备上传的文本
+## 对于准备上传的内容
 
-1. **永久保存**：直接在主页进行上传。
-2. **阅后即焚**：在左上角输入含有字母的索引，前往相应的临时空间，如果这个索引存在则显示索引内容，不存在则创建一份新的索引。每个索引被阅读一次后就会被立刻删除。
+### 永久保存
+
+直接在主页进行上传。
+
+### 阅后即焚
+
+1. 在左上角输入含有字母的索引，前往相应的临时空间，如果这个索引存在则显示索引内容，不存在则创建一份新的索引。
+
+2. 在主页直接勾选 `阅后即焚`。
+
+所有阅后即焚的内容一旦以任何方式（包括 `API` ）被成功访问就会**永久从数据库中消失**。
 
 # API
 
@@ -149,9 +158,9 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 # 待完善
 
-+ [ ] 重写阅后即焚功能
++ [x] 重写阅后即焚功能
 
 # 捐助
 
-![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/money.png?raw=true)
+![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/pasteme_donate.png?raw=true)
 
