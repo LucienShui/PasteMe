@@ -1,3 +1,9 @@
+# PasteMe
+
+Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键复制，上传的内容可以选择**永久保存**或者是**即阅即焚**。
+
+如果老板觉得这个项目还不错，右上角给个 **Star** 好不啦。QAQ
+
 # 注意
 
 为了实现 [部署问题 #1](https://github.com/LucienShui/PasteMe/issues/1) ，文件树发生了变化。因此，若要从 `v1.0` 升级至 `master` 版本请务必重新修改一次 `config.php` 。
@@ -27,10 +33,6 @@
 ![effectiveOnce](https://github.com/LucienShui/gitcdn/blob/master/pasteme_read_once.png?raw=true)
 
 ![adminPage](https://github.com/LucienShui/gitcdn/blob/master/pasteme_admin.png?raw=true)
-
-# PasteMe
-
-Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键复制，上传的内容可以选择**永久保存**或者是**即阅即焚**。
 
 ## 索引
 
@@ -83,7 +85,7 @@ web_root
  │   ├─ bootstrap.min.css.map
  │   └─ prism.css
  ├─ img
- │   ├─ money.png
+ │   ├─ donate.png
  │   ├─ touch-icon-ipad-retina.png
  │   ├─ touch-icon-ipad.png
  │   ├─ touch-icon-iphone-retina.png
@@ -162,5 +164,14 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 # 捐助
 
-![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/pasteme_donate.png?raw=true)
+## 捐助名单
 
+小伙伴们在捐助的时候可以添加留言以告知自己的 `ID` ，如果是 `GitHub` 账号的话我会顺便 `@` 出来。
+
+> 以前捐助过的小伙伴请给我发个邮件（lucien@lucien.ink）告知一下自己的 `ID` ，我会加到列表里，之前的收款码看不了付款人 `ID` 的全称。
+
+| ID | 金额 |
+|--|--|
+| Mrs Shui | 1.98 |
+
+![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/pasteme_donate.png?raw=true)
