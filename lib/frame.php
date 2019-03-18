@@ -68,7 +68,7 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                                     <span aria-hidden='true'>&times;</span></button>
                             </div>
                             <div class='modal-body'>
-                                <img src="<?php echo $config['cdn']; ?>img/money.png" style="width: 100%; height: auto;">
+                                <img src="<?php echo $config['cdn']; ?>img/donate.png" style="width: 100%; height: auto;">
                             </div>
                         </div>
                     </div>
