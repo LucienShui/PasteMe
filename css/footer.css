@@ -1,0 +1,6 @@
+footer {
+    font-size: .8em;
+}
+footer a:link, footer a:visited {
+    color: #38488f;
+}

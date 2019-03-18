@@ -18,10 +18,6 @@ if (isset($_POST['seed']) && verify($_POST['seed'])) {
     if (isset($_GET['keyword'])) $keyword = $_GET['keyword'];
     else if (isset($_POST['read_once'])) $keyword = 'read_once';
     $keyword = $table->insert($text, $type, $password, $keyword);
-    if ($keyword == -1) echo "Sorry, there is something wrong with SQL.";
-    else {
-        $config = require('config.php');
-        header("Refresh:0;url={$config['path']}success.php?keyword={$keyword}");
-    }
+    echo $keyword;
 }
 ?>

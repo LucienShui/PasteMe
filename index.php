@@ -15,7 +15,7 @@ if ($keyword == '') {
     require_once('lib/postVerify.php');
     head();
     home(seed());
-    foot();
+    foot(True);
     die();
 }
 if (($pos = strpos($keyword, '?')) !== False) {
@@ -56,7 +56,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
             require_once('lib/postVerify.php');
             head("style='background: #A0A0A0;'", "PasteMe - 阅后即焚");
             home(seed(), '在这里保存的内容阅后即焚', "lib/submit.php?keyword={$keyword}", "hidden");
-            foot();
+            foot(True);
         } else {  // 永久空间
             echo "<script> alert('请确认索引是否存在') </script>";
             header("Refresh:0;url={$config['path']}");
