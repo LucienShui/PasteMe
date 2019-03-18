@@ -83,6 +83,7 @@ web_root
  ├─ css
  │   ├─ bootstrap.min.css
  │   ├─ bootstrap.min.css.map
+ │   ├─ footer.css
  │   └─ prism.css
  ├─ img
  │   ├─ donate.png
@@ -91,20 +92,23 @@ web_root
  │   ├─ touch-icon-iphone-retina.png
  │   └─ touch-icon-iphone.png
  ├─ js
+ │   ├─ ajax.js
  │   ├─ bootstrap.min.js
  │   ├─ bootstrap.min.js.map
  │   ├─ clipboard.min.js
  │   ├─ dao.voice.object.js
  │   ├─ jquery.min.js
+ │   ├─ one.js
  │   ├─ prism.copy-all.js
  │   ├─ prism.js
+ │   ├─ success.clipboard.js
+ │   ├─ success.home.button.js
  │   └─ tools.js
  ├─ lib
  │   ├─ config.php
  │   ├─ dbEditor.php
  │   ├─ frame.php
  │   ├─ init.php
- │   ├─ oneWord.php
  │   ├─ postVerify.php
  │   ├─ submit.php
  │   └─ tableEditor.php
@@ -113,8 +117,7 @@ web_root
  ├─ admin.php
  ├─ api.php
  ├─ favicon.ico
- ├─ index.php
- └─ success.php
+ └─ index.php
 
 ```
 
@@ -158,10 +161,6 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 本工具只提供文本分享的载体部分，与所有的文本内容均没有任何联系。
 
-# 待完善
-
-+ [x] 重写阅后即焚功能
-
 # 捐助
 
 ## 捐助名单
@@ -173,5 +172,6 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 | ID | 金额 |
 |--|--|
 | Mrs Shui | 1.98 |
+| [Edwiv](https://github.com/Edwiv) | 1.99 |
 
 ![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/pasteme_donate.png?raw=true)

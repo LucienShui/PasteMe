@@ -5,7 +5,6 @@
  * Time: 23:18
  */
 $config = require('config.php');
-require_once('oneWord.php');
 
 function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文本分享平台') {
     global $config;
