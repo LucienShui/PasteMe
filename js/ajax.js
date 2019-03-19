@@ -17,11 +17,10 @@ $("#index_form").submit(function(event) {
         type: request_method,
         data : form_data
     }).done(function(response) {
-        var elem_body = document.getElementById("pasteme_body");
-        elem_body.style = undefined;
         vm.keyword = response;
     });
     $("#home_div").fadeOut("fast", function() {
+        document.getElementById("pasteme_body").style = undefined;
         $("#success_div").fadeIn("fast");
     });
 });

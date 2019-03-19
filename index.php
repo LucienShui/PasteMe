@@ -54,7 +54,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
         if ($chFlag) {  // 临时空间
             require_once('lib/frame.php');
             require_once('lib/postVerify.php');
-            head("style='background: #A0A0A0;'", "PasteMe - 阅后即焚");
+            head("style='background: #E0E0E0;'", "PasteMe - 阅后即焚");
             home(seed(), '在这里保存的内容阅后即焚', "lib/submit.php?keyword={$keyword}", "hidden");
             foot(True);
         } else {  // 永久空间
@@ -76,7 +76,7 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
             if (!$passwordRight && !empty($password_user)) $placeholder = "密码错误";
         }
         require_once('lib/frame.php');
-        if ($chFlag) head("style='background: #A0A0A0;'", "PasteMe - 阅后即焚");
+        if ($chFlag) head("style='background: #E0E0E0;'", "PasteMe - 阅后即焚");
         else head();
         if ($passwordRight) {
             show($array['text'], $array['type']);
