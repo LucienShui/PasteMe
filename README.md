@@ -145,6 +145,10 @@ if (!-e $request_filename) {
 
 + 代码写的很烂，望轻喷。
 
+## 更新日志
+
+[PasteMe 更新日志](https://www.lucien.ink/pasteme_log.html)
+
 # 版权所有
 
 Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
