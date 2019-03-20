@@ -14,8 +14,6 @@ Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键�
 
 [http://api.lucien.ink/pasteme](http://api.lucien.ink/pasteme)
 
-# 帮助
-
 ## 截图
 
 ![homePage](https://github.com/LucienShui/gitcdn/blob/master/pasteme_home.png?raw=true)
@@ -25,6 +23,8 @@ Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键�
 ![effectiveOnce](https://github.com/LucienShui/gitcdn/blob/master/pasteme_read_once.png?raw=true)
 
 ![adminPage](https://github.com/LucienShui/gitcdn/blob/master/pasteme_admin.png?raw=true)
+
+# 帮助
 
 ## 索引
 
