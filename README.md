@@ -4,16 +4,6 @@ Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键�
 
 如果老板觉得这个项目还不错，右上角给个 **Star** 好不啦。QAQ
 
-# 注意
-
-为了实现 [部署问题 #1](https://github.com/LucienShui/PasteMe/issues/1) ，文件树发生了变化。因此，若要从 `v1.0` 升级至 `master` 版本请务必重新修改一次 `config.php` 。
-
-从上一个版本开始对数据库进行了分割，为的是提高查询速度，老版本更新到此版本请先使用 [dbTrans](https://github.com/LucienShui/PasteMe/blob/dbTrans/trans_1.0_to_1.1.php) 对数据库进行转化，然后再对 `config.php` 进行更新修改。
-
-如有 `BUG` 请提 `issue` 或在网页中进行反馈。
-
-使用老版本请下载 `release` 版本：https://github.com/LucienShui/PasteMe/releases
-
 # Demo 
 
 ## Release
@@ -23,6 +13,8 @@ Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键�
 ## Dev
 
 [http://api.lucien.ink/pasteme](http://api.lucien.ink/pasteme)
+
+# 帮助
 
 ## 截图
 
@@ -83,6 +75,7 @@ web_root
  ├─ css
  │   ├─ bootstrap.min.css
  │   ├─ bootstrap.min.css.map
+ │   ├─ footer.css
  │   └─ prism.css
  ├─ img
  │   ├─ donate.png
@@ -91,20 +84,23 @@ web_root
  │   ├─ touch-icon-iphone-retina.png
  │   └─ touch-icon-iphone.png
  ├─ js
+ │   ├─ ajax.js
  │   ├─ bootstrap.min.js
  │   ├─ bootstrap.min.js.map
  │   ├─ clipboard.min.js
  │   ├─ dao.voice.object.js
  │   ├─ jquery.min.js
+ │   ├─ one.js
  │   ├─ prism.copy-all.js
  │   ├─ prism.js
+ │   ├─ success.clipboard.js
+ │   ├─ success.home.button.js
  │   └─ tools.js
  ├─ lib
  │   ├─ config.php
  │   ├─ dbEditor.php
  │   ├─ frame.php
  │   ├─ init.php
- │   ├─ oneWord.php
  │   ├─ postVerify.php
  │   ├─ submit.php
  │   └─ tableEditor.php
@@ -113,8 +109,7 @@ web_root
  ├─ admin.php
  ├─ api.php
  ├─ favicon.ico
- ├─ index.php
- └─ success.php
+ └─ index.php
 
 ```
 
@@ -158,10 +153,6 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 本工具只提供文本分享的载体部分，与所有的文本内容均没有任何联系。
 
-# 待完善
-
-+ [x] 重写阅后即焚功能
-
 # 捐助
 
 ## 捐助名单
@@ -173,5 +164,6 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 | ID | 金额 |
 |--|--|
 | Mrs Shui | 1.98 |
+| [Edwiv](https://github.com/Edwiv) | 1.99 |
 
 ![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/pasteme_donate.png?raw=true)
