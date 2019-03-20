@@ -14,16 +14,6 @@ Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键�
 
 [http://api.lucien.ink/pasteme](http://api.lucien.ink/pasteme)
 
-## 截图
-
-![homePage](https://github.com/LucienShui/gitcdn/blob/master/pasteme_home.png?raw=true)
-
-![chat](https://github.com/LucienShui/gitcdn/blob/master/pasteme_chat.png?raw=true)
-
-![effectiveOnce](https://github.com/LucienShui/gitcdn/blob/master/pasteme_read_once.png?raw=true)
-
-![adminPage](https://github.com/LucienShui/gitcdn/blob/master/pasteme_admin.png?raw=true)
-
 # 帮助
 
 ## 索引
@@ -48,6 +38,16 @@ Ubuntu Paste 的本土化版，有加密功能，文本框的内容可以一键�
 2. 在主页直接勾选 `阅后即焚`。
 
 所有阅后即焚的内容一旦以任何方式（包括 `API` ）被成功访问就会**永久从数据库中消失**。
+
+## 截图
+
+![homePage](https://github.com/LucienShui/gitcdn/blob/master/pasteme_home.png?raw=true)
+
+![chat](https://github.com/LucienShui/gitcdn/blob/master/pasteme_chat.png?raw=true)
+
+![effectiveOnce](https://github.com/LucienShui/gitcdn/blob/master/pasteme_read_once.png?raw=true)
+
+![adminPage](https://github.com/LucienShui/gitcdn/blob/master/pasteme_admin.png?raw=true)
 
 # API
 
