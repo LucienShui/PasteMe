@@ -54,7 +54,7 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                         </div>
                         <ul class="navbar-nav ml-md-auto">
                             <li class="nav-item"><a class="nav-link" href='https://www.lucien.ink/pasteme_log.html' target="_blank">更新日志</a></li>
-                            <li class="nav-item"><a class="nav-link" href='https://github.com/LucienShui/PasteMe#pasteme' target="_blank">API & 使用指南</a></li>
+                            <li class="nav-item"><a class="nav-link" href='https://github.com/LucienShui/PasteMe#帮助' target="_blank">API & 使用指南</a></li>
                             <li class="nav-item"><a class="nav-link" href='#modal-container-74921' data-toggle='modal'>捐助</a></li>
                         </ul>
                     </div>
