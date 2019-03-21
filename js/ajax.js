@@ -19,9 +19,9 @@ $("#index_form").submit(function(event) {
     }).done(function(response) {
         vm.keyword = response;
         document.getElementById('copy').setAttribute("data-clipboard-text", $("#copy").attr("base") + response);
-    });
-    $("#home_div").fadeOut("fast", function() {
-        document.getElementById("pasteme_body").style = undefined;
-        $("#success_div").fadeIn("fast");
+        $("#home_div").fadeOut("fast", function() {
+            document.getElementById("pasteme_body").style = undefined;
+            $("#success_div").fadeIn("fast");
+        });
     });
 });

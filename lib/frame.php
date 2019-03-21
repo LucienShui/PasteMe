@@ -54,8 +54,8 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                         </div>
                         <ul class="navbar-nav ml-md-auto">
                             <li class="nav-item"><a class="nav-link" href='https://www.lucien.ink/pasteme_log.html' target="_blank">更新日志</a></li>
-                            <li class="nav-item"><a class="nav-link" href='https://github.com/LucienShui/PasteMe#帮助' target="_blank">API & 使用指南</a></li>
-                            <li class="nav-item"><a class="nav-link" href='#modal-container-74921' data-toggle='modal'>捐助</a></li>
+                            <li class="nav-item"><a class="nav-link" href='https://github.com/LucienShui/PasteMe#帮助' target="_blank" id="nav_bar_donate_link">API & 使用指南</a></li>
+                            <li class="nav-item"><a class="nav-link" href='#modal-container-74921' data-toggle='modal' onclick="donate_image_lazy_load()">捐助</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -66,8 +66,8 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
                                 <button type='button' class='close' data-dismiss='modal'>
                                     <span aria-hidden='true'>&times;</span></button>
                             </div>
-                            <div class='modal-body'>
-                                <img src="<?php echo $config['cdn']; ?>img/donate.png" style="width: 100%; height: auto;">
+                            <div class='modal-body' id="modal-body-74921">
+                                "<?php echo $config['cdn']; ?>img/donate.png"
                             </div>
                         </div>
                     </div>
@@ -160,8 +160,9 @@ function foot($is_index = False) {
     <script src="<?php echo $config['cdn']; ?>js/bootstrap.min.js"></script>
     <script src="<?php echo $config['cdn']; ?>js/dao.voice.object.js"></script>
     <script src="<?php echo $config['cdn']; ?>js/one.js"></script>
-    <script src="https://cdn.bootcss.com/vue/2.6.9/vue.min.js"></script>
+    <script src="<?php echo $config['cdn']; ?>js/vue.min.js"></script>
     <script src="<?php echo $config['cdn']; ?>js/success.home.button.js"></script>
+    <script src="<?php echo $config['cdn']; ?>js/lazy.js"></script>
     <link rel="stylesheet" href="<?php echo $config['cdn']; ?>css/footer.css"/>
     <footer>
         <div style="text-align: center; margin-top: .8em;">
