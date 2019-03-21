@@ -1,6 +1,4 @@
-let url = document.getElementById('url');
 let copyLink = document.getElementById('copy');
-copyLink.setAttribute("data-clipboard-text", url.innerText);
 const clipboard = new ClipboardJS('#copy');
 clipboard.on('success', function() {
     copyLink.innerText = '复制成功';
