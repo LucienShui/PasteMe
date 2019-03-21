@@ -135,7 +135,7 @@ function home($seed, $placeholder = '写点什么进来吧', $action = 'lib/subm
                         </p>
                         <ul>
                             <li>在主页中输入索引</li>
-                            <li>在浏览器中访问：<a id="url" v-bind:href="'<?php echo $base_url?>' + keyword"><?php echo $base_url?>{{ keyword }}</a> <a tabindex="1" id="copy" href="#" v-bind:data-clipboard-text="'<?php echo $base_url?>' + keyword">复制链接</a></li>
+                            <li>在浏览器中访问：<a id="url" v-bind:href="'<?php echo $base_url?>' + keyword"><?php echo $base_url?>{{ keyword }}</a> <a tabindex="1" id="copy" href="#" base="<?php echo $base_url?>">复制链接</a></li>
                             <li><a id="success_qrcode_link" v-bind:href="'http://api.lucien.ink/qrcode/?text=<?php echo $base_url?>' + keyword + '&tag=PasteMe - 可能是最low的文本分享平台'" target="_blank">扫描二维码</a></li>
                         </ul>
                         <p>
