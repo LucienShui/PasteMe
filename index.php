@@ -72,8 +72,12 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
         $password = $array['passwd'];
         $passwordRight = True;  // 密码是否正确
         if (!empty($password)) {
-            if ($password_user != $password) $passwordRight = False;
-            if (!$passwordRight && !empty($password_user)) $placeholder = "密码错误";
+            if ($password_user != $password) {
+                $passwordRight = False;
+            }
+            if (!$passwordRight && !empty($password_user)) {
+                $placeholder = "密码错误";
+            }
         }
         require_once('lib/frame.php');
         if ($chFlag) head("style='background: #E0E0E0;'", "PasteMe - 阅后即焚");
