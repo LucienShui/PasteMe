@@ -18,6 +18,17 @@ if (isset($_POST['seed']) && verify($_POST['seed'])) {
     if (isset($_GET['keyword'])) $keyword = $_GET['keyword'];
     else if (isset($_POST['read_once'])) $keyword = 'read_once';
     $keyword = $table->insert($text, $type, $password, $keyword);
-    echo $keyword;
-}
+    echo json_encode(array(
+        'code' => 200,
+        'data' => array(
+            'message' => 'success',
+            'keyword' => $keyword,
+        )
+    ));
+} else echo json_encode(array(
+        'code' => 406,
+        'data' => array(
+            'message' => 'post token not found',
+        )
+    ));
 ?>

@@ -80,12 +80,19 @@ if ($otherFlag) {  // 包含除字母和数字之外的字符
             }
         }
         require_once('lib/frame.php');
-        if ($chFlag) head("style='background: #E0E0E0;'", "PasteMe - 阅后即焚");
-        else head();
+        if ($chFlag) {
+            head("style='background: #E0E0E0;'", "PasteMe - 阅后即焚");
+        } else {
+            head();
+        }
         if ($passwordRight) {
             show($array['text'], $array['type']);
-            if ($chFlag) $table->erase($keyword);
-        } else passwordCertification($keyword, $placeholder);
+            if ($chFlag) {
+                $table->erase($keyword);
+            }
+        } else {
+            passwordCertification($keyword, $placeholder);
+        }
         foot();
     }
 }
