@@ -6,3 +6,5 @@ test.php
 config.php
 tmp
 .*
+
+/vendor/

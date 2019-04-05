@@ -1,0 +1,12 @@
+{
+    "name": "aimer/paste-me",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "aimerforreimu",
+            "email": "aimerforreimu@gmail.com"
+        }
+    ],
+    "require": {}
+}
