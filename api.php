@@ -18,22 +18,60 @@ if (isset($_GET['token'])) {
     }
     $len = strlen($key);
     $chFlag = false;
-    for ($i = 0; $i < $len; $i++) if ($key[$i] < '0' || $key[$i] > '9') {
+    for ($i = 0; $i < $len; $i++) {
+        if ($key[$i] < '0' || $key[$i] > '9') {
             $chFlag = true;
             break;
+        }
     }
     $table = new tableEditor();
     $array = $table->query($key);
-    if ($array === false) echo "key not found\n";
+    if ($array === false) {
+        echo json_encode(array(
+            'code' => 404,
+            'data' => array(
+                'message' => 'key not found',
+            )
+        ));
+    }
     else {
         $flag = false;
         $sys_passwd = $array['passwd'];
         if (!empty($sys_passwd)) {
             if (!empty($sys_passwd) && md5($passwd) == $sys_passwd) $flag = true;
-        } else $flag = true;
+        } else {
+            $flag = true;
+        }
         if ($flag) {
-            echo str_replace("\r", "", htmlspecialchars_decode($array['text'])) . "\n";
-            if ($chFlag) $table->erase($key);
-        } else echo "passwd wrong\n";
+            if (isset($_GET['browser'])) {
+                echo json_encode(array(
+                    'code' => 200,
+                    'data' => array(
+                        'message' => 'success',
+                        'content' => $array['text'],
+                        'type' => $array['type'],
+                    )
+                ));
+            } else {
+                echo str_replace("\r", "", htmlspecialchars_decode($array['text'])) . "\n";
+            }
+            if ($chFlag) {
+                $table->erase($key);
+            }
+        } else {
+            echo json_encode(array(
+                'code' => 406,
+                'data' => array(
+                    'message' => 'passwd wrong',
+                )
+            ));
+        }
     }
-} else echo "wrong args\n";
+} else {
+    echo json_encode(array(
+        'code' => 500,
+        'data' => array(
+            'message' => 'wrong args',
+        )
+    ));
+}

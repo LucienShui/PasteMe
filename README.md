@@ -70,49 +70,6 @@ curl 'api.pasteme.cn?token=101,123'
 
 # 部署
 
-```
-web_root
- ├─ css
- │   ├─ bootstrap.min.css
- │   ├─ bootstrap.min.css.map
- │   ├─ footer.css
- │   └─ prism.css
- ├─ img
- │   ├─ donate.png
- │   ├─ touch-icon-ipad-retina.png
- │   ├─ touch-icon-ipad.png
- │   ├─ touch-icon-iphone-retina.png
- │   └─ touch-icon-iphone.png
- ├─ js
- │   ├─ ajax.js
- │   ├─ bootstrap.min.js
- │   ├─ bootstrap.min.js.map
- │   ├─ clipboard.min.js
- │   ├─ dao.voice.object.js
- │   ├─ jquery.min.js
- │   ├─ one.js
- │   ├─ prism.copy-all.js
- │   ├─ prism.js
- │   ├─ success.clipboard.js
- │   ├─ success.home.button.js
- │   └─ tools.js
- ├─ lib
- │   ├─ config.php
- │   ├─ dbEditor.php
- │   ├─ frame.php
- │   ├─ init.php
- │   ├─ postVerify.php
- │   ├─ submit.php
- │   └─ tableEditor.php
- └─ usr
- │   └─ js.php
- ├─ admin.php
- ├─ api.php
- ├─ favicon.ico
- └─ index.php
-
-```
-
 进入 `lib` 文件夹，将 `config.example.php` 复制一份并重命名为 `config.php` ，修改 `config.php` 中相关的信息。
 
 然后在浏览器中访问 `web_root/your_path/lib/init.php` 来初始化数据库。
@@ -169,5 +126,8 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 |--|--|
 | Mrs Shui | 1.98 |
 | [Edwiv](https://github.com/Edwiv) | 1.99 |
+| Rajy | 6.66 |
+| Jim Zhou | 0.88 |
+| LXF | 2.22 |
 
 ![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/pasteme_donate.png?raw=true)

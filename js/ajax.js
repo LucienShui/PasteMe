@@ -1,4 +1,4 @@
-var vm = new Vue({
+var success_vm = new Vue({
     el: '#success_div',
     data: {
         keyword: "",
@@ -15,13 +15,16 @@ $("#index_form").submit(function(event) {
     $.ajax({
         url : post_url,
         type: request_method,
+        dataType: "json",
         data : form_data
     }).done(function(response) {
-        vm.keyword = response;
-        document.getElementById('copy').setAttribute("data-clipboard-text", $("#copy").attr("base") + response);
-        $("#home_div").fadeOut("fast", function() {
-            document.getElementById("pasteme_body").style = undefined;
-            $("#success_div").fadeIn("fast");
-        });
+        if (response.code == 200) {
+            success_vm.keyword = response.data.keyword;
+            document.getElementById('copy').setAttribute("data-clipboard-text", $("#copy").attr("base") + response.data.keyword);
+            $("#home_div").fadeOut("fast", function() {
+                document.getElementById("pasteme_body").style = undefined;
+                $("#success_div").fadeIn("fast");
+            });
+        }
     });
 });
