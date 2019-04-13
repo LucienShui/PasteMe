@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"pastme/pkg/setting"
+	"pastme/PasteMe/pkg/setting"
 )
 
 func main() {
