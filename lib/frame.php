@@ -24,7 +24,7 @@ function head($color = '', $title = 'PasteMe - 一个不算糟糕的可私有文
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo $config['cdn']; ?>img/touch-icon-ipad.png">
     <link rel="apple-touch-icon" sizes="120x120" href="<?php echo $config['cdn']; ?>img/touch-icon-iphone-retina.png">
     <link rel="apple-touch-icon" sizes="152x152" href="<?php echo $config['cdn']; ?>img/touch-icon-ipad-retina.png">
-    <link rel="stylesheet" href="<?php echo $config['cdn']; ?>css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="<?php echo $config['cdn']; ?>css/bootstrap.min.css?version=20190403"/>
 </head>
 
 <body id="pasteme_body" <?php echo $color; ?>>
@@ -128,7 +128,7 @@ function home($seed, $placeholder = '写点什么进来吧', $action = 'lib/subm
                 </form>
             </div>
             <div class="col-md-8" style="display:none;margin-top: 1.375em; margin-bottom: 1.375em;" id="success_div">
-                <script src="<?php echo $config['cdn']; ?>js/clipboard.min.js"></script>
+                <script src="<?php echo $config['cdn']; ?>js/clipboard.min.js?version=20190403"></script>
                 <div class="jumbotron">
                     <h2>
                         保存成功
@@ -157,19 +157,19 @@ function foot($is_index = False) {
 
     </div>
 </body>
-<script src="<?php echo $config['cdn']; ?>js/tools.js"></script>
-<script src="<?php echo $config['cdn']; ?>js/jquery.min.js"></script>
-<script src="<?php echo $config['cdn']; ?>js/bootstrap.min.js"></script>
-<script src="<?php echo $config['cdn']; ?>js/dao.voice.object.js"></script>
-<script src="<?php echo $config['cdn']; ?>js/one.js"></script>
-<script src="<?php echo $config['cdn']; ?>js/vue.min.js"></script>
-<script src="<?php echo $config['cdn']; ?>js/success.home.button.js"></script>
-<script src="<?php echo $config['cdn']; ?>js/lazy.js"></script>
+<script src="<?php echo $config['cdn']; ?>js/tools.js?version=20190403"></script>
+<script src="<?php echo $config['cdn']; ?>js/jquery.min.js?version=20190403"></script>
+<script src="<?php echo $config['cdn']; ?>js/bootstrap.min.js?version=20190403"></script>
+<script src="<?php echo $config['cdn']; ?>js/dao.voice.object.js?version=20190403"></script>
+<script src="<?php echo $config['cdn']; ?>js/one.js?version=20190403"></script>
+<script src="<?php echo $config['cdn']; ?>js/vue.min.js?version=20190403"></script>
+<script src="<?php echo $config['cdn']; ?>js/success.home.button.js?version=20190403"></script>
+<script src="<?php echo $config['cdn']; ?>js/lazy.js?version=20190403"></script>
 <?php if ($is_index) { ?>
-<script src="<?php echo $config['cdn']; ?>js/success.clipboard.js"></script>
-<script src="<?php echo $config['cdn']; ?>js/ajax.js"></script>
+<script src="<?php echo $config['cdn']; ?>js/success.clipboard.js?version=20190403"></script>
+<script src="<?php echo $config['cdn']; ?>js/ajax.js?version=20190403"></script>
 <?php } require_once("usr/js.php"); ?>
-<link rel="stylesheet" href="<?php echo $config['cdn']; ?>css/footer.css"/>
+<link rel="stylesheet" href="<?php echo $config['cdn']; ?>css/footer.css?version=20190403"/>
 
 <footer>
     <div style="text-align: center; margin-top: .8em;">
@@ -189,10 +189,10 @@ function show($text, $type) {
             <div class="col-md-1">
             </div>
             <div class="col-md-10">
-                <link rel="stylesheet" type="text/css" href="<?php echo $config['cdn']?>css/prism.css">
-                <script src="<?php echo $config['cdn']; ?>js/clipboard.min.js"></script>
-                <script src="<?php echo $config['cdn']; ?>js/prism.js"></script>
-                <script src="<?php echo $config['cdn'];?>js/prism.copy-all.js"></script>
+                <link rel="stylesheet" type="text/css" href="<?php echo $config['cdn']?>css/prism.css?version=20190403">
+                <script src="<?php echo $config['cdn']; ?>js/clipboard.min.js?version=20190403"></script>
+                <script src="<?php echo $config['cdn']; ?>js/prism.js?version=20190403"></script>
+                <script src="<?php echo $config['cdn'];?>js/prism.copy-all.js?version=20190403"></script>
                 <pre><code id="code" class="language-<?php echo $type; ?> line-numbers-rows"><?php echo $text; ?></code></pre>
             </div>
             <div class="col-md-1">
@@ -244,8 +244,7 @@ function admin($placeholder, $seed) {
     <?php
 }
 
-function notFound() {
-    global $config; ?>
+function notFound() { ?>
 
         <div class="row">
             <div class="col-md-4">
