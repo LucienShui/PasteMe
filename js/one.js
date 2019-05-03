@@ -1,1 +1,0 @@
-function footer_one(){var a="";do $.ajax({url:"https://v1.hitokoto.cn?encode=text",async:!1,success:function(b){a=b}});while(a.replace(/[\u4e00-\u9fa5]/gi,"**").length>100);document.write(a)}

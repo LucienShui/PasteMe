@@ -1,1 +1,0 @@
-"use strict";function success_home_button(){$("#index_form")[0].reset();var e=document.getElementById("index_form"),t=e.action.indexOf("?");t>-1&&(e.action=e.action.substr(0,t),console.log(e.action));var n=document.getElementById("index_form_button");n.innerText="保存",n.disabled=void 0,$("#success_div").fadeOut("fast",function(){$("#home_div").fadeIn("fast")})}
