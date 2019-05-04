@@ -9,9 +9,9 @@ import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 import 'prismjs/plugins/line-numbers/prism-line-numbers'
-import '@/../public/css/prism-toolbar.css'
+import '../public/css/prism-toolbar.css'
 import 'prismjs/plugins/toolbar/prism-toolbar'
-import '@/../public/js/pasteme.prism.toobar'
+import '../public/js/pasteme.prism.toobar'
 import 'prismjs/components/prism-c'
 import 'prismjs/components/prism-cpp'
 import 'prismjs/components/prism-java'
@@ -26,6 +26,14 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.config.productionTip = false;
 Vue.use(VueAxios, axios);
 Vue.use(BootstrapVue);
+
+window.pasteme = {
+    config: {
+        api: 'http://test.cc/',
+        base_url: 'localhost:8080/',
+        list: {}
+    },
+};
 
 new Vue({
     router,
