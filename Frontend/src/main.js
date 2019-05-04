@@ -31,7 +31,7 @@ window.pasteme = {
     config: {
         api: 'http://test.cc/',
         base_url: 'localhost:8080/',
-        list: {}
+        protocol: 'http://',
     },
 };
 

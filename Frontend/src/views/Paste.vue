@@ -42,7 +42,7 @@
                     } else if (code === 403) {
                         this.view = 'pasteme_password_auth';
                     } else {
-                        this.$router.push('What_are_you_doing?');
+                        location.pathname = 'What_are_you_doing';
                     }
                 }).then(function() {
                     window.Prism.highlightAll();

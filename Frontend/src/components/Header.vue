@@ -6,8 +6,8 @@
                 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
                 <b-collapse id="nav-collapse" is-nav>
                     <b-nav-form @submit="onSubmit">
-                        <b-input-group v-bind:prepend="host + '/'">
-                            <b-form-input placeholder="索引" v-model="keyword" maxlength="8"></b-form-input>
+                        <b-input-group v-bind:prepend="host + path_name">
+                            <b-form-input placeholder="索引" v-model="keyword" maxlength="8" required></b-form-input>
                             <b-input-group-append>
                                 <b-button type="submit" variant="primary" required="required">前往</b-button>
                             </b-input-group-append>
@@ -40,15 +40,12 @@
             return {
                 keyword: null,
                 host: location.host,
-                path_name: location.pathname,
+                path_name: '/',
             }
         },
         methods: {
             onSubmit(event) {
                 event.preventDefault();
-                if (!this.keyword) {
-                    alert('Hello World!');
-                }
                 this.$router.push(this.keyword);
                 this.keyword = null;
             }
