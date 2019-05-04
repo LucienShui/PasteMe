@@ -13,4 +13,4 @@
 daovoice('init', {
     app_id: "b67cc1e0"
 });
-daovoice('update');
+daovoice('request');

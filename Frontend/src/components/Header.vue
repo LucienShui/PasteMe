@@ -50,6 +50,7 @@
                     alert('Hello World!');
                 }
                 this.$router.push(this.keyword);
+                this.keyword = null;
             }
         }
     }

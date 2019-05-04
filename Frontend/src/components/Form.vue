@@ -53,6 +53,9 @@
                     { text: "C/C++", value: "cpp"},
                     { text: "Java", value: "java"},
                     { text: "Python", value: "python"},
+                    { text: "Bash", value: "bash"},
+                    { text: "HTML", value: "html"},
+                    { text: "Markdown", value: "markdown"},
                 ]
             }
         },

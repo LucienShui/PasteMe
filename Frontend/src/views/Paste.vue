@@ -2,53 +2,48 @@
     <b-row>
         <b-col md="1"></b-col>
         <b-col md="10">
-            <pre id="code"><code v-bind:class="'language-' + type + ' line-numbers'">{{ content }}</code></pre>
+            <pre><code v-bind:class="'language-' + type + ' line-numbers'" v-text="content"></code></pre>
         </b-col>
         <b-col md="1"></b-col>
     </b-row>
 </template>
 
 <script>
-    import '@/../public/js/prism'
-    Prism.highlightAll();
     export default {
         name: "Paste",
         data() {
             return {
-                type: "",
-                content: "",
+                content: null,
+                type: 'cpp',
             }
         },
         watch: {
-            '$route' () {
-                /*
+            '$route': function () {
+                this.request();
+            }
+        },
+        methods: {
+            request() {
                 let keyword = this.$route.params.keyword;
-                console.log(keyword);
-                this.axios.get("http://test.cc/pasteme/api.php?token=" + keyword).then(response => {
-                    document.getElementById("code").innerText = response.data;
-                    this.content = response.data;
-                    this.type = "cpp";
-                    console.log(keyword + "finished");
+                this.axios.get("http://test.cc/pasteme/api.php?vue=&token=" + keyword).then(response => {
+                    console.log(JSON.stringify(response));
+                    this.content = response.data.content;
+                    this.type = response.data.type;
+                }).then(function() {
+                    window.Prism.highlightAll();
                 }).catch(error => {
                     console.log(error);
                 });
-                 */
-            }
+            },
         },
         mounted() {
-            let keyword = this.$route.params.keyword;
-            this.axios.get("http://test.cc/pasteme/api.php?token=" + keyword).then(response => {
-                this.content = response.data;
-                this.type = "cpp";
-            }).catch(error => {
-                console.log(error);
-            });
-        }
+            this.request();
+        },
     }
 </script>
 
 <style scoped>
-    #code {
+    pre {
         font-size: .88em;
     }
 </style>
