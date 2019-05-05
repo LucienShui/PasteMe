@@ -24,7 +24,7 @@
                         </b-form-group>
                         <b-form-group>
                             <b-checkbox-group switches>
-                                <b-button type="submit" variant="primary" style="margin-right: .65em">
+                                <b-button type="submit" :variant="this.$parent.variant" style="margin-right: .65em">
                                     保存
                                 </b-button>
                                 <b-form-checkbox v-model="form.read_once" v-show="!this.$parent.disabled" switch>

@@ -27,12 +27,12 @@
             onSubmit(event) {
                 event.preventDefault();
                 this.axios.get(window.pasteme.config.api + 'get.php?browser=&token=' +
-                    this.$parent.keyword + ',' + this.form.password).then(response => {
+                    this.$route.params.keyword + ',' + this.form.password).then(response => {
                     console.log(JSON.stringify(response));
                     if (response.data.status === 200) {
                         this.$parent.content = response.data.content;
                         this.$parent.type = response.data.type;
-                        this.$parent.view = 'pasteme_paste_view';
+                        this.$parent.view = 'paste_view';
                     } else {
                         this.placeholder = '密码错误';
                         this.form.password = null;

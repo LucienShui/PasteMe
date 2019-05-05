@@ -17,6 +17,7 @@
                 type: null,
                 content: null,
                 placeholder: null,
+                variant: 'primary',
             }
         },
         watch: {
@@ -29,8 +30,9 @@
         },
         methods: {
             init() {
-                this.disabled = false;
                 if (this.$route.params.keyword === '') {
+                    this.variant = 'primary';
+                    this.disabled = false;
                     this.placeholder = '写点什么进来吧';
                     this.view = 'home';
                 } else {
@@ -44,6 +46,7 @@
                         } else if (code === 403) {
                             this.view = 'password_auth';
                         } else if (code === 404 && this.$route.params.keyword.search('[a-zA-Z]{1}') !== -1) {
+                            this.variant = 'outline-primary';
                             this.disabled = true;
                             this.placeholder = '一次有效，阅后即焚';
                             this.view = 'home';
