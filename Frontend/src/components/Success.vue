@@ -15,7 +15,7 @@
                     <li><a id="success_qrcode_link" v-bind:href="this.base_url + this.$parent.keyword + '&tag=PasteMe - 可能是最low的文本分享平台'" target="_blank">扫描二维码</a></li>
                 </ul>
                 <p>
-                    <b-button @click="onHome" variant="primary">返回主页</b-button>
+                    <b-button @click="goHome" variant="primary">返回主页</b-button>
                 </p>
             </div>
         </b-col>
@@ -32,9 +32,13 @@
             }
         },
         methods: {
-            onHome(event) {
+            goHome(event) {
                 event.preventDefault();
-                this.$parent.view = 'pasteme_form';
+                if (this.$route.params.keyword !== '') {
+                    this.$router.push('/');
+                } else {
+                    this.$parent.view = 'home';
+                }
             }
         }
     }

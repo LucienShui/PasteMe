@@ -13,10 +13,12 @@ if ($type == 'plain' && strpos($text, "#include") !== false) $type = 'cpp';
 $password = $_POST['password'];
 if (!empty($password)) $password = md5($password);
 $keyword = null;
-if (isset($_POST['read_once'])) $keyword = 'read_once';
+if (isset($_POST['keyword'])) $keyword = $_POST['keyword'];
+else if ($_POST['read_once'] === 'true') $keyword = 'read_once';
 $keyword = $table->insert($text, $type, $password, $keyword);
 echo json_encode(array(
     'status' => 201,
     'message' => 'success',
     'keyword' => $keyword,
+    'debug' => json_encode($_POST),
 ));
