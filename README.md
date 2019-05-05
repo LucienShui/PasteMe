@@ -147,6 +147,6 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 | \*政 | 0.99 | 2019-02-17 |
 | [@Edwiv](https://github.com/Edwiv) | 1.99 | 2019-03-02 |
 | [@louyu666](https://github.com/louyu666) | 2.33 | 2019-04-18 |
-| \*弘 | 9.99 | 2019-05-02 |
+| [@oierwanhong](https://github.com/oierwanhong) | 9.99 | 2019-05-02 |
 
 ![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/pasteme_donate.png?raw=true)
