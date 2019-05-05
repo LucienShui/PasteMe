@@ -122,6 +122,10 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 > 以前捐助过的小伙伴请给我发个邮件（lucien@lucien.ink）告知一下自己的 `ID` ，我会加到列表里，之前的收款码看不了付款人 `ID` 的全称。
 
+### 2019-05-06 补充
+
+然而过去了这么久之前匿名捐的小伙伴们没几个私聊我的 Orz，所以就直接在这里把支付宝、微信里显示给我的 ID 列出来吧，谢谢各位小伙伴的支持。
+
 | ID | 金额 | 时间 |
 |--|--|--|
 | Mrs Shui | 1.98 | 2018-08-24 |
@@ -143,6 +147,6 @@ Copyright © 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 | \*政 | 0.99 | 2019-02-17 |
 | [@Edwiv](https://github.com/Edwiv) | 1.99 | 2019-03-02 |
 | [@louyu666](https://github.com/louyu666) | 2.33 | 2019-04-18 |
-| \弘 | 9.99 | 2019-05-02 |
+| \*弘 | 9.99 | 2019-05-02 |
 
 ![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/pasteme_donate.png?raw=true)
