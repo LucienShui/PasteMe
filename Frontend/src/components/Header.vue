@@ -7,7 +7,8 @@
                 <b-collapse id="nav-collapse" is-nav>
                     <b-nav-form @submit="onSubmit">
                         <b-input-group v-bind:prepend="host + path_name">
-                            <b-form-input placeholder="索引" v-model="keyword" maxlength="8" required id="nav_input"></b-form-input>
+                            <b-form-input placeholder="索引" v-model="keyword" maxlength="8"
+                                    autocomplete="off" required id="nav_input"></b-form-input>
                             <b-input-group-append>
                                 <b-button type="submit" variant="primary" required="required">前往</b-button>
                             </b-input-group-append>
@@ -21,7 +22,8 @@
                             <b-dropdown-item href="#">FA</b-dropdown-item>
                         </b-nav-item-dropdown>
                         <b-nav-item href="https://www.lucien.ink/pasteme_log.html" target="_blank">更新日志</b-nav-item>
-                        <b-nav-item href="https://github.com/LucienShui/PasteMe#帮助" target="_blank">API & 使用指南</b-nav-item>
+                        <b-nav-item href="https://github.com/LucienShui/PasteMe#帮助" target="_blank">
+                            API & 使用指南</b-nav-item>
                         <b-nav-item v-b-modal.modal-donate>捐助</b-nav-item>
                     </b-navbar-nav>
                 </b-collapse>

@@ -12,7 +12,7 @@
                         </b-form-group>
                         <b-form-group>
                             <b-input-group prepend="加密">
-                                <b-form-input v-model="form.password" placeholder="无需加密请留空"></b-form-input>
+                                <b-form-input type="password" autocomplete="off" v-model="form.password" placeholder="无需加密请留空"></b-form-input>
                             </b-input-group>
                         </b-form-group>
                     </b-col>

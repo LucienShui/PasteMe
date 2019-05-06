@@ -10,7 +10,12 @@
                     欲访问 <b id="success_jumbotron_p_b">{{ $parent.keyword }}</b> 所对应的 Paste：
                 </p>
                 <ul>
-                    <li>在导航栏中输入<strong>索引</strong>&nbsp;<b-badge pill class="badge-fixed" href="#" @click="popover_show = !popover_show">?</b-badge></li>
+                    <li>在导航栏中输入<strong>索引</strong>&nbsp;<b-badge
+                            pill class="badge-fixed"
+                            href="#"
+                            @mouseenter="popover_show = true"
+                            @mouseleave="popover_show = false">?</b-badge>
+                    </li>
                     <li>在浏览器中访问：
                         <a
                                 v-b-tooltip.hover="'在新页面中查看'"
@@ -30,7 +35,7 @@
                         </b-badge>
                     </li>
                     <li>
-                        <b-link v-b-modal.modal_qr_code>扫描二维码
+                        <b-link id="qr_code_link">扫描二维码
                         </b-link>
                     </li>
                 </ul>
@@ -44,14 +49,16 @@
                 :show.sync="popover_show"
                 target="nav_input"
                 placement="bottomright"
-                triggers="hover"
         >
             在这里填入<strong>索引</strong>即可查看相应的 Paste
         </b-popover>
-        <b-modal id="modal_qr_code" size="sm" hide-footer lazy style="text-align: center;">
+        <b-popover
+                target="qr_code_link"
+                placement="auto"
+                triggers="hover"
+        >
             <qrcode :value="this.base_url + this.$parent.keyword" :options="{ width: 200 }"></qrcode>
-            <p>PasteMe - 一个不算糟糕的可私有文本分享平台</p>
-        </b-modal>
+        </b-popover>
     </b-row>
 </template>
 
