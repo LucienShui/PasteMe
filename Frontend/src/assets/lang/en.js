@@ -76,8 +76,7 @@ export const lang = {
             button: 'Go',
         },
         dropdown: {
-            title: 'Languages',
-            zh_CN: 'Simplified Chinese',
+            zh_CN: '简体中文',
             en: 'English',
         },
         log: 'Update Logs',

@@ -16,11 +16,14 @@
                         </b-input-group>
                     </b-nav-form>
                     <b-navbar-nav class="ml-auto">
-                        <b-nav-item-dropdown :text="$t('lang.nav.dropdown.title')" right>
-                            <b-dropdown-item href="#" @click="$i18n.locale = 'zh-CN'">
+                        <b-nav-item-dropdown right>
+                            <template slot="button-content">
+                                <font-awesome-icon icon="globe-asia" />
+                            </template>
+                            <b-dropdown-item href="#" @click="setLang('zh-CN')">
                                 {{ $t('lang.nav.dropdown.zh_CN') }}
                             </b-dropdown-item>
-                            <b-dropdown-item href="#" @click="$i18n.locale = 'en'">
+                            <b-dropdown-item href="#" @click="setLang('en')">
                                 {{ $t('lang.nav.dropdown.en') }}
                             </b-dropdown-item>
                         </b-nav-item-dropdown>
@@ -56,6 +59,10 @@
                 event.preventDefault();
                 this.$router.push(this.keyword);
                 this.keyword = null;
+            },
+            setLang(lang) {
+                this.$i18n.locale = lang;
+                this.$cookie.set('pasteme_lang', lang, 30);
             }
         }
     }

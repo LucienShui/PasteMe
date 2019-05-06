@@ -25,13 +25,22 @@ import 'prismjs/components/prism-markdown'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import '../src/assets/js/dao.voice.object'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faGlobeAsia } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+library.add(faGlobeAsia);
+
+let VueCookie = require('vue-cookie');
 Vue.config.productionTip = false;
 Vue.use(VueAxios, axios);
 Vue.use(VueI18n);
 Vue.use(BootstrapVue);
+Vue.use(VueCookie);
 Vue.prototype.clipboard = clipboard;
+Vue.prototype.supported_language = ['zh-CN', 'en'];
 Vue.component('qrcode', VueQrcode);
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 function ConfigLoader () {
     return new Promise ((resolve, reject) => {

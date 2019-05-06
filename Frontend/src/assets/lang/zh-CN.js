@@ -76,7 +76,6 @@ export const lang = {
             button: '前往',
         },
         dropdown: {
-            title: '语言',
             zh_CN: '简体中文',
             en: 'English',
         },

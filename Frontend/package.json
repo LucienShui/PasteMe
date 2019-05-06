@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "@chenfengyuan/vue-qrcode": "^1.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
     "axios": "^0.18.0",
     "bootstrap-vue": "^2.0.0-rc.19",
     "clipboard": "^2.0.4",
@@ -18,6 +21,7 @@
     "qs": "^6.7.0",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.4",
+    "vue-cookie": "^1.1.4",
     "vue-i18n": "^8.11.2",
     "vue-router": "^3.0.3"
   },

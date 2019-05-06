@@ -30,6 +30,20 @@
         },
         methods: {
             init() {
+                if (this.$cookie.get('pasteme_lang') === null) {
+                    let flag = false;
+                    for (let i = 0; i < navigator.languages.length; i++) {
+                        if (navigator.languages[i] in this.supported_language) {
+                            this.$cookie.set('pasteme_lang', navigator.languages[i], 30);
+                            flag = true;
+                            break;
+                        }
+                    }
+                    if (!flag) {
+                        this.$cookie.set('pasteme_lang', 'en', 30);
+                    }
+                }
+                this.$i18n.locale = this.$cookie.get('pasteme_lang');
                 if (this.$route.params.keyword === '') {
                     this.variant = 'primary';
                     this.disabled = false;
