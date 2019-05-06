@@ -67,7 +67,7 @@
         name: "Success",
         data() {
             return {
-                base_url: window.pasteme.config.protocol + window.pasteme.config.base_url,
+                base_url: this.pasteme.config.protocol + this.pasteme.config.base_url,
                 clipboard_object: null,
                 copy_btn_text: '复制链接',
                 popover_show: false,

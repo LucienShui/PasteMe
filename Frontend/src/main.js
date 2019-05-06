@@ -31,15 +31,24 @@ Vue.use(BootstrapVue);
 Vue.prototype.clipboard = clipboard;
 Vue.component(VueQrcode.name, VueQrcode);
 
-window.pasteme = {
-    config: {
-        api: 'http://test.cc/',
-        base_url: 'localhost:8080/',
-        protocol: 'http://',
-    },
-};
+function ConfigLoader () {
+    return new Promise ((resolve, reject) => {
+        axios.get('./config.json').then(response => {
+            Vue.prototype.pasteme = {
+                config: response.data,
+            };
+            resolve();
+        }).catch((error) => {
+            console.log(error);
+            reject();
+        })
+    })
+}
 
-new Vue({
-    router,
-    render: h => h(App)
-}).$mount('#app');
+(async function () {
+    await ConfigLoader();
+    new Vue({
+        router,
+        render: h => h(App)
+    }).$mount('#app');
+})();

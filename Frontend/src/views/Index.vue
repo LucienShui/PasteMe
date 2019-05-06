@@ -36,8 +36,7 @@
                     this.placeholder = '写点什么进来吧';
                     this.view = 'home';
                 } else {
-                    this.axios.get(window.pasteme.config.api + 'get.php?browser=&token=' + this.$route.params.keyword).then(response => {
-                        console.log(JSON.stringify(response));
+                    this.axios.get(this.pasteme.config.api + 'get.php?browser=&token=' + this.$route.params.keyword).then(response => {
                         let code = response.data.status;
                         if (code === 200) {
                             this.view = 'paste_view';
@@ -51,7 +50,7 @@
                             this.placeholder = '一次有效，阅后即焚';
                             this.view = 'home';
                         } else {
-                            this.$router.push('What_are_nong_sha_lai');
+                            this.$router.push('What_are_you_nong_sha_lei');
                         }
                     }).then(function() {
                         window.Prism.highlightAll();
