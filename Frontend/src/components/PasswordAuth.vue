@@ -3,10 +3,10 @@
         <b-col md="4"></b-col>
         <b-col md="4">
             <b-form @submit="onSubmit">
-                <b-form-group label="此 Paste 已加密，请输入密码：">
-                    <b-form-input v-model="form.password" :placeholder="placeholder"></b-form-input>
+                <b-form-group :label="$t('lang.auth.form.label')">
+                    <b-form-input v-model="form.password" :placeholder="flag ? '' : this.$t('lang.auth.form.placeholder')"></b-form-input>
                 </b-form-group>
-                <b-button type="submit" variant="primary">提交</b-button>
+                <b-button type="submit" variant="primary">{{ $t('lang.auth.form.button') }}</b-button>
             </b-form>
         </b-col>
     </b-row>
@@ -17,7 +17,7 @@
         name: "PasswordAuth",
         data() {
             return {
-                placeholder: null,
+                flag: true,
                 form: {
                     password: null,
                 }
@@ -33,12 +33,12 @@
                         this.$parent.type = response.data.type;
                         this.$parent.view = 'paste_view';
                     } else {
-                        this.placeholder = '密码错误';
+                        this.flag = false;
                         this.form.password = null;
                     }
                 }).catch(error => {
                     console.log(JSON.stringify(error));
-                    alert('遇到一个致命错误，请按 F12 将 console 中输出的信息发送给管理员');
+                    alert(this.$t('lang.error.text'));
                 });
             }
         }

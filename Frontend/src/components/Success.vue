@@ -4,21 +4,21 @@
         <b-col md="8" id="success_fixed">
             <div class="jumbotron">
                 <h2>
-                    保存成功
+                    {{ $t('lang.success.h2') }}
                 </h2>
                 <p>
-                    欲访问 <b id="success_jumbotron_p_b">{{ $parent.keyword }}</b> 所对应的 Paste：
+                    {{ $t('lang.success.p[0].left') }}&nbsp;<b id="success_jumbotron_p_b">{{ $parent.keyword }}</b>&nbsp;{{ $t('lang.success.p[0].right') }}
                 </p>
                 <ul>
-                    <li>在导航栏中输入<strong>索引</strong>&nbsp;<b-badge
+                    <li>{{ $t('lang.success.ul.li[0].left') }}<strong>{{ $t('lang.success.ul.li[0].mid') }}</strong>{{ $t('lang.success.ul.li[0].right') }}&nbsp;<b-badge
                             pill class="badge-fixed"
                             href="#"
                             @mouseenter="popover_show = true"
                             @mouseleave="popover_show = false">?</b-badge>
                     </li>
-                    <li>在浏览器中访问：
+                    <li>{{ $t('lang.success.ul.li[1].browser') }}
                         <a
-                                v-b-tooltip.hover="'在新页面中查看'"
+                                v-b-tooltip.hover="$t('lang.success.ul.li[1].tooltip')"
                                 :href="base_url + $parent.keyword"
                                 target="_blank"
                         >
@@ -31,16 +31,16 @@
                                 @click="onCopy"
                                 href="#"
                         >
-                            {{ copy_btn_text }}
+                            {{ $t('lang.success.badge.' +
+                            (copy_btn_status > 0 ? 'success' : (copy_btn_status === 0 ?  'copy' : 'fail')))  }}
                         </b-badge>
                     </li>
                     <li>
-                        <b-link id="qr_code_link">扫描二维码
-                        </b-link>
+                        <b-link id="qr_code_link">{{ $t('lang.success.ul.li[2].scan_qr_code') }}</b-link>
                     </li>
                 </ul>
                 <p>
-                    <b-button @click="goHome" variant="primary">返回主页</b-button>
+                    <b-button @click="goHome" variant="primary">{{ $t('lang.success.p[1].button') }}</b-button>
                 </p>
             </div>
         </b-col>
@@ -50,7 +50,7 @@
                 target="nav_input"
                 placement="bottomright"
         >
-            在这里填入<strong>索引</strong>即可查看相应的 Paste
+            {{ $t('lang.success.popover.left') }}<strong>{{ $t('lang.success.popover.mid') }}</strong>{{ $t('lang.success.popover.right') }}
         </b-popover>
         <b-popover
                 target="qr_code_link"
@@ -69,7 +69,7 @@
             return {
                 base_url: this.pasteme.config.protocol + this.pasteme.config.base_url,
                 clipboard_object: null,
-                copy_btn_text: '复制链接',
+                copy_btn_status: 0,
                 popover_show: false,
             }
         },
@@ -89,15 +89,15 @@
                 let clipboard = this.clipboard_object;
                 let cur = this;
                 clipboard.on('success', function() {
-                    cur.copy_btn_text = '复制成功';
+                    cur.copy_btn_status = 1;
                     window.setTimeout(function () {
-                        cur.copy_btn_text = '复制链接'
+                        cur.copy_btn_status = 0;
                     }, 2000);
                 });
                 clipboard.on('error', function() {
-                    cur.copy_btn_text = '复制失败';
+                    cur.copy_btn_status = -1;
                     window.setTimeout(function () {
-                        cur.copy_btn_text = '复制链接'
+                        cur.copy_btn_status = 0;
                     }, 2000);
                 });
             }

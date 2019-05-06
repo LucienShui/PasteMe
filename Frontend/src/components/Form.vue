@@ -6,13 +6,22 @@
                 <b-row>
                     <b-col md="5">
                         <b-form-group>
-                            <b-input-group prepend="高亮">
-                                <b-form-select v-model="form.type" :options="options"></b-form-select>
+                            <b-input-group :prepend="$t('lang.form.input[0].prepend')">
+                                <b-form-select v-model="form.type">
+                                    <option value="plain">{{ this.$t('lang.form.select.plain') }}</option>
+                                    <option value="cpp">C/C++</option>
+                                    <option value="java">Java</option>
+                                    <option value="python">Python</option>
+                                    <option value="bash">Bash</option>
+                                    <option value="markdown">Markdown</option>
+                                    <option value="html">HTML</option>
+                                </b-form-select>
                             </b-input-group>
                         </b-form-group>
                         <b-form-group>
-                            <b-input-group prepend="加密">
-                                <b-form-input type="password" autocomplete="off" v-model="form.password" placeholder="无需加密请留空"></b-form-input>
+                            <b-input-group :prepend="$t('lang.form.input[1].prepend')">
+                                <b-form-input type="password" autocomplete="off" v-model="form.password"
+                                              :placeholder="$t('lang.form.input[1].placeholder')"></b-form-input>
                             </b-input-group>
                         </b-form-group>
                     </b-col>
@@ -20,15 +29,18 @@
                 <b-row>
                     <b-col md="12">
                         <b-form-group>
-                            <b-form-textarea v-model="form.content" rows="10" :placeholder="this.$parent.placeholder" required no-resize></b-form-textarea>
+                            <b-form-textarea v-model="form.content" rows="10"
+                                             :placeholder="$t('lang.form.textarea.placeholder.' +
+                                             (this.$parent.disabled ? 'read_once' : 'write_something_here'))"
+                                             required no-resize></b-form-textarea>
                         </b-form-group>
                         <b-form-group>
                             <b-checkbox-group switches>
                                 <b-button type="submit" :variant="this.$parent.variant" style="margin-right: .65em">
-                                    保存
+                                    {{ $t('lang.form.submit') }}
                                 </b-button>
                                 <b-form-checkbox v-model="form.read_once" v-show="!this.$parent.disabled" switch>
-                                    阅后即焚
+                                    {{ $t('lang.form.checkbox') }}
                                 </b-form-checkbox>
                             </b-checkbox-group>
                         </b-form-group>
@@ -51,15 +63,6 @@
                     content: null,
                     read_once: false,
                 },
-                options: [
-                    { text: "纯文本", value: "plain"},
-                    { text: "C/C++", value: "cpp"},
-                    { text: "Java", value: "java"},
-                    { text: "Python", value: "python"},
-                    { text: "Bash", value: "bash"},
-                    { text: "HTML", value: "html"},
-                    { text: "Markdown", value: "markdown"},
-                ],
             }
         },
         methods: {
@@ -76,7 +79,7 @@
                     }
                 }).catch(error => {
                     console.log(JSON.stringify(error));
-                    alert('遇到一个致命错误，请按 F12 将 console 中输出的信息发送给管理员');
+                    alert(this.$t('lang.error.text'));
                 });
             },
         },

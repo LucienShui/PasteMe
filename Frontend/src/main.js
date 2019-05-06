@@ -4,6 +4,7 @@ import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
+import VueI18n from 'vue-i18n'
 import clipboard from 'clipboard'
 import BootstrapVue from 'bootstrap-vue'
 
@@ -27,9 +28,10 @@ import '../src/assets/js/dao.voice.object'
 
 Vue.config.productionTip = false;
 Vue.use(VueAxios, axios);
+Vue.use(VueI18n);
 Vue.use(BootstrapVue);
 Vue.prototype.clipboard = clipboard;
-Vue.component(VueQrcode.name, VueQrcode);
+Vue.component('qrcode', VueQrcode);
 
 function ConfigLoader () {
     return new Promise ((resolve, reject) => {
@@ -40,15 +42,24 @@ function ConfigLoader () {
             resolve();
         }).catch((error) => {
             console.log(JSON.stringify(error));
-            alert('遇到一个致命错误，请按 F12 将 console 中输出的信息发送给管理员');
+            alert(this.$t('lang.error.text'));
             reject();
         })
     })
 }
 
+const i18n = new VueI18n({
+    locale: 'zh-CN',
+    messages: {
+        'zh-CN': require('./assets/lang/zh-CN'),
+        'en': require('./assets/lang/en'),
+    }
+});
+
 (async function () {
     await ConfigLoader();
     new Vue({
+        i18n,
         router,
         render: h => h(App)
     }).$mount('#app');

@@ -33,7 +33,6 @@
                 if (this.$route.params.keyword === '') {
                     this.variant = 'primary';
                     this.disabled = false;
-                    this.placeholder = '写点什么进来吧';
                     this.view = 'home';
                 } else {
                     this.axios.get(this.pasteme.config.api + 'get.php?browser=&token=' + this.$route.params.keyword).then(response => {
@@ -47,7 +46,6 @@
                         } else if (code === 404 && this.$route.params.keyword.search('[a-zA-Z]{1}') !== -1) {
                             this.variant = 'outline-primary';
                             this.disabled = true;
-                            this.placeholder = '一次有效，阅后即焚';
                             this.view = 'home';
                         } else {
                             this.$router.push('What_are_you_nong_sha_lei');
@@ -56,7 +54,7 @@
                         window.Prism.highlightAll();
                     }).catch(error => {
                         console.log(JSON.stringify(error));
-                        alert('遇到一个致命错误，请按 F12 将 console 中输出的信息发送给管理员');
+                        alert(this.$t('lang.error.text'));
                     });
                 }
             },

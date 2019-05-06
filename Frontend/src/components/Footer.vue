@@ -25,18 +25,29 @@
         name: "Footer",
         data() {
             return {
-                oneWord: null,
+                oneWord: 'Loading...',
                 year: new Date().getFullYear(),
             }
         },
         mounted() {
-            this.axios.get('https://v1.hitokoto.cn?encode=text').then(response => {
-                this.oneWord = response.data;
-            }).catch(error => {
-                console.log(JSON.stringify(error));
-                alert('遇到一个致命错误，请按 F12 将 console 中输出的信息发送给管理员');
+            this.getOne().then(result => {
+                this.oneWord = result;
             });
         },
+        methods: {
+            async getOne() {
+                let one = null;
+                do {
+                    await this.axios.get('https://v1.hitokoto.cn?encode=text').then(response => {
+                        one = response.data;
+                    }).catch(error => {
+                        console.log(JSON.stringify(error));
+                        alert(this.$t('lang.error.text'));
+                    });
+                } while (one.replace(/[\u4e00-\u9fa5]/ig, '**').length > 100);
+                return one;
+            }
+        }
     }
 </script>
 

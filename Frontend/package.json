@@ -18,6 +18,7 @@
     "qs": "^6.7.0",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.4",
+    "vue-i18n": "^8.11.2",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
