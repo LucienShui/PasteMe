@@ -20,5 +20,4 @@ echo json_encode(array(
     'status' => 201,
     'message' => 'success',
     'keyword' => $keyword,
-    'debug' => json_encode($_POST),
 ));

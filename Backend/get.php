@@ -8,13 +8,13 @@ require_once('lib/tableEditor.php');
 if (isset($_GET['token'])) {
     $token = $_GET['token'];
     $key = '';
-    $passwd = '';
+    $password = '';
     $pos = strpos($token, ",");
     if ($pos === false) {
         $key = $token;
     } else {
         $key = substr($token, 0, $pos);
-        $passwd = substr($token, $pos + 1, strlen($token) - $pos + 1);
+        $password = substr($token, $pos + 1, strlen($token) - $pos + 1);
     }
     $len = strlen($key);
     $chFlag = false;
@@ -36,7 +36,7 @@ if (isset($_GET['token'])) {
         $flag = false;
         $sys_passwd = $array['passwd'];
         if (!empty($sys_passwd)) {
-            if (!empty($sys_passwd) && md5($passwd) == $sys_passwd) $flag = true;
+            if (!empty($sys_passwd) && md5($password) == $sys_passwd) $flag = true;
         } else {
             $flag = true;
         }
@@ -57,7 +57,6 @@ if (isset($_GET['token'])) {
             echo json_encode(array(
                 'status' => 403,
                 'message' => 'Wrong password',
-                'debug' => json_encode($_GET),
             ));
         }
     }
