@@ -59,7 +59,7 @@
                     { text: "Bash", value: "bash"},
                     { text: "HTML", value: "html"},
                     { text: "Markdown", value: "markdown"},
-                ]
+                ],
             }
         },
         methods: {
@@ -75,7 +75,8 @@
                         this.$parent.keyword = response.data.keyword;
                     }
                 }).catch(error => {
-                    console.log(error);
+                    console.log(JSON.stringify(error));
+                    alert('遇到一个致命错误，请按 F12 将 console 中输出的信息发送给管理员');
                 });
             },
         },

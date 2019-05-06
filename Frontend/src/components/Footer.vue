@@ -33,7 +33,8 @@
             this.axios.get('https://v1.hitokoto.cn?encode=text').then(response => {
                 this.oneWord = response.data;
             }).catch(error => {
-                console.log(error);
+                console.log(JSON.stringify(error));
+                alert('遇到一个致命错误，请按 F12 将 console 中输出的信息发送给管理员');
             });
         },
     }

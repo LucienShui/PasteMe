@@ -39,7 +39,8 @@ function ConfigLoader () {
             };
             resolve();
         }).catch((error) => {
-            console.log(error);
+            console.log(JSON.stringify(error));
+            alert('遇到一个致命错误，请按 F12 将 console 中输出的信息发送给管理员');
             reject();
         })
     })
