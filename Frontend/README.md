@@ -44,3 +44,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 + [bootstrap-vue](https://github.com/bootstrap-vue/bootstrap-vue)
 + [vue-i18n](https://github.com/kazupon/vue-i18n)
 + [clipboardjs](https://clipboardjs.com)
++ [compression-webpack-plugin](https://www.npmjs.com/package/compression-webpack-plugin)
+
+## By the way
+
+1. IE are not considered
