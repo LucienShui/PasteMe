@@ -6,4 +6,3 @@ return array(
     'dbname' => 'pasteme', // 数据库名
     'passwd' => 'CHANGE_THIS', // 管理界面的密码
 );
-?>
