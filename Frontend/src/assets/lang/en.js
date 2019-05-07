@@ -52,9 +52,9 @@ export const lang = {
             ],
         },
         popover: {
-            left: 'Enter Paste\'s number here',
-            mid: '',
-            right: 'to access to it.',
+            left: 'Enter ',
+            mid: 'Paste\'s number',
+            right: ' here to access to it.',
         },
         badge: {
             copy: 'Copy',

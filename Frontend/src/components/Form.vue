@@ -72,7 +72,6 @@
                 }
                 this.axios.post(this.pasteme.config.api + '/set.php',
                     require('qs').stringify(this.form)).then(response => {
-                    console.log(JSON.stringify(response));
                     if (response.data.status === 201) {
                         this.$parent.view = 'success';
                         this.$parent.keyword = response.data.keyword;

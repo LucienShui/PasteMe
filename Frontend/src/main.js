@@ -39,7 +39,7 @@ Vue.use(BootstrapVue);
 Vue.use(VueCookie);
 Vue.prototype.clipboard = clipboard;
 Vue.prototype.supported_language = ['zh-CN', 'en'];
-Vue.component('qrcode', VueQrcode);
+Vue.component('QRCode', VueQrcode);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 function ConfigLoader () {
