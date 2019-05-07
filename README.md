@@ -4,6 +4,14 @@
 
 **目前仍在测试当中，请不要轻易部署至生产环境**
 
+# Demo
+
+http://dev.pasteme.cn
+
+# Release
+
+https://pasteme.cn
+
 # Feature
 
 1. 支持更多的高亮
