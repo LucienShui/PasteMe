@@ -14,7 +14,7 @@ $password = $_POST['password'];
 if (!empty($password)) $password = md5($password);
 $keyword = null;
 if (isset($_POST['keyword'])) $keyword = $_POST['keyword'];
-else if ($_POST['read_once'] !== 'false') $keyword = 'read_once';
+else if (isset($_POST['read_once'])) $keyword = 'read_once';
 $keyword = $table->insert($text, $type, $password, $keyword);
 echo json_encode(array(
     'status' => 201,
