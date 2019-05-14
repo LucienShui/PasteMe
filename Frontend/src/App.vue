@@ -1,5 +1,5 @@
 <template>
-    <b-container id="app" fluid>
+    <b-container id="app" fluid :class="{ 'background_gray' : $store.state.read_once }">
         <Header />
         <transition name="router-fade" mode="out-in">
             <router-view id="fixed" />
@@ -19,9 +19,13 @@
     }
 </script>
 
-<style>
+<style scoped>
     #fixed {
-        margin-top: 4.5em;
+        padding-top: 4.5em;
+    }
+
+    .background_gray {
+        background: #f0f0f0;
     }
 
     .router-fade-enter-active, .router-fade-leave-active {

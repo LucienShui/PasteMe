@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 import App from './App.vue'
 import router from './router'
 import axios from 'axios'
@@ -37,8 +38,8 @@ Vue.use(VueAxios, axios);
 Vue.use(VueI18n);
 Vue.use(BootstrapVue);
 Vue.use(VueCookie);
+Vue.use(Vuex);
 Vue.prototype.clipboard = clipboard;
-Vue.prototype.supported_language = ['zh-CN', 'en'];
 Vue.component('QRCode', VueQrcode);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
@@ -57,6 +58,17 @@ function ConfigLoader () {
     })
 }
 
+const store = new Vuex.Store({
+    state: {
+        read_once: false,
+    },
+    mutations: {
+        updateMode (state, payload) {
+            state.read_once = payload.read_once;
+        },
+    }
+});
+
 const i18n = new VueI18n({
     locale: 'zh-CN',
     messages: {
@@ -68,6 +80,7 @@ const i18n = new VueI18n({
 (async function () {
     await ConfigLoader();
     new Vue({
+        store,
         i18n,
         router,
         render: h => h(App)

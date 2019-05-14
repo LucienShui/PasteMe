@@ -125,6 +125,9 @@ return array(
 ```
 location / {
     try_files $uri $uri/ /index.html;
+    location ~ .*\.(js|css)?$ {
+        gzip_static on;
+    }
 }
 ```
 
@@ -162,6 +165,9 @@ $ ./build.sh
 ```
 location /<path>/ {
     try_files $uri $uri/ /<path>/index.html;
+    location ~ .*\.(js|css)?$ {
+        gzip_static on;
+    }
 }
 ```
 

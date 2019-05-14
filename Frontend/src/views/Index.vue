@@ -9,15 +9,15 @@
     import Success from '../components/Success'
     import PasswordAuth from '../components/PasswordAuth'
     import PasteView from '../components/PasteView'
+    import Loading from '../components/Loading'
     export default {
         name: "Index",
         data() {
             return {
-                view: 'home',
+                view: 'loading',
                 type: null,
                 content: null,
                 placeholder: null,
-                variant: 'primary',
             }
         },
         watch: {
@@ -26,29 +26,21 @@
             }
         },
         mounted() {
+            if (this.$cookie.get('pasteme_lang') === null) {
+                this.$cookie.set('pasteme_lang', 'zh-CN', 30);
+            }
+            this.$i18n.locale = this.$cookie.get('pasteme_lang');
             this.init();
         },
         methods: {
             init() {
-                if (this.$cookie.get('pasteme_lang') === null) {
-                    let flag = false;
-                    for (let i = 0; i < navigator.languages.length; i++) {
-                        if (navigator.languages[i] in this.supported_language) {
-                            this.$cookie.set('pasteme_lang', navigator.languages[i], 30);
-                            flag = true;
-                            break;
-                        }
-                    }
-                    if (!flag) {
-                        this.$cookie.set('pasteme_lang', 'en', 30);
-                    }
-                }
-                this.$i18n.locale = this.$cookie.get('pasteme_lang');
+                this.$store.commit('updateMode', {
+                    read_once: false,
+                });
                 if (this.$route.params.keyword === '') {
-                    this.variant = 'primary';
-                    this.disabled = false;
                     this.view = 'home';
                 } else {
+                    this.view = 'loading';
                     this.axios.get(this.pasteme.config.api + 'get.php?browser=&token=' + this.$route.params.keyword).then(response => {
                         let code = response.data.status;
                         if (code === 200) {
@@ -58,8 +50,9 @@
                         } else if (code === 403) {
                             this.view = 'password_auth';
                         } else if (code === 404 && this.$route.params.keyword.search('[a-zA-Z]{1}') !== -1) {
-                            this.variant = 'outline-primary';
-                            this.disabled = true;
+                            this.$store.commit('updateMode', {
+                                read_once: true,
+                            });
                             this.view = 'home';
                         } else {
                             this.$router.push('What_are_you_nong_sha_lei');
@@ -78,6 +71,7 @@
             'success': Success,
             'password_auth': PasswordAuth,
             'paste_view': PasteView,
+            'loading': Loading,
         }
     }
 </script>

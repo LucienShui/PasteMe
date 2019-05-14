@@ -57,7 +57,9 @@
                 placement="auto"
                 triggers="hover"
         >
-            <QRCode :value="this.base_url + this.$parent.keyword" :options="{ width: 200 }"></QRCode>
+            <div class="text-center">
+                <QRCode :value="this.base_url + this.$parent.keyword" :options="{ width: 168 }"></QRCode>
+            </div>
         </b-popover>
     </b-row>
 </template>

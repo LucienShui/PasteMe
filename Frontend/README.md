@@ -36,6 +36,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Reference
 
++ [vuex](https://github.com/vuejs/vuex)
 + [vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome)
 + [axios](https://github.com/axios/axios)
 + [vue-cookie](https://github.com/alfhen/vue-cookie)

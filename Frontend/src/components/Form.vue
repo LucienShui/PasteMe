@@ -31,15 +31,15 @@
                         <b-form-group>
                             <b-form-textarea v-model="form.content" rows="10"
                                              :placeholder="$t('lang.form.textarea.placeholder.' +
-                                             (this.$parent.disabled ? 'read_once' : 'write_something_here'))"
+                                             ($store.state.read_once ? 'read_once' : 'write_something_here'))"
                                              required no-resize></b-form-textarea>
                         </b-form-group>
                         <b-form-group>
                             <b-checkbox-group switches>
-                                <b-button type="submit" :variant="this.$parent.variant" style="margin-right: .65em">
+                                <b-button type="submit" :variant="$store.state.read_once ? 'dark' : 'primary'" style="margin-right: .65em">
                                     {{ $t('lang.form.submit') }}
                                 </b-button>
-                                <b-form-checkbox v-model="form.read_once" v-show="!this.$parent.disabled" switch>
+                                <b-form-checkbox v-model="form.read_once" v-show="!$store.state.read_once" switch>
                                     {{ $t('lang.form.checkbox') }}
                                 </b-form-checkbox>
                             </b-checkbox-group>
@@ -82,6 +82,9 @@
                 });
             },
         },
+        mounted() {
+            console.log(this.$store.state.read_once);
+        }
     }
 </script>
 
