@@ -4,13 +4,25 @@
 
 **目前仍在测试当中，请不要轻易部署至生产环境**
 
-# Demo
+# Release
+
+## Demo
+
+https://pasteme.cn
+
+## 地址
+
+https://github.com/LucienShui/PasteMe/tree/release-v1.2
+
+# Master
+
+## Demo
 
 http://dev.pasteme.cn
 
-# Release
+## 地址
 
-https://pasteme.cn
+https://github.com/LucienShui/PasteMe
 
 # Feature
 
@@ -30,7 +42,8 @@ Markdown
 2. 支持多语言切换（需要写 cookie 以保存语言变动）
 3. 前后端分离，前端去掉 png 和 ico 只有 200KB，后端只有 20KB，提高页面加载速度
 4. 90% 的计算移至前端，无需经过网络层，提升用户体验
-5. 如果部署在域名根目录的话和以前的部署方式无异
+5. 采用 `gzip` 传输 
+6. 如果部署在域名根目录的话和以前的部署方式无异
 
 # 帮助
 
@@ -134,14 +147,7 @@ location / {
 #### Apache
 
 ```
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-    RewriteRule ^index\.html$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /index.html [L]
-</IfModule>
+对 Apache 不熟悉，待补
 ```
 </details>
 
