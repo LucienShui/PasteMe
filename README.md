@@ -26,7 +26,7 @@
 <details>
 <summary>Release</summary>
 
-### 地址
+### build
 
 https://github.com/LucienShui/PasteMe/releases/latest
 
@@ -39,7 +39,11 @@ https://github.com/LucienShui/PasteMe/releases/latest
 
 https://pasteme.cn
 
-### 地址
+### build
+
+https://github.com/LucienShui/PasteMe/tree/build
+
+### 源码
 
 https://github.com/LucienShui/PasteMe
 
@@ -52,9 +56,9 @@ https://github.com/LucienShui/PasteMe
 
 http://beta.pasteme.cn
 
-### 地址
+### 源码
 
-https://github.com/LucienShui/PasteMe/tree/build
+https://github.com/LucienShui/PasteMe/tree/dev
 
 </details>
 
@@ -175,8 +179,8 @@ return array(
 <details>
 <summary>部署至域名根目录</summary>
 
-1. `git clone -b build https://github.com/LucienShui/PasteMe.git pasteme`
-2. 将 `pasteme` 文件夹中的文件放至域名对应的根目录
+1. `wget https://github.com/LucienShui/PasteMe/releases/latest/download/PasteMe-build.zip && unzip PasteMe-build.zip `
+2. 将 `PasteMe-build` 文件夹中的文件放至域名对应的根目录
 3. 妥善配置 `config.json` 和 `config.php`
 4. 配置伪静态至 `index.html` 就可以了。
 
