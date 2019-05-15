@@ -3,7 +3,7 @@
         return;
     }
     if (!window.Prism.plugins.toolbar) {
-        console.warn('Copy to Clipboard plugin loaded before Toolbar plugin.');
+        alert('Copy to Clipboard plugin loaded before Toolbar plugin.');
         return;
     }
     let ClipboardJS = window.ClipboardJS || undefined;
