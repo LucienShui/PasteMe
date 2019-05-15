@@ -1,4 +1,18 @@
-# PasteMe 2.0
+<p style="text-align: center">
+    <img src="https://github.com/LucienShui/gitcdn/blob/master/duck.png?raw=true" alt="" width=200>
+</p>
+<div style="text-align: center">
+    <h1 style="align: center;">PasteMe 2.0</h1>
+</div>
+<p style="text-align: center">
+    <a href="https://github.com/LucienShui/PasteMe/tree/build">
+        <img src="https://travis-ci.org/LucienShui/PasteMe.svg?branch=master" alt="">
+    </a>
+    <a href="https://github.com/LucienShui/PasteMe/blob/master/LICENSE">
+        <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="">
+    </a>
+</p>
+
 
 关于 UI 框架考虑了许久还是决定继续沿用 `Bootstrap` ，因为写 `Vue` 已经是我的极限了，没有精力去搞 `UI` 了，而且相比后端，前端真的是个天坑。QAQ
 
