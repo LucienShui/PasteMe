@@ -60,8 +60,7 @@
                     }).then(function() {
                         window.Prism.highlightAll();
                     }).catch(error => {
-                        console.log(JSON.stringify(error));
-                        alert(this.$t('lang.error.text'));
+                        alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
                     });
                 }
             },

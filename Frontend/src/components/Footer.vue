@@ -41,8 +41,7 @@
                     await this.axios.get('https://v1.hitokoto.cn?encode=text').then(response => {
                         one = response.data;
                     }).catch(error => {
-                        console.log(JSON.stringify(error));
-                        alert(this.$t('lang.error.text'));
+                        alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
                     });
                 } while (one.replace(/[\u4e00-\u9fa5]/ig, '**').length > 100);
                 return one;

@@ -12,7 +12,7 @@
     }
     let callbacks = [];
     if (!ClipboardJS) {
-        console.log('There is no clipboard.min.js, load from web');
+        alert('There is no clipboard.min.js, load from web');
         let script = document.createElement('script');
         let head = document.querySelector('head');
         script.onload = function() {

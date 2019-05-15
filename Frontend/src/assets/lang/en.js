@@ -1,6 +1,6 @@
 export const lang = {
     error: {
-        text: 'A fatal error was detected. Please contact the administrator according to the contact information in the Console.',
+        text: 'A fatal error was detected. Please contact the administrator with the information',
     },
     form: {
         input: [
