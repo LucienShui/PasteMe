@@ -21,12 +21,19 @@
 
 关于 UI 框架考虑了许久还是决定继续沿用 `Bootstrap` ，因为写 `Vue` 已经是我的极限了，没有精力去搞 `UI` 了，而且相比后端，前端真的是个天坑。QAQ
 
-**目前仍在测试当中，请不要轻易部署至生产环境**
-
 ## 版本
 
 <details>
-<summary>Release (release-v1.2 分支)</summary>
+<summary>Release</summary>
+
+### 地址
+
+https://github.com/LucienShui/PasteMe/releases/latest
+
+</details>
+
+<details>
+<summary>master 分支</summary>
 
 ### Demo
 
@@ -34,12 +41,12 @@ https://pasteme.cn
 
 ### 地址
 
-https://github.com/LucienShui/PasteMe/tree/release-v1.2
+https://github.com/LucienShui/PasteMe
 
 </details>
 
 <details>
-<summary>Beta (Master 分支)</summary>
+<summary>dev 分支</summary>
 
 ### Demo
 
@@ -47,7 +54,7 @@ http://beta.pasteme.cn
 
 ### 地址
 
-https://github.com/LucienShui/PasteMe
+https://github.com/LucienShui/PasteMe/tree/build
 
 </details>
 
