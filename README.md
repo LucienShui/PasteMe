@@ -4,7 +4,7 @@
 
 **目前仍在测试当中，请不要轻易部署至生产环境**
 
-# Release
+# Release (release-v1.2 分支)
 
 ## Demo
 
@@ -14,11 +14,11 @@ https://pasteme.cn
 
 https://github.com/LucienShui/PasteMe/tree/release-v1.2
 
-# Master
+# Beta (Master 分支)
 
 ## Demo
 
-http://dev.pasteme.cn
+http://beta.pasteme.cn
 
 ## 地址
 
@@ -186,9 +186,9 @@ location /<path>/ {
 
 # 其它
 
-1. 数据库相比 `1.1` 版本没有变动
+1. 数据库相比 `1.x` 版本没有变动
 2. 只支持现代浏览器
-3. 代码写的很烂，望轻喷。
+3. 代码写的很烂，望轻喷。i
 
 # 更新日志
 
