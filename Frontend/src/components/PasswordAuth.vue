@@ -4,7 +4,11 @@
         <b-col md="4">
             <b-form @submit="onSubmit">
                 <b-form-group :label="$t('lang.auth.form.label')">
-                    <b-form-input v-model="form.password" :placeholder="flag ? '' : this.$t('lang.auth.form.placeholder')"></b-form-input>
+                    <b-form-input
+                    type="password"
+                    v-model="form.password"
+                    :placeholder="flag ? '' : this.$t('lang.auth.form.placeholder')">
+                </b-form-input>
                 </b-form-group>
                 <b-button type="submit" variant="primary">{{ $t('lang.auth.form.button') }}</b-button>
             </b-form>
@@ -37,8 +41,7 @@
                         this.form.password = null;
                     }
                 }).catch(error => {
-                    console.log(JSON.stringify(error));
-                    alert(this.$t('lang.error.text'));
+                    alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
                 });
             }
         }

@@ -77,14 +77,10 @@
                         this.$parent.keyword = response.data.keyword;
                     }
                 }).catch(error => {
-                    console.log(JSON.stringify(error));
-                    alert(this.$t('lang.error.text'));
+                    alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
                 });
             },
         },
-        mounted() {
-            console.log(this.$store.state.read_once);
-        }
     }
 </script>
 

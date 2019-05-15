@@ -1,6 +1,6 @@
 export const lang = {
     error: {
-        text: '遇到一个致命错误，请按 F12 将 console 中输出的信息发送给管理员',
+        text: '遇到一个致命错误，请将输出的信息发送给管理员',
     },
     form: {
         input: [
