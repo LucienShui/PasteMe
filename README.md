@@ -72,13 +72,22 @@ Markdown
 
 ## 截图
 
+<details>
+
 ![homePage](https://github.com/LucienShui/gitcdn/blob/master/pasteme_home2.0.png?raw=true)
 
 ![homePageEN](https://github.com/LucienShui/gitcdn/blob/master/pasteme_home_en2.0.png?raw=true)
 
 ![chat](https://github.com/LucienShui/gitcdn/blob/master/pasteme_chat2.0.png?raw=true)
 
-![effectiveOnce](https://github.com/LucienShui/gitcdn/blob/master/pasteme_read_once2.0.png?raw=true)
+![read_once](https://github.com/LucienShui/gitcdn/blob/master/pasteme_read_once2.0.png?raw=true)
+
+![hello_world](https://github.com/LucienShui/gitcdn/blob/master/pasteme_hello_world2.0.png?raw=true)
+
+![success](https://github.com/LucienShui/gitcdn/blob/master/pasteme_success2.0.png?raw=true)
+
+![success_qrcode](https://github.com/LucienShui/gitcdn/blob/master/pasteme_success_qrcode2.0.png?raw=true)
+</details>
 
 # API
 
