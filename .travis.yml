@@ -1,0 +1,39 @@
+language: node_js
+node_js:
+  - "11"
+
+before_install:
+  - cd Frontend # Frontend
+
+install:
+  - npm install
+
+script:
+  - npm run build
+
+after_success:
+  - cp config.example.json pasteme
+  - cd pasteme # Frontend/pasteme
+  - cp -r ../../Backend api
+  - git init
+  - git config --global user.name "${U_NAME}"
+  - git config --global user.email "${U_EMAIL}"
+  - git add .
+  - git commit -m "Automatically build from travis-ci"
+  - git push --quiet --force  "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+
+branches:
+  only:
+    - master
+
+notifications:
+  email:
+    - lucien@lucien.ink
+  on_failure: always
+
+# Note: you should set Environment Variables here or 'Settings' on travis-ci.org
+env:
+  global:
+    - GH_REF: github.com/LucienShui/PasteMe.git
+    - P_BRANCH: build
+
