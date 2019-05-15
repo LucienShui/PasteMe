@@ -1,10 +1,10 @@
-<p style="text-align: center">
+<p align="center">
     <img src="https://github.com/LucienShui/gitcdn/blob/master/duck.png?raw=true" alt="" width=200>
 </p>
-<div style="text-align: center">
+<div align="center">
     <h1 style="align: center;">PasteMe 2.0</h1>
 </div>
-<p style="text-align: center">
+<p align="center">
     <a href="https://github.com/LucienShui/PasteMe/tree/build">
         <img src="https://travis-ci.org/LucienShui/PasteMe.svg?branch=master" alt="">
     </a>
