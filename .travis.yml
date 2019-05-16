@@ -12,7 +12,7 @@ script:
   - npm run build
 
 after_success:
-  - if [ ${TRAVIS_PULL_REQUEST} == "false" ]; then cp config.example.json pasteme && cd pasteme && rm config.json && cp -r ../../Backend api && cp ../../LICENSE ../../README.md ./ && git init && git config --global user.name "${U_NAME}" && git config --global user.email "${U_EMAIL}" && git add . && git commit -m "Automatically build from travis-ci" && git push --quiet --force  "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}; fi
+  - if [[ ${TRAVIS_PULL_REQUEST} == "false" ]]; then cp config.example.json pasteme && cd pasteme && rm config.json && cp -r ../../Backend api && cp ../../LICENSE ../../README.md ./ && git init && git config --global user.name "${U_NAME}" && git config --global user.email "${U_EMAIL}" && git add . && git commit -m "Automatically build from travis-ci" && git push --quiet --force  "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}; fi
   
 
 branches:
@@ -29,4 +29,3 @@ env:
   global:
     - GH_REF: github.com/LucienShui/PasteMe.git
     - P_BRANCH: build
-
