@@ -2,7 +2,7 @@
     <b-row>
         <b-col md="1"></b-col>
         <b-col md="10">
-            <pre><code v-bind:class="'language-' + this.$parent.type + ' line-numbers'"
+            <pre id="font-md"><code v-bind:class="'language-' + this.$parent.type + ' line-numbers'"
                        v-text="this.$parent.content"></code></pre>
         </b-col>
         <b-col md="1"></b-col>
@@ -19,5 +19,7 @@
 </script>
 
 <style scoped>
-
+    #font-md {
+        font-size: .88em;
+    }
 </style>
