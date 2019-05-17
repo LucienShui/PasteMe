@@ -9,10 +9,11 @@ module.exports = {
     configureWebpack: config => {
         if (process.env.NODE_ENV === 'production') {
             return {
-                plugins: [new CompressionPlugin({
-                    test: /\.js$|\.html$|\.css$|\.png$|\.ico/,
-                    threshold: 4096,
-                    deleteOriginalAssets: true,
+                plugins: [
+                    new CompressionPlugin({
+                        test: /\.js$|\.html$|\.css$|\.png$|\.ico$|\.jpg/i,
+                        threshold: 0,
+                        deleteOriginalAssets: true,
                 })],
             }
         }

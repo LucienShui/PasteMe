@@ -191,7 +191,7 @@ return array(
 ```
 location / {
     try_files $uri $uri/ /index.html;
-    location ~ .*\.(js|css)?$ {
+    location ~ .*\.(js|css|html)?$ {
         gzip_static on;
     }
 }
@@ -224,7 +224,7 @@ $ ./build.sh
 ```
 location /<path>/ {
     try_files $uri $uri/ /<path>/index.html;
-    location ~ .*\.(js|css)?$ {
+    location ~ .*\.(js|css|html)?$ {
         gzip_static on;
     }
 }
@@ -301,3 +301,4 @@ Copyright &copy; 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reser
 ## 免责声明
 
 本平台只提供文本分享的载体，与所有文本内容均没有任何联系。
+
