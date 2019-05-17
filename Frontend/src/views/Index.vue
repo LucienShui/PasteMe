@@ -26,10 +26,6 @@
             }
         },
         mounted() {
-            if (this.$cookie.get('pasteme_lang') === null) {
-                this.$cookie.set('pasteme_lang', 'zh-CN', 30);
-            }
-            this.$i18n.locale = this.$cookie.get('pasteme_lang');
             this.init();
         },
         methods: {
