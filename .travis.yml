@@ -23,7 +23,7 @@ after_success:
   - git config --global user.email "${U_EMAIL}"
   - git add .
   - git commit -m "Automatically build from travis-ci"
-  - git push --quiet --force  "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}; fi
+  - git push --quiet --force  "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
   
 
 branches:
