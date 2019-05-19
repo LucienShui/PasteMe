@@ -1,0 +1,47 @@
+---
+kind: pipeline
+name: latest_test
+
+steps:
+- name: frontend
+  image: node:latest
+  commands:
+  - cd Frontend
+  - npm install
+  - npm test
+
+---
+kind: pipeline
+name: version_test
+
+steps:
+- name: frontend
+  image: node:11
+  commands:
+  - cd Frontend
+  - npm install
+  - npm test
+
+---
+kind: pipeline
+name: latest_build
+
+steps:
+- name: frontend
+  image: node:latest
+  commands:
+  - cd Frontend
+  - npm install
+  - npm run build
+
+---
+kind: pipeline
+name: version_build
+
+steps:
+- name: frontend
+  image: node:11
+  commands:
+  - cd Frontend
+  - npm install
+  - npm run build
