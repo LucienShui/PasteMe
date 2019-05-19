@@ -70,7 +70,7 @@
                 if (this.$route.params.keyword !== '') {
                     this.form.keyword = this.$route.params.keyword;
                 }
-                this.axios.post(this.pasteme.config.api + '/set.php',
+                this.axios.post(this.pasteme.config.api,
                     require('qs').stringify(this.form)).then(response => {
                     if (response.data.status === 201) {
                         this.$parent.view = 'success';

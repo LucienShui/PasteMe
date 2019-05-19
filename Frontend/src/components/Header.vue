@@ -6,7 +6,7 @@
                 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
                 <b-collapse id="nav-collapse" is-nav>
                     <b-nav-form @submit="onSubmit">
-                        <b-input-group v-bind:prepend="host + path_name">
+                        <b-input-group v-bind:prepend="this.pasteme.config.base_url">
                             <b-form-input :placeholder="$t('lang.nav.form.placeholder')" v-model="keyword" maxlength="8"
                                     autocomplete="off" required id="nav_input"></b-form-input>
                             <b-input-group-append>
@@ -37,7 +37,7 @@
                     </b-navbar-nav>
                 </b-collapse>
             </b-navbar>
-            <b-modal id="modal-donate" hide-footer lazy>
+            <b-modal id="modal-donate" hide-footer>
                 <img src="../assets/donate.png" alt="donate.png">
             </b-modal>
         </b-col>
@@ -50,8 +50,6 @@
         data() {
             return {
                 keyword: null,
-                host: location.host,
-                path_name: '/',
             }
         },
         methods: {
@@ -62,7 +60,7 @@
             },
             setLang(lang) {
                 this.$i18n.locale = lang;
-                this.$cookie.set('pasteme_lang', lang, 30);
+                this.$cookie.set('pasteme_lang', lang, 7);
             }
         }
     }

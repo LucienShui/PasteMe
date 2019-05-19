@@ -18,6 +18,10 @@ export default new Router({
             path: '*',
             name: 'NotFound',
             component: NotFound,
-        }
+        },
+        {
+            path: 'admin',
+            name: 'admin',
+        }, // TODO
     ]
 })

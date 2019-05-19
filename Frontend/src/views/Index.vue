@@ -26,10 +26,6 @@
             }
         },
         mounted() {
-            if (this.$cookie.get('pasteme_lang') === null) {
-                this.$cookie.set('pasteme_lang', 'zh-CN', 30);
-            }
-            this.$i18n.locale = this.$cookie.get('pasteme_lang');
             this.init();
         },
         methods: {
@@ -41,7 +37,7 @@
                     this.view = 'home';
                 } else {
                     this.view = 'loading';
-                    this.axios.get(this.pasteme.config.api + 'get.php?browser=&token=' + this.$route.params.keyword).then(response => {
+                    this.axios.get(this.pasteme.config.api + '?browser=&token=' + this.$route.params.keyword).then(response => {
                         let code = response.data.status;
                         if (code === 200) {
                             this.view = 'paste_view';
