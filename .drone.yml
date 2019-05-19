@@ -8,7 +8,7 @@ steps:
   commands:
   - cd Frontend
   - npm install
-  - npm test
+  - npm run lint
 
 ---
 kind: pipeline
@@ -20,7 +20,7 @@ steps:
   commands:
   - cd Frontend
   - npm install
-  - npm test
+  - npm run lint
 
 ---
 kind: pipeline

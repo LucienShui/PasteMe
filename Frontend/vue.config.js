@@ -6,7 +6,7 @@ module.exports = {
     publicPath: process.env.NODE_ENV === 'production' ? webPath : '/',
     outputDir: 'pasteme',
     productionSourceMap: false,
-    configureWebpack: config => {
+    configureWebpack: config => { // eslint-disable-line
         if (process.env.NODE_ENV === 'production') {
             return {
                 plugins: [
