@@ -1,5 +1,6 @@
 config.php
 config.json
+usr.js
 
 .DS_Store
 node_modules
