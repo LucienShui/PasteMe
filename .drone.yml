@@ -1,9 +1,9 @@
 ---
 kind: pipeline
-name: latest_test
+name: frontend_latest_lint
 
 steps:
-- name: frontend
+- name: lint
   image: node:latest
   commands:
   - cd Frontend
@@ -12,10 +12,10 @@ steps:
 
 ---
 kind: pipeline
-name: version_test
+name: frontend_version_lint
 
 steps:
-- name: frontend
+- name: lint
   image: node:11
   commands:
   - cd Frontend
@@ -24,10 +24,10 @@ steps:
 
 ---
 kind: pipeline
-name: latest_build
+name: frontend_latest_build
 
 steps:
-- name: frontend
+- name: build
   image: node:latest
   commands:
   - cd Frontend
@@ -36,10 +36,10 @@ steps:
 
 ---
 kind: pipeline
-name: version_build
+name: frontend_version_build
 
 steps:
-- name: frontend
+- name: build
   image: node:11
   commands:
   - cd Frontend
