@@ -37,7 +37,7 @@
                     </b-navbar-nav>
                 </b-collapse>
             </b-navbar>
-            <b-modal id="modal-donate" hide-footer>
+            <b-modal id="modal-donate" hide-footer lazy>
                 <img src="../assets/donate.png" alt="donate.png">
             </b-modal>
         </b-col>

@@ -17,12 +17,12 @@ after_success:
   - cd pasteme
   - rm config.json
   - cp -r ../../Backend api
-  - cp ../../LICENSE ../../README.md ./
+  - cp ../../LICENSE ../../README.md ../../.gitignore ./
   - git init
   - git config --global user.name "${U_NAME}"
   - git config --global user.email "${U_EMAIL}"
   - git add .
-  - git commit -m "Automatically build from travis-ci"
+  - git commit -m "build from travis-ci `date`"
   - git push --quiet --force "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
   
 

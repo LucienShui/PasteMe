@@ -5,6 +5,9 @@
   <a href="https://github.com/LucienShui/PasteMe/tree/build">
     <img src="https://travis-ci.org/LucienShui/PasteMe.svg?branch=master" alt="">
   </a>
+  <a href="https://cloud.drone.io/LucienShui/PasteMe">
+    <img src="https://cloud.drone.io/api/badges/LucienShui/PasteMe/status.svg" />
+  </a>
   <a href="./LICENSE">
     <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="">
   </a>
