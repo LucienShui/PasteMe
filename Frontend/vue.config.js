@@ -11,7 +11,7 @@ module.exports = {
             return {
                 plugins: [
                     new CompressionPlugin({
-                        test: /\.js$|\.html$|\.css$|\.png$|\.ico$|\.jpg/i,
+                        test: /\.js$|\.css/,
                         threshold: 0,
                         deleteOriginalAssets: true,
                 })],
