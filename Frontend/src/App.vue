@@ -1,10 +1,10 @@
 <template>
-    <b-container id="app" fluid :class="{ 'background_gray' : $store.state.read_once }">
-        <Header />
+    <b-container id="app" fluid :class="{ 'background_gray' : $store.state.read_once, 'background_blue' : $store.state.not_found }" style="height: 100%;">
+        <Header :hidden="$store.state.not_found" />
         <transition name="router-fade" mode="out-in">
             <router-view id="fixed" />
         </transition>
-        <Footer />
+        <Footer :hidden="$store.state.not_found" />
     </b-container>
 </template>
 
@@ -32,6 +32,10 @@
 
     .background_gray {
         background: #f0f0f0;
+    }
+
+    .background_blue {
+        background: #0099CC;
     }
 
     .router-fade-enter-active, .router-fade-leave-active {
