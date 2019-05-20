@@ -19,53 +19,34 @@
   </a>
 </p>
 <div align="center">
-  <h1 style="align: center;">PasteMe 2.0</h1>
+  <h1>PasteMe 2.0</h1>
 </div>
 
-关于 UI 框架考虑了许久还是决定继续沿用 `Bootstrap` ，因为写 `Vue` 已经是我的极限了，没有精力去搞 `UI` 了，而且相比后端，前端真的是个天坑。QAQ
+PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外的高亮功能。
 
-## 版本
++ 在存储内容时，**设置密码**和**阅后即焚**可以高度保证用户内容的安全性和私密性。
 
-<details>
-<summary>Release</summary>
++ 在将自己的内容分享给别人时，提供了一键复制链接和二维码分享等多种途径。
 
-### build
++ 在查看别人的内容时，可以一键复制所有文本。如果查看的是阅后即焚的内容，那么在网页加载完成之前，实体数据就已经不存在了。
 
-https://github.com/LucienShui/PasteMe/releases/latest
+性能方面，PasteMe 2.0 采用了喜闻乐见的前后端分离，由于历史原因，目前后端是 PHP + MySQL ，前端是 Vue + Bootstrap ，主站点 https://pasteme.cn 已开启了全站 CDN 和 gzip 压缩传输。
 
-</details>
+下一步的计划是用 `golang` 重构后端之后采用 `Docker` 进行打包/发布。
 
-<details>
-<summary>master 分支</summary>
+各位老板 Star 、Issue 、PR 好不啦。**Orz**
 
-### Demo
+## 一些场景
 
-https://pasteme.cn
++ 如果你要发布一个脚本，可以把 `Bash` 或者 `Python` 等脚本上传至 `PasteMe` ，然后通过 `curl` 和管道机制来进行优雅的发布，比如：`curl api.pasteme.cn?token=8219 | python3`
 
-### build
++ 如果你要发给某人一些私密的信息，但是通过 QQ 、微信等聊天工具可能会被查水表，你可以将私密信息以阅后即焚形式上传至 `PasteMe` ，将产生的一次性链接分享给别人，别人查看一次之后这个链接就会失效。
 
-https://github.com/LucienShui/PasteMe/tree/build
++ 阅后即焚的链接是可以自定义的，比如 https://pasteme.cn/Hello ，更多详情请查看 [帮助](#帮助)。
 
-### 源码
-
-https://github.com/LucienShui/PasteMe
-
-</details>
+## 2.0 Feature
 
 <details>
-<summary>dev 分支</summary>
-
-### Demo
-
-http://beta.pasteme.cn
-
-### 源码
-
-https://github.com/LucienShui/PasteMe/tree/dev
-
-</details>
-
-## Feature
 
 1. 支持的高亮
     1.1 有需要高亮其它语言的小伙伴欢迎发邮件给我
@@ -82,10 +63,12 @@ https://github.com/LucienShui/PasteMe/tree/dev
     ```
     </details>
 2. 支持多语言切换（需要写 cookie 以保存语言变动）
-3. 前后端分离，前端去掉 png 和 ico 只有 200KB，后端只有 20KB，提高页面加载速度
+3. 前后端分离，前端去掉 png 和 ico 只有 200KB，后端只有 20KB，页面体积小
 4. 90% 的计算移至前端，无需经过网络层，提升用户体验
 5. 采用 `gzip` 传输 
 6. 如果部署在域名根目录的话和以前的部署方式无异
+
+</details>
 
 ## 帮助
 
@@ -93,7 +76,9 @@ https://github.com/LucienShui/PasteMe/tree/dev
 
 ### 索引
 
-每一个被上传的文本都有一个字符串去对其进行唯一标识，就像是门牌号一样，我称它为“**索引**”。纯数字的索引对应永久空间的文本，包含字母的索引对应临时空间的文本。
+每一个被上传的文本都有一个字符串去对其进行唯一标识，就像是门牌号一样，我称它为“**索引**”（Paste ID）。纯数字的索引对应永久空间的文本，包含字母的索引对应阅后即焚的文本。
+
+索引的长度至少为三个字符，至多为八个字符。
 
 ### 对于别人分享的内容
 
@@ -104,15 +89,25 @@ https://github.com/LucienShui/PasteMe/tree/dev
 
 #### 永久保存
 
-直接在主页进行上传。
+在主页进行保存。
 
 #### 阅后即焚
 
-1. 在左上角输入含有字母的索引，前往相应的临时空间，如果这个索引存在则显示索引内容，不存在则创建一份新的索引。
+1. 在左上角输入含有字母的索引，如果这个索引存在则显示索引内容，不存在则创建一份新的索引。
 
 2. 在主页直接勾选 `阅后即焚`。
 
 所有阅后即焚的内容一旦以任何方式（包括 `API` ）被成功访问就会**永久从数据库中消失**。
+
+关于这部分的逻辑可以看一下伪代码：
+
+```python
+if paste_id is not empty:
+    show(paste_id)
+    delete(paste_id)
+else:
+    create(paste_id)
+```
 
 </details>
 
@@ -150,115 +145,29 @@ curl 'api.pasteme.cn?token=100'
 curl 'api.pasteme.cn?token=101,123'
 ```
 
-## 部署前的配置
+## Deploy
 
-> 请注意，这里为了更易懂才加入注释，实际部署时请将注释删去
+[部署文档](./deploy.md)
 
-### config.json
-
-```json
-{
-  "api": "<protocol>://<domain>/<path>/api/", // 前端向后端发起请求时的地址
-  "base_url": "<domain>/<path>/", // index.html 所在的域名 + 子目录
-  "protocol": "<protocol>://" // http 或 https
-}
-```
-
-### api/lib/config.php
-
-```php
-<?php
-return array(
-  'dbhost' => 'localhost:3306', // 数据库服务端地址
-  'username' => 'root', // 数据库用户名
-  'password' => 'root', // 数据库密码
-  'dbname' => 'pasteme', // 数据库名
-  'passwd' => 'CHANGE_THIS', // 管理界面的密码，PS：管理界面在 2.0 中暂时被阉割掉了
-);
-```
-
-## 部署
-
-<details>
-<summary>部署至域名根目录</summary>
-
-1. `wget https://github.com/LucienShui/PasteMe/releases/latest/download/PasteMe-build.zip && unzip PasteMe-build.zip `
-2. 将 `PasteMe-build` 文件夹中的文件放至域名对应的根目录
-3. 妥善配置 `config.json` 和 `config.php`
-4. 配置伪静态至 `index.html` 就可以了。
-
-### 伪静态配置参考
-
-#### Nginx
-
-```
-location / {
-    try_files $uri $uri/ /index.html;
-    location ~ .*\.(js|css)?$ {
-        gzip_static on;
-    }
-}
-```
-
-#### Apache
-
-```
-对 Apache 不熟悉，待补
-```
-</details>
-
-<details>
-<summary>部署至域名子目录</summary>
-
-1. 修改 `Frontend/vue.config.js` 中的 `webPath` ，然后通过 `./build.sh` 进行重新编译，需要 `npm` 。
-
-```bash
-$ vim Frontend/vue.config.js
-$ ./build.sh
-```
-2. 将 `pasteme` 文件夹中的文件放至域名对应的目录
-3. 妥善配置 `config.json` 和 `config.php`
-4. 配置伪静态至 `index.html` 就可以了。
-
-### 伪静态配置参考
-
-#### Nginx
-
-```
-location /<path>/ {
-    try_files $uri $uri/ /<path>/index.html;
-    location ~ .*\.(js|css)?$ {
-        gzip_static on;
-    }
-}
-```
-
-#### Apache
-
-```
-对 Apache 不熟悉，待补
-```
-</details>
-
-# 其它
+## 其它
 
 1. 数据库相比 `1.x` 版本没有变动
 2. 只支持现代浏览器
 3. 代码写的很烂，望轻喷
 
-# 更新日志
+### 更新日志
 
 [PasteMe 更新日志](https://www.lucien.ink/pasteme_log.html)
 
-## 捐助
+### 捐助
 
-### 捐助名单
+#### 捐助名单
 
 小伙伴们在捐助的时候可以添加留言以告知自己的 `ID` ，如果是 `GitHub` 账号的话我会顺便 `@` 出来。
 
 > 以前捐助过的小伙伴请给我发个邮件（lucien@lucien.ink）告知一下自己的 `ID` ，我会加到列表里，之前的收款码看不了付款人 `ID` 的全称。
 
-#### 2019-05-06 补充
+##### 2019-05-06 补充
 
 然而过去了这么久之前匿名捐的小伙伴们没几个私聊我的 QAQ，所以就直接在这里把支付宝、微信里显示给我的 ID 列出来吧，特意附上了时间，欢迎各位小伙伴来认捐，谢谢各位小伙伴的支持 Orz。
 
@@ -284,12 +193,13 @@ location /<path>/ {
 | [@Edwiv](https://github.com/Edwiv) | 1.99 | 2019-03-02 |
 | [@louyu666](https://github.com/louyu666) | 2.33 | 2019-04-18 |
 | [@oierwanhong](https://github.com/oierwanhong) | 9.99 | 2019-05-02 |
+| [@Albertliuzw](https://github.com/Albertliuzw) | 1.50 | 2019-05-17 |
 
-### 谢谢老板
+#### 谢谢老板
 
 ![谢谢老板](https://github.com/LucienShui/gitcdn/blob/master/pasteme_donate.png?raw=true)
 
-## Browsers support
+### Browsers support
 
 Modern browsers and Internet Explorer 10+.
 
