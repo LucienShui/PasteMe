@@ -16,13 +16,13 @@ after_success:
   - rm -rf .git
   - git clone https://${GH_REF} -b ${P_BRANCH} tmpdir
   - rm -rf tmpdir/*
-  - cp pasteme/* tmpdir
+  - cp -r pasteme/* tmpdir
   - cp config.example.json tmpdir
   - cd tmpdir
-  - touch usr.js
   - rm config.json
   - cp -r ../../Backend api
   - cp ../../LICENSE ../../README.md ../../.gitignore ./
+  - ls -a
   - git config user.name "${U_NAME}"
   - git config user.email "${U_EMAIL}"
   - git add --all
