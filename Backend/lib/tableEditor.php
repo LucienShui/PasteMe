@@ -6,11 +6,15 @@
  */
 require_once('dbEditor.php');
 class tableEditor {
-    private $char_set = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
-    private $db = null;
+    private $char_set = 'qwertyuiopasdfghjklzxcvbnm0123456789';
+    private $char_set_length;
+    private $db;
+
     public function __construct() {
         $this->db = new dbEditor();
+        $this->char_set_length = strlen($this->char_set);
     }
+
     public function insert($text, $type, $password, $key = null) {
         if ($key === null) {
             $key = $this->db->get_id();
@@ -23,8 +27,8 @@ class tableEditor {
             if ($key === 'read_once') {
                 do {
                     $key = '';
-                    for ($i = 0; $i < 8; $i++) $key .= $this->char_set[mt_rand(0, 51)];
-                } while ($this->query($key) !== False);
+                    for ($i = 0; $i < 8; $i++) $key .= $this->char_set[mt_rand(0, $this->char_set_length - 1)];
+                } while (!preg_match('/[a-zA-Z]/', $key) || $this->query($key) !== False);
             }
             if ($this->db->insert("temp", "s", $key, $text, $type, $password, 1)) return $key;
         }
@@ -32,7 +36,7 @@ class tableEditor {
     }
     
     public function query($key) {
-        if (filter_var($key, FILTER_VALIDATE_INT) === False) {
+        if (preg_match('/[a-zA-Z]/', $key)) {
             return $this->db->query("temp", "s", $key);
         } else {
             $buf = $key % 10;

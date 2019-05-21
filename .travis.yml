@@ -13,17 +13,20 @@ script:
   - npm run build
 
 after_success:
-  - cp config.example.json pasteme
-  - cd pasteme
+  - rm -rf .git
+  - git clone https://${GH_REF} -b ${P_BRANCH} tmpdir
+  - rm -rf tmpdir/*
+  - cp -r pasteme/* tmpdir
+  - cp config.example.json tmpdir
+  - cd tmpdir
   - rm config.json
   - cp -r ../../Backend api
   - cp ../../LICENSE ../../README.md ../../.gitignore ./
-  - git init
-  - git config --global user.name "${U_NAME}"
-  - git config --global user.email "${U_EMAIL}"
-  - git add .
+  - git config user.name "${U_NAME}"
+  - git config user.email "${U_EMAIL}"
+  - git add --all
   - git commit -m "build from travis-ci `date`"
-  - git push --quiet --force "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+  - git push https://${GH_TOKEN}@${GH_REF} ${P_BRANCH}
   
 
 branches:

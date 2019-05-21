@@ -15,9 +15,13 @@ export default new Router({
             component: Index,
         },
         {
-            path: '*',
+            path: '/What_are_you_nong_sha_lei?',
             name: 'NotFound',
             component: NotFound,
+        },
+        {
+            path: '*',
+            redirect: '/What_are_you_nong_sha_lei?',
         },
         {
             path: 'admin',

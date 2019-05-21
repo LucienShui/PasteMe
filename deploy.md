@@ -31,7 +31,7 @@ https://github.com/LucienShui/PasteMe
 
 #### Demo
 
-http://beta.pasteme.cn
+http://dev.pasteme.cn
 
 #### 源码
 
@@ -77,7 +77,8 @@ return array(
 1. `wget https://github.com/LucienShui/PasteMe/releases/latest/download/PasteMe-build.zip && unzip PasteMe-build.zip `
 2. 将 `PasteMe-build` 文件夹中的文件放至域名对应的根目录
 3. 妥善配置 `config.json` 和 `config.php`
-4. 配置伪静态至 `index.html` 就可以了。
+4. 配置伪静态至 `index.html`
+5. 在网页中访问 `api/lib/init.php`
 
 ### 伪静态配置参考
 
@@ -102,15 +103,17 @@ location / {
 <details>
 <summary>部署至域名子目录</summary>
 
-1. 修改 `Frontend/vue.config.js` 中的 `webPath` ，然后通过 `./build.sh` 进行重新编译，需要 `npm` 。
+1. 修改 `Frontend/vue.config.js` 中的 `webPath` ，然后通过 `./build.sh` 进行重新编译，需要 `nodejs` 。
 
 ```bash
 $ vim Frontend/vue.config.js
 $ ./build.sh
 ```
+
 2. 将 `pasteme` 文件夹中的文件放至域名对应的目录
 3. 妥善配置 `config.json` 和 `config.php`
-4. 配置伪静态至 `index.html` 就可以了。
+4. 配置伪静态至 `index.html`
+5. 在网页中访问 `api/lib/init.php`
 
 ### 伪静态配置参考
 

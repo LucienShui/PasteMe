@@ -30,9 +30,7 @@
         },
         methods: {
             init() {
-                this.$store.commit('updateMode', {
-                    read_once: false,
-                });
+                this.$store.commit('init');
                 if (this.$route.params.keyword === '') {
                     this.view = 'home';
                 } else {
@@ -51,7 +49,7 @@
                             });
                             this.view = 'home';
                         } else {
-                            this.$router.push('What_are_you_nong_sha_lei');
+                            this.$router.push('What_are_you_nong_sha_lei?');
                         }
                     }).then(function() {
                         window.Prism.highlightAll();
