@@ -78,7 +78,7 @@ return array(
 2. 将 `PasteMe-build` 文件夹中的文件放至域名对应的根目录
 3. 妥善配置 `config.json` 和 `config.php`
 4. 配置伪静态至 `index.html`
-5. 在网页中访问 `lib/init.php`
+5. 在网页中访问 `api/lib/init.php`
 
 ### 伪静态配置参考
 
@@ -113,7 +113,7 @@ $ ./build.sh
 2. 将 `pasteme` 文件夹中的文件放至域名对应的目录
 3. 妥善配置 `config.json` 和 `config.php`
 4. 配置伪静态至 `index.html`
-5. 在网页中访问 `lib/init.php`
+5. 在网页中访问 `api/lib/init.php`
 
 ### 伪静态配置参考
 
