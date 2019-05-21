@@ -146,7 +146,7 @@ curl 'api.pasteme.cn?token=101,123'
 
 ## Deploy
 
-[部署文档](./deploy.md)
+[部署文档](./DEPLOY.md)
 
 ## 其它
 
