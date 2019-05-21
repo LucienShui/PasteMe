@@ -6,21 +6,21 @@
  */
 require_once('lib/tableEditor.php');
 if (!empty($_POST)) {
-    $keyword = '';
+    $key = '';
     $table = new tableEditor();
     $text = $_POST['content'];
     $type = $_POST['type'];
     if ($type == 'plain' && strpos($text, "#include") !== false) $type = 'cpp';
     $password = $_POST['password'];
     if (!empty($password)) $password = md5($password);
-    $keyword = null;
-    if (isset($_POST['keyword'])) $keyword = $_POST['keyword'];
-    else if (isset($_POST['read_once'])) $keyword = 'read_once';
-    $keyword = $table->insert($text, $type, $password, $keyword);
+    $key = null;
+    if (isset($_POST['keyword'])) $key = $_POST['keyword'];
+    else if (isset($_POST['read_once'])) $key = 'read_once';
+    $key = $table->insert($text, $type, $password, $key);
     echo json_encode(array(
         'status' => 201,
         'message' => 'success',
-        'keyword' => $keyword,
+        'keyword' => $key,
     ));
 } else if (isset($_GET['token'])) {
     $token = $_GET['token'];
@@ -34,13 +34,6 @@ if (!empty($_POST)) {
         $password = substr($token, $pos + 1, strlen($token) - $pos + 1);
     }
     $len = strlen($key);
-    $chFlag = false;
-    for ($i = 0; $i < $len; $i++) {
-        if ($key[$i] < '0' || $key[$i] > '9') {
-            $chFlag = true;
-            break;
-        }
-    }
     $table = new tableEditor();
     $array = $table->query($key);
     if ($array === false) {
@@ -51,9 +44,9 @@ if (!empty($_POST)) {
     }
     else {
         $flag = false;
-        $sys_passwd = $array['passwd'];
-        if (!empty($sys_passwd)) {
-            if (!empty($sys_passwd) && md5($password) == $sys_passwd) $flag = true;
+        $sys_password = $array['passwd'];
+        if (!empty($sys_password)) {
+            if (!empty($sys_password) && md5($password) == $sys_password) $flag = true;
         } else {
             $flag = true;
         }
@@ -67,7 +60,7 @@ if (!empty($_POST)) {
             } else {
                 echo str_replace("\r", "", htmlspecialchars_decode($array['text'])) . "\n";
             }
-            if ($chFlag) {
+            if (preg_match('/[a-zA-Z]/', $key)) {
                 $table->erase($key);
             }
         } else {
