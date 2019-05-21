@@ -22,7 +22,6 @@ after_success:
   - rm config.json
   - cp -r ../../Backend api
   - cp ../../LICENSE ../../README.md ../../.gitignore ./
-  - ls -a
   - git config user.name "${U_NAME}"
   - git config user.email "${U_EMAIL}"
   - git add --all
