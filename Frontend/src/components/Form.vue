@@ -1,10 +1,10 @@
 <template>
     <b-row>
-        <b-col md="2"></b-col>
-        <b-col md="8">
+        <b-col md="1" lg="2"></b-col>
+        <b-col md="10" lg="8">
             <b-form @submit="onSubmit">
                 <b-row>
-                    <b-col md="5">
+                    <b-col md="7" lg="5">
                         <b-form-group>
                             <b-input-group :prepend="$t('lang.form.input[0].prepend')">
                                 <b-form-select v-model="form.type">
@@ -48,7 +48,7 @@
                 </b-row>
             </b-form>
         </b-col>
-        <b-col md="2"></b-col>
+        <b-col md="1" lg="2"></b-col>
     </b-row>
 </template>
 
