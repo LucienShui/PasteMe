@@ -75,12 +75,15 @@ export const lang = {
             placeholder: '索引',
             button: '前往',
         },
-        dropdown: {
+        lang: {
             zh_CN: '简体中文',
             en: 'English',
         },
-        log: '更新日志',
-        help: 'API & 使用指南',
+        something: {
+            text: '聚合',
+            log: '更新日志',
+            help: 'API & 使用指南',
+        },
         donate: '捐助',
     }
 };

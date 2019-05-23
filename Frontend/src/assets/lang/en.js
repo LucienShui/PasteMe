@@ -75,12 +75,15 @@ export const lang = {
             placeholder: 'Paste\'s number',
             button: 'Go',
         },
-        dropdown: {
+        lang: {
             zh_CN: '简体中文',
             en: 'English',
         },
-        log: 'Update Logs',
-        help: 'API & Guidance',
+        something: {
+            text: 'Something',
+            log: 'Change Logs',
+            help: 'API & Guidance',
+        },
         donate: 'Donation',
     }
 };
