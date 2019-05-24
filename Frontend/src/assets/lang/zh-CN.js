@@ -83,7 +83,22 @@ export const lang = {
             text: '聚合',
             log: '更新日志',
             help: 'API & 使用指南',
+            feedback: '我要吐槽',
         },
         donate: '捐助',
-    }
+        beg: '给个 Star 好不啦',
+    },
+    not_found: {
+        content: {
+            title: '您访问的页面没有找到',
+            text: '秒后转至 PasteMe 主页',
+        },
+        footer: {
+            text: '如果您想了解更多信息，则可以稍后在线搜索此错误：Error 404 Girlfriend Not Found',
+            beg: {
+                left: '在 GitHub 里给本项目一个',
+                right: '吧 Orz',
+            }
+        }
+    },
 };

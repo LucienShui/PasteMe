@@ -3,10 +3,15 @@
         <b-col md="2"></b-col>
         <b-col md="8">
             <p class="not_found_face">:(</p>
-            <p class="not_found_content">您访问的页面没有找到</p>
-            <p class="not_found_content"><a class="not_found_second">{{ totalTime }}</a>&nbsp;秒后转至 PasteMe 主页</p>
-            <p class="not_found_footer">如果您想了解更多信息，则可以稍后在线搜索此错误：Error 404 Girlfriend Not Found</p>
-            <p class="not_found_footer">在 GitHub 里给本项目一个 <iframe src="//ghbtns.com/github-btn.html?user=LucienShui&repo=PasteMe&type=star&count=true" frameborder="0" scrolling="0" width="81px" height="20px" style="position: relative; bottom: -.25em"></iframe> 吧 Orz</p>
+            <p class="not_found_content">{{ $t('lang.not_found.content.title') }}</p>
+            <p class="not_found_content"><a class="not_found_second">{{ totalTime }}</a>&nbsp;{{
+                $t('lang.not_found.content.text') }}</p>
+            <p class="not_found_footer">{{ $t('lang.not_found.footer.text') }}</p>
+            <p class="not_found_footer">{{ $t('lang.not_found.footer.beg.left') }}&nbsp;<iframe
+                    src="//ghbtns.com/github-btn.html?user=LucienShui&repo=PasteMe&type=star&count=true"
+                    frameborder="0" scrolling="0" width="81px" height="20px"
+                    style="position: relative; bottom: -.25em">
+            </iframe>&nbsp;{{ $t('lang.not_found.footer.beg.right') }}</p>
         </b-col>
         <b-col md="2"></b-col>
     </b-row>
