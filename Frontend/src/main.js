@@ -32,20 +32,18 @@ Vue.prototype.qs = qs;
 Vue.component('QRCode', VueQrcode);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
-function ConfigLoader () {
-    return new Promise ((resolve, reject) => {
-        axios.get('./config.json').then(response => {
-            store.state.config = response.data;
-            resolve();
-        }).catch((error) => {
-            alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
-            reject();
-        })
-    })
-}
-
 (async function () {
-    await ConfigLoader();
+    await (function() {
+        return new Promise ((resolve, reject) => {
+            axios.get('./config.json').then(response => {
+                store.state.config = response.data;
+                resolve();
+            }).catch((error) => {
+                alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
+                reject();
+            })
+        })
+    })();
     new Vue({
         store,
         i18n,
