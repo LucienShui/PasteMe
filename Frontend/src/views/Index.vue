@@ -51,8 +51,6 @@
                         } else {
                             this.$router.push('What_are_you_nong_sha_lei?');
                         }
-                    }).then(function() {
-                        window.Prism.highlightAll();
                     }).catch(error => {
                         alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
                     });

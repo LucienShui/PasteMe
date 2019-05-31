@@ -60,8 +60,8 @@
                 form: {
                     type: 'plain',
                     password: null,
-                    content: null,
-                },
+                    content: null
+                }
             }
         },
         methods: {
@@ -71,7 +71,7 @@
                     this.form.keyword = this.$route.params.keyword;
                 }
                 this.axios.post(this.$store.state.config.api,
-                    require('qs').stringify(this.form)).then(response => {
+                    this.qs.stringify(this.form)).then(response => {
                     if (response.data.status === 201) {
                         this.$parent.view = 'success';
                         this.$parent.keyword = response.data.keyword;
@@ -79,8 +79,8 @@
                 }).catch(error => {
                     alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
                 });
-            },
-        },
+            }
+        }
     }
 </script>
 

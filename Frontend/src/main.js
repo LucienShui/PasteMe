@@ -9,11 +9,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import i18n from './i18n'
+import qs from 'qs'
 
 import './prism'
 import './assets/js/daovoice.object'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './assets/css/global.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGlobeAsia } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -26,6 +28,7 @@ Vue.use(VueAxios, axios);
 Vue.use(BootstrapVue);
 Vue.use(VueCookie);
 Vue.prototype.clipboard = clipboard;
+Vue.prototype.qs = qs;
 Vue.component('QRCode', VueQrcode);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
