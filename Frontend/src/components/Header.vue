@@ -6,7 +6,7 @@
                 <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
                 <b-collapse id="nav-collapse" is-nav>
                     <b-nav-form @submit="onSubmit">
-                        <b-input-group v-bind:prepend="this.pasteme.config.base_url">
+                        <b-input-group v-bind:prepend="this.$store.state.config.base_url">
                             <b-form-input :placeholder="$t('lang.nav.form.placeholder')" v-model="keyword" maxlength="8"
                                     autocomplete="off" required id="nav_input"></b-form-input>
                             <b-input-group-append>

@@ -30,7 +30,7 @@
         methods: {
             onSubmit(event) {
                 event.preventDefault();
-                this.axios.get(this.pasteme.config.api + '?browser=&token=' +
+                this.axios.get(this.$store.state.config.api + '?browser=&token=' +
                     this.$route.params.keyword + ',' + this.form.password).then(response => {
                     if (response.data.status === 200) {
                         this.$parent.content = response.data.content;
