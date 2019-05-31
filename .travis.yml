@@ -17,7 +17,6 @@ after_success:
   - git clone https://${GH_REF} -b ${P_BRANCH} tmpdir
   - rm -rf tmpdir/*
   - cp -r pasteme/* tmpdir
-  - cp config.example.json tmpdir
   - cd tmpdir
   - rm config.json
   - cp -r ../../Backend api
