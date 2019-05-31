@@ -35,7 +35,7 @@
                     this.view = 'home';
                 } else {
                     this.view = 'loading';
-                    this.axios.get(this.pasteme.config.api + '?browser=&token=' + this.$route.params.keyword).then(response => {
+                    this.axios.get(this.$store.state.config.api + '?browser=&token=' + this.$route.params.keyword).then(response => {
                         let code = response.data.status;
                         if (code === 200) {
                             this.view = 'paste_view';
@@ -51,8 +51,6 @@
                         } else {
                             this.$router.push('What_are_you_nong_sha_lei?');
                         }
-                    }).then(function() {
-                        window.Prism.highlightAll();
                     }).catch(error => {
                         alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
                     });

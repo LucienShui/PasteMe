@@ -69,7 +69,7 @@
         name: "Success",
         data() {
             return {
-                base_url: this.pasteme.config.protocol + this.pasteme.config.base_url,
+                base_url: this.$store.state.config.protocol + this.$store.state.config.base_url,
                 clipboard_object: null,
                 copy_btn_status: 0,
                 popover_show: false,

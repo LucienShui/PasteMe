@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import NotFound from './views/NotFound.vue'
+import NotFound from './views/NotFound'
 import Index from './views/Index'
 
 Vue.use(Router);
@@ -12,20 +12,21 @@ export default new Router({
         {
             path: '/:keyword(0{0}|[a-zA-Z0-9]{3,8})',
             name: 'index',
-            component: Index,
+            component: Index
         },
         {
             path: '/What_are_you_nong_sha_lei?',
             name: 'NotFound',
-            component: NotFound,
+            component: NotFound
         },
         {
             path: '*',
-            redirect: '/What_are_you_nong_sha_lei?',
+            redirect: '/What_are_you_nong_sha_lei?'
         },
         {
             path: 'admin',
             name: 'admin',
-        }, // TODO
+            // TODO
+        },
     ]
 })

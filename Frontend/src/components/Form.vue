@@ -60,8 +60,8 @@
                 form: {
                     type: 'plain',
                     password: null,
-                    content: null,
-                },
+                    content: null
+                }
             }
         },
         methods: {
@@ -70,8 +70,8 @@
                 if (this.$route.params.keyword !== '') {
                     this.form.keyword = this.$route.params.keyword;
                 }
-                this.axios.post(this.pasteme.config.api,
-                    require('qs').stringify(this.form)).then(response => {
+                this.axios.post(this.$store.state.config.api,
+                    this.qs.stringify(this.form)).then(response => {
                     if (response.data.status === 201) {
                         this.$parent.view = 'success';
                         this.$parent.keyword = response.data.keyword;
@@ -79,8 +79,8 @@
                 }).catch(error => {
                     alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
                 });
-            },
-        },
+            }
+        }
     }
 </script>
 

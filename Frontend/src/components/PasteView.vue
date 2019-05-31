@@ -13,7 +13,7 @@
     export default {
         name: "PasteView",
         mounted() {
-            window.Prism.highlightAll();
+            this.prism.highlightAll();
         }
     }
 </script>

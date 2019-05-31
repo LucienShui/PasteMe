@@ -26,7 +26,9 @@
             }
         },
         mounted() {
-            this.$store.state.not_found = true;
+            this.$store.commit('updateNotFound', {
+                not_found: true
+            });
             let clock = window.setInterval(() => {
                 this.totalTime--;
                 if (this.totalTime === 0) {
