@@ -12,7 +12,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/vue-fontawesome": "^0.1.6",
-    "axios": "^0.18.1",
+    "axios": "^0.19.0",
     "bootstrap-vue": "^2.0.0-rc.19",
     "clipboard": "^2.0.4",
     "core-js": "^2.6.5",
