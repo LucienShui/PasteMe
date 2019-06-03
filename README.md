@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="">
   </a>
   <a>
-    <img src="https://img.shields.io/badge/version-2.0.1-brightgreen.svg" alt="version">
+    <img src="https://img.shields.io/badge/version-2.1.1-brightgreen.svg" alt="version">
   </a>
   <a href="#谢谢老板">
     <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">

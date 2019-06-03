@@ -4,9 +4,9 @@
             <div class="footer">
                 <p><a>{{ oneWord }}</a></p>
                 <p>
-                    <a href='http://www.lucien.ink' target='_blank'>Lucien's Blog</a>
+                    <a href='http://blog.lucien.ink' target='_blank'>Lucien's Blog</a>
                     <a>&nbsp;&nbsp;|&nbsp;&nbsp;</a>
-                    <a href="http://www.lucien.ink/go/csdn" target='_blank'>CSDN</a>
+                    <a href="http://blog.lucien.ink/go/csdn" target='_blank'>CSDN</a>
                     <a>&nbsp;&nbsp;|&nbsp;&nbsp;</a>
                     <a href="http://www.miitbeian.gov.cn/" target='_blank'>鲁ICP备18007563号</a>
                 </p>
