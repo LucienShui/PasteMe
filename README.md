@@ -51,7 +51,17 @@ https://github.com/LucienShui/PasteMe/tree/dev
 {
   "api": "<protocol>://<domain>/<path>/api/", // 前端向后端发起请求时的地址
   "base_url": "<domain>/<path>/", // index.html 所在的域名 + 子目录
-  "protocol": "<protocol>://" // http 或 https
+  "protocol": "<protocol>://", // http 或 https
+  "footer": [ // 自定义底部链接
+    {
+      "url": "http(s)://<custom_address_0>",
+      "text": "<custom_name_0>"
+    },
+    {
+      "url": "http(s)://<custom_address_1>",
+      "text": "<custom_name_1>"
+    }
+  ]
 }
 ```
 
