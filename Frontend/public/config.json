@@ -1,5 +1,15 @@
 {
   "api": "http://test.cc/",
   "base_url": "localhost:8080/",
-  "protocol": "http://"
+  "protocol": "http://",
+  "footer": [
+    {
+      "url": "http://blog.lucien.ink/go/csdn",
+      "text": "CSDN"
+    },
+    {
+      "url": "http://www.miitbeian.gov.cn/",
+      "text": "鲁ICP备18007563号"
+    }
+  ]
 }

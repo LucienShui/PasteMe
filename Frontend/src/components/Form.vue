@@ -60,7 +60,8 @@
                 form: {
                     type: 'plain',
                     password: null,
-                    content: null
+                    content: null,
+                    read_once: []
                 }
             }
         },
