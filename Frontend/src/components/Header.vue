@@ -89,7 +89,7 @@
                 this.keyword = null;
             },
             setLang(lang) {
-                this.$i18n.locale = lang;
+                this.setI18n(lang);
                 this.$cookie.set('pasteme_lang', lang, 7);
             }
         }

@@ -18,9 +18,9 @@
         },
         mounted() {
             if (this.$cookie.get('pasteme_lang') === null) {
-                this.$cookie.set('pasteme_lang', 'zh-CN', 30);
+                this.$cookie.set('pasteme_lang', 'zh-CN', 7);
             }
-            this.$i18n.locale = this.$cookie.get('pasteme_lang');
+            this.setI18n(this.$cookie.get('pasteme_lang'));
         }
     }
 </script>
