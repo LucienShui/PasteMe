@@ -1,6 +1,4 @@
 import Vue from 'vue'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
 import clipboard from 'clipboard'
 import BootstrapVue from 'bootstrap-vue'
@@ -9,7 +7,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import i18n from './i18n'
-import qs from 'qs'
+import api from './api'
 
 import '@/prism'
 import '@/assets/js/daovoice.object'
@@ -24,23 +22,21 @@ library.add(faGlobeAsia);
 
 let VueCookie = require('vue-cookie');
 Vue.config.productionTip = false;
-Vue.use(VueAxios, axios);
 Vue.use(BootstrapVue);
 Vue.use(VueCookie);
 Vue.prototype.clipboard = clipboard;
-Vue.prototype.qs = qs;
+Vue.prototype.api = api;
 Vue.component('QRCode', VueQrcode);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 (async function () {
     await (function() {
         return new Promise ((resolve, reject) => {
-            axios.get('./config.json').then(response => {
-                store.state.config = response.data;
+            api.get('./config.json').then(response => {
+                store.state.config = response;
                 resolve();
-            }).catch((error) => {
-                alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
-                reject();
+            }).catch(error => {
+                reject(error);
             })
         })
     })();

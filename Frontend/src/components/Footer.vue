@@ -35,10 +35,10 @@
             async getOne() {
                 let one = null;
                 do {
-                    await this.axios.get('https://v1.hitokoto.cn?encode=text').then(response => {
-                        one = response.data;
-                    }).catch(error => {
-                        alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
+                    await this.api.get('https://v1.hitokoto.cn', {
+                        encode: 'text'
+                    }).then(response => {
+                        one = response;
                     });
                 } while (one.replace(/[\u4e00-\u9fa5]/ig, '**').length > 100);
                 return one;

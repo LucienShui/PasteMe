@@ -71,14 +71,11 @@
                 if (this.$route.params.keyword !== '') {
                     this.form.keyword = this.$route.params.keyword;
                 }
-                this.axios.post(this.$store.state.config.api,
-                    this.qs.stringify(this.form)).then(response => {
-                    if (response.data.status === 201) {
+                this.api.post(this.$store.state.config.api, this.form).then(response => {
+                    if (response.status === 201) {
                         this.$parent.view = 'success';
-                        this.$parent.keyword = response.data.keyword;
+                        this.$parent.keyword = response.keyword;
                     }
-                }).catch(error => {
-                    alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
                 });
             }
         }
