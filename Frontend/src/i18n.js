@@ -14,6 +14,7 @@ Vue.use(VueI18n);
 
 const i18n = new VueI18n({
     locale: 'zh-CN',
+    fallbackLocale: 'zh-CN',
     messages: {
         'zh-CN': require('./assets/lang/zh-CN')
     }
@@ -22,18 +23,27 @@ const i18n = new VueI18n({
 const loadedLanguages = ['zh-CN'];
 const supportedLanguage = ['zh-CN', 'en'];
 
+function setI18nLanguage(lang) {
+    i18n.locale = lang;
+    document.querySelector('html').setAttribute('lang', lang);
+    return lang;
+}
+
 Vue.prototype.setI18n = function (lang) {
     if (i18n.locale !== lang) {
         if (supportedLanguage.includes(lang)) {
             if (!loadedLanguages.includes(lang)) {
-                import(`@/assets/lang/${lang}`).then(messages => {
+                return import(/* webpackChunkName: "[request]" */ `./assets/lang/${lang}`).then(messages => {
                     i18n.setLocaleMessage(lang, messages);
                     loadedLanguages.push(lang);
-                    i18n.locale = lang;
+                    return setI18nLanguage(lang);
                 });
-            } else i18n.locale = lang;
-        } else i18n.locale = supportedLanguage[0];
+            }
+            return Promise.resolve(setI18nLanguage(lang));
+        }
+        return Promise.reject(setI18nLanguage(supportedLanguage[0]));
     }
+    return Promise.resolve(lang);
 };
 
 export default i18n;
