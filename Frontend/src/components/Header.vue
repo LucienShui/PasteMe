@@ -68,7 +68,7 @@
                 </div>
             </b-popover>
             <b-modal id="modal-donate" hide-footer lazy>
-                <img src="../assets/donate.png" alt="donate.png">
+                <img src="../assets/img/donate.png" alt="donate.png">
             </b-modal>
         </b-col>
     </b-row>
