@@ -30,18 +30,18 @@
         methods: {
             onSubmit(event) {
                 event.preventDefault();
-                this.axios.get(this.$store.state.config.api + '?browser=&token=' +
-                    this.$route.params.keyword + ',' + this.form.password).then(response => {
-                    if (response.data.status === 200) {
-                        this.$parent.content = response.data.content;
-                        this.$parent.type = response.data.type;
+                this.api.get(this.$store.state.config.api, {
+                    browser: '',
+                    token: this.$route.params.keyword + ',' + this.form.password,
+                }).then(response => {
+                    if (response.status === 200) {
+                        this.$parent.content = response.content;
+                        this.$parent.type = response.type;
                         this.$parent.view = 'paste_view';
                     } else {
                         this.flag = false;
                         this.form.password = null;
                     }
-                }).catch(error => {
-                    alert(JSON.stringify(error) + '\n' + this.$t('lang.error.text'));
                 });
             }
         }

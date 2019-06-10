@@ -28,19 +28,16 @@ export const lang = {
         h2: 'Success!',
         p: [
             {
-                left: 'How to access this Paste ',
-                right: ':',
+                text: 'How to access this Paste <strong>{keyword}</strong> :',
             },
             {
-                button: 'Retrun',
+                button: 'Return',
             },
         ],
         ul: {
             li: [
                 {
-                    left: 'Enter its number in the navbar area.',
-                    mid: '',
-                    right: '',
+                    text: 'Enter <strong>Paste\'s number</strong> in the nav bar area.',
                 },
                 {
                     browser: 'Direct click to access: ',
@@ -52,9 +49,7 @@ export const lang = {
             ],
         },
         popover: {
-            left: 'Enter ',
-            mid: 'Paste\'s number',
-            right: ' here to access to it.',
+            text: 'Enter <strong>Paste\'s number</strong> here to access to it.',
         },
         badge: {
             copy: 'Copy',

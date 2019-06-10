@@ -30,7 +30,7 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 + 在查看别人的内容时，可以一键复制所有文本。如果查看的是阅后即焚的内容，那么在网页加载完成之前，实体数据就已经不存在了。
 
-性能方面，PasteMe 2.0 采用了喜闻乐见的前后端分离，由于历史原因，目前后端是 PHP + MySQL ，前端是 Vue + Bootstrap ，主站点 https://pasteme.cn 已开启了全站 CDN 和 gzip 压缩传输。
+性能方面，PasteMe 2.0 采用了喜闻乐见的前后端分离，由于历史原因，目前后端是 PHP + MySQL ，前端是 Vue + Bootstrap ，主站点 [pasteme.cn](https://pasteme.cn) 已开启了全站 CDN 和 gzip 压缩传输。
 
 下一步的计划是用 `golang` 重构后端之后采用 `Docker` 进行打包/发布。
 
@@ -42,7 +42,7 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 + 如果你要发给某人一些私密的信息，但是通过 QQ 、微信等聊天工具可能会被查水表，你可以将私密信息以阅后即焚形式上传至 `PasteMe` ，将产生的一次性链接分享给别人，别人查看一次之后这个链接就会失效。
 
-+ 阅后即焚的链接是可以自定义的，比如 https://pasteme.cn/Hello ，更多详情请查看 [帮助](#帮助)。
++ 阅后即焚的链接是可以自定义的，比如 [pasteme.cn/example](https://pasteme.cn/example) ，更多详情请查看 [帮助](#帮助)。
 
 ## 2.0 Feature
 
@@ -141,6 +141,7 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 | [@louyu666](https://github.com/louyu666) | 2.33 | 2019-04-18 |
 | [@oierwanhong](https://github.com/oierwanhong) | 9.99 | 2019-05-02 |
 | [@Albertliuzw](https://github.com/Albertliuzw) | 1.50 | 2019-05-17 |
+| [@EndangeredFish](https://github.com/EndangeredF1sh) | 9.90 | 2019-06-05 |
 
 #### 谢谢老板
 

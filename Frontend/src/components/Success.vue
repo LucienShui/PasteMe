@@ -6,11 +6,9 @@
                 <h2>
                     {{ $t('lang.success.h2') }}
                 </h2>
-                <p>
-                    {{ $t('lang.success.p[0].left') }}&nbsp;<b id="success_jumbotron_p_b">{{ $parent.keyword }}</b>&nbsp;{{ $t('lang.success.p[0].right') }}
-                </p>
+                <p v-html="$t('lang.success.p[0].text', { keyword: $parent.keyword })"></p>
                 <ul>
-                    <li>{{ $t('lang.success.ul.li[0].left') }}<strong>{{ $t('lang.success.ul.li[0].mid') }}</strong>{{ $t('lang.success.ul.li[0].right') }}&nbsp;<b-badge
+                    <li><a v-html="$t('lang.success.ul.li[0].text')"></a>&nbsp;<b-badge
                             pill class="badge-fixed"
                             href="#"
                             @mouseenter="popover_show = true"
@@ -49,9 +47,7 @@
                 :show.sync="popover_show"
                 target="nav_input"
                 placement="bottomright"
-        >
-            {{ $t('lang.success.popover.left') }}<strong>{{ $t('lang.success.popover.mid') }}</strong>{{ $t('lang.success.popover.right') }}
-        </b-popover>
+        ><a v-html="$t('lang.success.popover.text')"></a></b-popover>
         <b-popover
                 target="qr_code_link"
                 placement="auto"
