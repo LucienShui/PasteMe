@@ -37,9 +37,7 @@ export const lang = {
         ul: {
             li: [
                 {
-                    left: '在导航栏中输入',
-                    mid: '索引',
-                    right: '',
+                    text: '在导航栏中输入<strong>索引</strong>',
                 },
                 {
                     browser: '在浏览器中访问',
@@ -51,9 +49,7 @@ export const lang = {
             ],
         },
         popover: {
-            left: '在这里填入',
-            mid: '索引',
-            right: '即可查看相应的 Paste',
+            text: '在这里填入 <strong>索引</strong> 即可查看相应的 Paste',
         },
         badge: {
             copy: '复制链接',
