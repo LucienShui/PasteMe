@@ -7,15 +7,24 @@ module.exports = {
     outputDir: 'pasteme',
     productionSourceMap: false,
     configureWebpack: config => { // eslint-disable-line
+        let output = {
+            libraryExport: 'default',
+            jsonpFunction: 'jsonpFunction'
+        };
         if (process.env.NODE_ENV === 'production') {
             return {
                 plugins: [
                     new CompressionPlugin({
                         test: /\.js$|\.css/,
                         threshold: 0,
-                        deleteOriginalAssets: true,
+                        deleteOriginalAssets: true
                 })],
+                output
+            }
+        } else {
+            return {
+                output
             }
         }
-    },
+    }
 };

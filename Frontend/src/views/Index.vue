@@ -39,15 +39,13 @@
                         browser: '',
                         token: this.$route.params.keyword
                     }).then(response => {
-                        console.log(JSON.stringify(response));
-                        let code = response.status;
-                        if (code === 200) {
+                        if (response.status === 200) {
                             this.view = 'paste_view';
                             this.content = response.content;
                             this.type = response.type;
-                        } else if (code === 403) {
+                        } else if (response.status === 403) {
                             this.view = 'password_auth';
-                        } else if (code === 404 && this.$route.params.keyword.search('[a-zA-Z]{1}') !== -1) {
+                        } else if (response.status === 404 && this.$route.params.keyword.search('[a-zA-Z]{1}') !== -1) {
                             this.$store.commit('updateMode', {
                                 read_once: true,
                             });

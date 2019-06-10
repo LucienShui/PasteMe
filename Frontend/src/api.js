@@ -1,12 +1,3 @@
-/*
-@File    :   api.js
-@Contact :   lucien@lucien.ink
-@License :   (C)Copyright 2019, Lucien Shui
-
-@Modify Time      @Author    @Version    @Desciption
-------------      -------    --------    -----------
-2019-06-07 01:14  Lucien     1.0         None
-*/
 import axios from 'axios'
 import qs from 'qs'
 

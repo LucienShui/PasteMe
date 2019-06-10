@@ -1,12 +1,3 @@
-/*
-@File    :   i18n.js
-@Contact :   lucien@lucien.ink
-@License :   (C)Copyright 2019, Lucien Shui
-
-@Modify Time      @Author    @Version    @Desciption
-------------      -------    --------    -----------
-2019-05-31 23:48  Lucien     1.0         None
-*/
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 
@@ -26,24 +17,22 @@ const supportedLanguage = ['zh-CN', 'en'];
 function setI18nLanguage(lang) {
     i18n.locale = lang;
     document.querySelector('html').setAttribute('lang', lang);
-    return lang;
 }
 
 Vue.prototype.setI18n = function (lang) {
     if (i18n.locale !== lang) {
         if (supportedLanguage.includes(lang)) {
             if (!loadedLanguages.includes(lang)) {
-                return import(/* webpackChunkName: "[request]" */ `./assets/lang/${lang}`).then(messages => {
+                import(/* webpackChunkName: "lang-[request]" */ `./assets/lang/${lang}`).then(messages => {
                     i18n.setLocaleMessage(lang, messages);
                     loadedLanguages.push(lang);
-                    return setI18nLanguage(lang);
+                    setI18nLanguage(lang);
+                }).catch(error => {
+                    alert(JSON.stringify(error));
                 });
-            }
-            return Promise.resolve(setI18nLanguage(lang));
-        }
-        return Promise.reject(setI18nLanguage(supportedLanguage[0]));
+            } else setI18nLanguage(lang);
+        } else setI18nLanguage(supportedLanguage[0]);
     }
-    return Promise.resolve(lang);
 };
 
 export default i18n;
