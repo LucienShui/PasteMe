@@ -6,9 +6,7 @@
                 <h2>
                     {{ $t('lang.success.h2') }}
                 </h2>
-                <p>
-                    {{ $t('lang.success.p[0].left') }}&nbsp;<b id="success_jumbotron_p_b">{{ $parent.keyword }}</b>&nbsp;{{ $t('lang.success.p[0].right') }}
-                </p>
+                <p v-html="$t('lang.success.p[0].text', { keyword: $parent.keyword })"></p>
                 <ul>
                     <li>{{ $t('lang.success.ul.li[0].left') }}<strong>{{ $t('lang.success.ul.li[0].mid') }}</strong>{{ $t('lang.success.ul.li[0].right') }}&nbsp;<b-badge
                             pill class="badge-fixed"

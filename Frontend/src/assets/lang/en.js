@@ -28,17 +28,16 @@ export const lang = {
         h2: 'Success!',
         p: [
             {
-                left: 'How to access this Paste ',
-                right: ':',
+                text: 'How to access this Paste <strong>{keyword}</strong> :',
             },
             {
-                button: 'Retrun',
+                button: 'Return',
             },
         ],
         ul: {
             li: [
                 {
-                    left: 'Enter its number in the navbar area.',
+                    left: 'Enter its number in the nav bar area.',
                     mid: '',
                     right: '',
                 },
