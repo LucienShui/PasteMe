@@ -47,8 +47,7 @@
                 :show.sync="popover_show"
                 target="nav_input"
                 placement="bottomright"
-                v-html="$t('lang.success.popover.text')"
-        ></b-popover>
+        ><a v-html="$t('lang.success.popover.text')"></a></b-popover>
         <b-popover
                 target="qr_code_link"
                 placement="auto"
