@@ -11,43 +11,47 @@
 package main
 
 import (
-	"github.com/LucienShui/PasteMe/GoBackend/data"
-	"github.com/LucienShui/PasteMe/GoBackend/mysql"
-	"github.com/LucienShui/PasteMe/GoBackend/util"
+	"./data"
+	"./util"
+	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	mysql.Init()
+	err := data.Init()
+	if err != nil {
+		panic(err)
+	}
 	server := gin.Default()
 	server.GET("", doGet)
 	server.POST("", doPost)
-	err := server.Run("0.0.0.0:8080")
+	err = server.Run("0.0.0.0:8080")
 	if err != nil {
-		// TODO
+		panic(err)
 	}
 }
 
 func doGet(requests *gin.Context) {
 	token := requests.DefaultQuery("token", "")
 	if token == "" { // empty request
-		requests.JSON(501, gin.H {
+		requests.JSON(501, gin.H{
 			"message": "Wrong params",
 		})
 	} else {
 		key, password := util.Parse(token)
-		object := data.Get(key, password)
+		object, err := data.Get(key, password)
 		// TODO
-		if object { // key and password (if exist) is right
+		fmt.Println(object)
+		if err != nil { // key and password (if exist) is right
 			browser := requests.DefaultQuery("browser", "")
 			if browser == "" { // API request
-				requests.JSON(200, gin.H {
-					"key": key,
+				requests.JSON(200, gin.H{
+					"key":      key,
 					"password": password,
 					// TODO
 				})
 			} else { // Browser request
-				requests.JSON(200, gin.H {
+				requests.JSON(200, gin.H{
 					// TODO
 				})
 			}

@@ -11,12 +11,12 @@ $sqlSet = [
     )",
     "INSERT INTO `id` VALUES ('id', 100)",
     "CREATE TABLE IF NOT EXISTS `temp` (
-            `key` VARCHAR(16) PRIMARY KEY,
-            `text` MEDIUMTEXT,
-            `type` VARCHAR (16),
-            `passwd` VARCHAR (37),
-            `visble` BOOLEAN
-        )",
+        `key` VARCHAR(16) PRIMARY KEY,
+        `text` MEDIUMTEXT,
+        `type` VARCHAR (16),
+        `passwd` VARCHAR (37),
+        `visble` BOOLEAN
+    )",
 ];
 foreach ($sqlSet as $sql) if (!$connection->query($sql)) echo 'Error: ' . mysqli_error($connection);
 for ($i = 0; $i < 10; $i++) {
