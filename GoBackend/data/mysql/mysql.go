@@ -72,6 +72,38 @@ func Query(table string, key string) (string, string, string, bool, error) {
 	return content, lang, password, visible == "1", err
 }
 
+func insertPermanent(content string, lang string, password string, visible bool) (int64, error) {
+	result, err := db.Exec("INSERT INTO `permanent` (`content`, `lang`, `password`, `visible`) VALUES (?, ?, ?, ?, ?)", content, lang, password, visible)
+	if err != nil {
+		return -1, err
+	}
+	return result.LastInsertId()
+}
+
+func insertTemporary(key string, content string, lang string, password string, visible bool) error {
+	result, err := db.Exec("INSERT INTO `temporary` (`key`, `content`, `lang`, `password`, `visible`) VALUES (?, ?, ?, ?, ?, ?)", key, content, lang, password, visible)
+	if err != nil {
+		return err
+	}
+	count, err := result.RowsAffected()
+	if err != nil {
+		return err
+	}
+	if count == 0 {
+		return errors.New("affect 0 row")
+	}
+}
+
+func Insert(key string, content string, lang string, password string, visible bool) (string, error) {
+	if key == "read_once" {
+
+	} else if key == "" {
+
+	} else {
+
+	}
+}
+
 func Erase(key string) error {
 	result, err := db.Exec("DELETE FROM `temporary` WHERE `key` = ?", key)
 	if err != nil {

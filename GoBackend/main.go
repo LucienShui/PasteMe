@@ -45,13 +45,13 @@ func doGet(requests *gin.Context) {
 		if err != nil { // key and password (if exist) is right
 			browser := requests.DefaultQuery("browser", "")
 			if browser == "" { // API request
-				requests.JSON(200, gin.H{
+				requests.JSON(200, gin.H {
 					"key":      key,
 					"password": password,
 					// TODO
 				})
 			} else { // Browser request
-				requests.JSON(200, gin.H{
+				requests.JSON(200, gin.H {
 					// TODO
 				})
 			}

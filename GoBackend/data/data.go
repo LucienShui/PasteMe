@@ -11,6 +11,7 @@
 package data
 
 import (
+	"../util"
 	"./mysql"
 )
 
@@ -33,8 +34,19 @@ func Init() error {
 }
 
 func Get(key string, password string) (Paste, error) {
-	// TODO
-	return Paste{}, nil
+	table, err := util.ValidChecker(key)
+	paste := Paste{}
+	if err != nil {
+		return paste, err
+	}
+	err = paste.get(table, key, password)
+	if err != nil {
+		return paste, err
+	}
+	if table == "permanent" {
+		err = erase(key)
+	}
+	return paste, err
 }
 
 func Set(key string, lang string, password string, content string) error {
@@ -44,25 +56,6 @@ func Set(key string, lang string, password string, content string) error {
 
 func erase(key string) error {
 	return mysql.Erase(key)
-}
-
-func GetPermanent(key string, password string) (Paste, error) {
-	paste := Paste{}
-	err := paste.get("permanent", key, password)
-	if err != nil {
-		return Paste{}, err
-	}
-	return paste, err
-}
-
-func GetTemporary(key string, password string) (Paste, error) {
-	paste := Paste{}
-	err := paste.get("temporary", key, password)
-	if err != nil {
-		return Paste{}, err
-	}
-	err = erase(key)
-	return paste, err
 }
 
 func SetPermanent(lang string, password string, content string) {

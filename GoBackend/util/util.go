@@ -11,6 +11,7 @@ package util
 
 import (
 	"errors"
+	"math/rand"
 	"regexp"
 	"strings"
 )
@@ -46,4 +47,12 @@ func ValidChecker(key string) (string, error) {
 		return "permanent", nil
 	}
 	return "temporary", nil
+}
+
+func generator() (string, error) {
+	// TODO
+}
+
+func Generator() (string, error) {
+	// TODO
 }
