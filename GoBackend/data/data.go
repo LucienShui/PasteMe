@@ -13,6 +13,7 @@ package data
 import (
 	"../util"
 	"./mysql"
+	"strconv"
 )
 
 type Paste struct {
@@ -49,19 +50,21 @@ func Get(key string, password string) (Paste, error) {
 	return paste, err
 }
 
-func Set(key string, lang string, password string, content string) error {
-	// TODO
-	return nil
+// should guarantee the correct key type
+func Set(key string, lang string, password string, content string, visible bool) (string, error) {
+	if key == "read_once" {
+		// TODO
+	} else if key == "" {
+		return func (key int64, err error) (string, error) {
+			return strconv.FormatInt(key, 10), err
+		} (mysql.InsertPermanent(content, lang, password, visible))
+	} else {
+		err := mysql.InsertTemporary(key, content, lang, password, visible)
+		return key, err
+	}
+	return "", nil
 }
 
 func erase(key string) error {
 	return mysql.Erase(key)
-}
-
-func SetPermanent(lang string, password string, content string) {
-	// TODO
-}
-
-func SetTemporary(key string, lang string, password string, content string) {
-	// TODO
 }

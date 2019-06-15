@@ -1,6 +1,7 @@
-package util
+package tests
 
 import (
+	"../util"
 	"fmt"
 	"testing"
 )
@@ -18,14 +19,13 @@ func TestValidChecker(t *testing.T) {
 		{"a", ""},
 		{"asdf", "temporary"},
 		{"asd", "temporary"},
-		{"asdfqwerasdf", "temporary"},
+		{"asdfqwerasdf", ""},
 		{"1000000000", ""},
 	}
 	for i, TestCase := range TestCases {
-		output, err := ValidChecker(TestCase.input)
-		fmt.Printf("Test %d | input: %s, expected: %s, output: %s\n", i, TestCase.input, TestCase.expected, output)
+		output, err := util.ValidChecker(TestCase.input)
 		if output != TestCase.expected {
-			fmt.Printf("Test %d | input: %s, expected: %s, output: %s\n", i, TestCase.input, TestCase.expected, output)
+			t.Errorf("Test %d | input: %s, expected: %s, output: %s\n", i, TestCase.input, TestCase.expected, output)
 		}
 		if err != nil {
 			fmt.Printf("[%s]\n", err)

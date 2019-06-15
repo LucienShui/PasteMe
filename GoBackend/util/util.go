@@ -16,6 +16,8 @@ import (
 	"strings"
 )
 
+var table = "qwertyuiopasdfghjklzxcvbnm0123456789"
+
 func Parse(token string) (string, string) {
 	buf := strings.Split(token, ",")
 	if len(buf) == 1 {
@@ -50,9 +52,14 @@ func ValidChecker(key string) (string, error) {
 }
 
 func generator() (string, error) {
-	// TODO
+	for i := 0; i < 8; i++ {
+		rand.Int()
+		// TODO
+	}
+	return "", nil
 }
 
 func Generator() (string, error) {
 	// TODO
+	return "", nil
 }

@@ -8,19 +8,21 @@
 2019-06-13 15:21  Lucien     1.0         Init
 2019-06-13 21:54  Lucien     1.1         Implement
 */
-package mysql
+package tests
 
 import (
+	"../data/mysql"
 	"testing"
 )
 
 func TestCreateTable(t *testing.T) {
-	err := Init()
+	err := mysql.Init()
 	if err != nil {
 		t.Error("Error when connect to mysql", err)
 	}
-	err = Create()
+	err = mysql.Create()
 	if err != nil {
 		t.Error("Error when create table: ", err)
 	}
 }
+
