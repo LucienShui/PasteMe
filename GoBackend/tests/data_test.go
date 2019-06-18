@@ -5,36 +5,33 @@
 
 @Modify Time      @Author    @Version    @Description
 ------------      -------    --------    -----------
-2019-06-16 03:18  Lucien     1.0         Init
+2019-06-18 14:51  Lucien     1.0         Init
 */
 package tests
 
 import (
 	"../data"
+	"encoding/json"
 	"fmt"
 	"testing"
 )
 
 func TestInsert(t *testing.T) {
-	err := data.Init()
+	key, err := data.Insert("", "Hello World!", "plain", "")
 	if err != nil {
-		t.Error("Error when connect to mysql", err)
+		t.Error(err)
 	}
-	var TestCases = []struct {
-		key string
-		expected string
-	}{
-		{"", "1"},
-		{"asd", "asd"},
-		{"", "2"},
+	t.Log(key)
+}
+
+func TestQuery(t *testing.T) {
+	object, err := data.Query("100")
+	if err != nil {
+		t.Error(err)
 	}
-	for i, TestCase := range TestCases {
-		output, err := data.Set(TestCase.key, "", "", "", true)
-		if output != TestCase.expected {
-			t.Errorf("Test %d | input: %s, expected: %s, output: %s\n", i, TestCase.key, TestCase.expected, output)
-		}
-		if err != nil {
-			fmt.Printf("[ %s ]\n", err)
-		}
+	content, err := json.Marshal(object)
+	if err != nil {
+		t.Error(err)
 	}
+	fmt.Println(string(content))
 }
