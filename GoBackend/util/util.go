@@ -13,8 +13,11 @@ import (
 	"errors"
 	"math/rand"
 	"regexp"
+	"strconv"
 	"strings"
 )
+
+var table = "qwertyuiopasdfghjklzxcvbnm0123456789"
 
 func Parse(token string) (string, string) {
 	buf := strings.Split(token, ",")
@@ -50,9 +53,27 @@ func ValidChecker(key string) (string, error) {
 }
 
 func generator() (string, error) {
-	// TODO
+	for i := 0; i < 8; i++ {
+		rand.Int()
+		// TODO
+	}
+	return "", nil
 }
 
 func Generator() (string, error) {
 	// TODO
+	return "", nil
+}
+
+func Uint2string(value uint64) string {
+	return strconv.FormatUint(value, 10)
+}
+
+func String2uint(value string) uint64 {
+	ret, err := strconv.ParseUint(value, 10, 64)
+	if err != nil {
+		// TODO
+		return 0
+	}
+	return ret
 }
