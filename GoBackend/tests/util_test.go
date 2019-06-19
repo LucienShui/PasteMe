@@ -1,8 +1,7 @@
 package tests
 
 import (
-	"../util"
-	"fmt"
+	"github.com/LucienShui/PasteMe/GoBackend/util"
 	"testing"
 )
 
@@ -28,7 +27,7 @@ func TestValidChecker(t *testing.T) {
 			t.Errorf("Test %d | input: %s, expected: %s, output: %s\n", i, TestCase.input, TestCase.expected, output)
 		}
 		if err != nil {
-			fmt.Printf("[%s]\n", err)
+			t.Logf("[%s]\n", err)
 		}
 	}
 }

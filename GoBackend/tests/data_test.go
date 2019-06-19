@@ -10,8 +10,8 @@
 package tests
 
 import (
-	"../data"
 	"encoding/json"
+	"github.com/LucienShui/PasteMe/GoBackend/data"
 	"testing"
 )
 

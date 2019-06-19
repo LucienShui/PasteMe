@@ -10,9 +10,9 @@
 package data
 
 import (
-	"../util"
-	"./permanent"
 	"fmt"
+	"github.com/LucienShui/PasteMe/GoBackend/data/permanent"
+	"github.com/LucienShui/PasteMe/GoBackend/util"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"time"
@@ -54,7 +54,7 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	db = db.Debug() // DEBUG
+	// db = db.Debug() // DEBUG
 	if !db.HasTable(&permanent.Permanent{}) {
 		if err := db.Set(
 			"gorm:table_options",

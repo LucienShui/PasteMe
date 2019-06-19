@@ -1,0 +1,91 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "qlEzrgKgIkh7y0ePm9BNo1cNdXo=",
+			"path": "github.com/gin-contrib/sse",
+			"revision": "54d8467d122d380a14768b6b4e5cd7ca4755938f",
+			"revisionTime": "2019-06-02T15:02:53Z"
+		},
+		{
+			"checksumSHA1": "x9SLAMNta3AwbyrY/x1IPFBujy8=",
+			"path": "github.com/gin-gonic/gin",
+			"revision": "73c4633943d596bdbeaa7d02cebdd4bd0c4f4630",
+			"revisionTime": "2019-06-03T14:52:33Z"
+		},
+		{
+			"checksumSHA1": "SohLqPWFKw8qKTCx4tMpG9bSDPI=",
+			"path": "github.com/gin-gonic/gin/binding",
+			"revision": "73c4633943d596bdbeaa7d02cebdd4bd0c4f4630",
+			"revisionTime": "2019-06-03T14:52:33Z"
+		},
+		{
+			"checksumSHA1": "rST0S8cuVbM57VmJhWXhKNUkKTc=",
+			"path": "github.com/gin-gonic/gin/internal/json",
+			"revision": "73c4633943d596bdbeaa7d02cebdd4bd0c4f4630",
+			"revisionTime": "2019-06-03T14:52:33Z"
+		},
+		{
+			"checksumSHA1": "4XLWNQHHCyHJCCROC4UXSn7U1OM=",
+			"path": "github.com/gin-gonic/gin/render",
+			"revision": "73c4633943d596bdbeaa7d02cebdd4bd0c4f4630",
+			"revisionTime": "2019-06-03T14:52:33Z"
+		},
+		{
+			"checksumSHA1": "zGYOyUB58GVhLkrwhG1ut66SPec=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "877a9775f06853f611fb2d4e817d92479242d1cd",
+			"revisionTime": "2019-05-10T10:23:35Z"
+		},
+		{
+			"checksumSHA1": "CGj8VcI/CpzxaNqlqpEVM7qElD4=",
+			"path": "github.com/golang/protobuf/proto",
+			"revision": "b285ee9cfc6c881bb20c0d8dc73370ea9b9ec90f",
+			"revisionTime": "2019-05-17T06:12:10Z"
+		},
+		{
+			"checksumSHA1": "R9ZZGsEMP5q1LHSHjpTaYgHUg6w=",
+			"path": "github.com/jinzhu/gorm",
+			"revision": "01b66011427614f01e84a473b0303c917179f2a0",
+			"revisionTime": "2019-06-13T06:42:55Z"
+		},
+		{
+			"checksumSHA1": "eECxSkwh0WmhLwaxHfkvcLOWS08=",
+			"path": "github.com/jinzhu/gorm/dialects/mysql",
+			"revision": "01b66011427614f01e84a473b0303c917179f2a0",
+			"revisionTime": "2019-06-13T06:42:55Z"
+		},
+		{
+			"checksumSHA1": "iqeSAF7imnVsW+iqLqf6kkYn1VU=",
+			"path": "github.com/jinzhu/inflection",
+			"revision": "f5c5f50e6090ae76a29240b61ae2a90dd810112e",
+			"revisionTime": "2019-06-03T04:28:36Z"
+		},
+		{
+			"checksumSHA1": "74gCzvJiE6bXX3i4vIVCYhffDHc=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "1311e847b0cb909da63b5fecfb5370aa66236465",
+			"revisionTime": "2019-05-22T01:25:13Z"
+		},
+		{
+			"checksumSHA1": "DH7n7umhN4yjK/X5HmyAWfYVJFA=",
+			"path": "github.com/ugorji/go/codec",
+			"revision": "0e7b41a4180a29ac92dd9a3621f3fe776a19b6e1",
+			"revisionTime": "2019-06-10T21:01:06Z"
+		},
+		{
+			"checksumSHA1": "P/k5ZGf0lEBgpKgkwy++F7K1PSg=",
+			"path": "gopkg.in/go-playground/validator.v8",
+			"revision": "5f1438d3fca68893a817e4a66806cea46a9e4ebf",
+			"revisionTime": "2017-07-30T05:02:35Z"
+		},
+		{
+			"checksumSHA1": "QqDq2x8XOU7IoOR98Cx1eiV5QY8=",
+			"path": "gopkg.in/yaml.v2",
+			"revision": "51d6538a90f86fe93ac480b35f37b2be17fef232",
+			"revisionTime": "2018-11-15T11:05:04Z"
+		}
+	],
+	"rootPath": "github.com/LucienShui/PasteMe/GoBackend"
+}

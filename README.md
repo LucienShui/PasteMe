@@ -120,7 +120,7 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 | ID | 金额 | 时间 |
 |--|--|--|
-| Mrs Shui | 1.98 | 2018-08-24 |
+| [Irene Liu](https://github.com/ireneliuqaq) | 1.98 | 2018-08-24 |
 | \*晨晨 | 0.99 | 2018-08-28 |
 | \*绍延 | 0.99 | 2018-09-04 |
 | \*鱼 | 0.99 | 2018-09-04 |
@@ -142,6 +142,8 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 | [@oierwanhong](https://github.com/oierwanhong) | 9.99 | 2019-05-02 |
 | [@Albertliuzw](https://github.com/Albertliuzw) | 1.50 | 2019-05-17 |
 | [@EndangeredFish](https://github.com/EndangeredF1sh) | 9.90 | 2019-06-05 |
+| \*舟 | 1.00 | 2019-06-11 |
+| [@异或和](https://github.com/XorSum) | 6.60 | 2019-06-17 |
 
 #### 谢谢老板
 

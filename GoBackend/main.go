@@ -12,8 +12,8 @@
 package main
 
 import (
-	"./data"
-	"./util"
+	"github.com/LucienShui/PasteMe/GoBackend/data"
+	"github.com/LucienShui/PasteMe/GoBackend/util"
 	"github.com/gin-gonic/gin"
 )
 
