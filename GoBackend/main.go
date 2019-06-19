@@ -7,26 +7,21 @@
 ------------      -------    --------    -----------
 2019-06-11 01:27  Lucien     1.0         Init
 2019-06-13 01:59  Lucien     1.1         Split function, add mysql.Init()
+2019-06-19 19:06  Irene      1.2         Fix package
 */
 package main
 
 import (
 	"./data"
 	"./util"
-	"fmt"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	err := data.Init()
-	if err != nil {
-		panic(err)
-	}
 	server := gin.Default()
 	server.GET("", doGet)
 	server.POST("", doPost)
-	err = server.Run("0.0.0.0:8080")
-	if err != nil {
+	if err := server.Run("0.0.0.0:8080"); err != nil {
 		panic(err)
 	}
 }
@@ -39,10 +34,11 @@ func doGet(requests *gin.Context) {
 		})
 	} else {
 		key, password := util.Parse(token)
-		object, err := data.Get(key, password)
-		// TODO
-		fmt.Println(object)
-		if err != nil { // key and password (if exist) is right
+		object, err := data.Query(key)
+		if err != nil {
+			// TODO
+		}
+		if object.Password == password { // key and password (if exist) is right
 			browser := requests.DefaultQuery("browser", "")
 			if browser == "" { // API request
 				requests.JSON(200, gin.H {

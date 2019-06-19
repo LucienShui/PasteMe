@@ -1,6 +1,5 @@
----
 kind: pipeline
-name: frontend_latest_lint
+name: Frontend latest lint
 
 steps:
 - name: lint
@@ -11,8 +10,9 @@ steps:
   - npm run lint
 
 ---
+
 kind: pipeline
-name: frontend_version_lint
+name: Frontend version lint
 
 steps:
 - name: lint
@@ -23,8 +23,9 @@ steps:
   - npm run lint
 
 ---
+
 kind: pipeline
-name: frontend_latest_build
+name: Frontend latest build
 
 steps:
 - name: build
@@ -35,8 +36,9 @@ steps:
   - npm run build
 
 ---
+
 kind: pipeline
-name: frontend_version_build
+name: Frontend version build
 
 steps:
 - name: build
@@ -45,3 +47,45 @@ steps:
   - cd Frontend
   - npm install
   - npm run build
+
+---
+
+kind: pipeline
+name: GoBackend latest test
+
+services:
+- name: mysql
+  image: mysql:latest
+  ports:
+  - 3306
+  environment:
+    MYSQL_USER: username
+    MYSQL_PASSWORD: password
+    MYSQL_ROOT_PASSWORD: password
+    MYSQL_DATABASE: pasteme
+
+steps:
+- name: test
+  image: golang:latest
+  commands:
+  - sleep 15
+  - cd GoBackend
+  - go get -u github.com/gin-gonic/gin
+  - go get -u github.com/jinzhu/gorm
+  - go get -u github.com/go-sql-driver/mysql
+  - go test ./tests
+
+---
+
+kind: pipeline
+name: gobackend_latest build
+
+steps:
+- name: build
+  image: golang:latest
+  commands:
+  - cd GoBackend
+  - go get -u github.com/gin-gonic/gin
+  - go get -u github.com/jinzhu/gorm
+  - go get -u github.com/go-sql-driver/mysql
+  - go build -o pasteme_server
