@@ -52,6 +52,9 @@ steps:
 
 kind: pipeline
 name: GoBackend latest test
+workspace:
+    base: /go
+    path: src/github.com/LucienShui/PasteMe
 
 services:
 - name: mysql
@@ -76,13 +79,13 @@ steps:
 
 kind: pipeline
 name: gobackend_latest build
+workspace:
+    base: /go
+    path: src/github.com/LucienShui/PasteMe
 
 steps:
 - name: build
   image: golang:latest
   commands:
   - cd GoBackend
-  - go get -u github.com/gin-gonic/gin
-  - go get -u github.com/jinzhu/gorm
-  - go get -u github.com/go-sql-driver/mysql
   - go build -o pasteme_server
