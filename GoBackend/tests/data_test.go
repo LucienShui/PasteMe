@@ -16,8 +16,11 @@ import (
 	"testing"
 )
 
+var key string
+
 func TestInsert(t *testing.T) {
-	key, err := data.Insert("", "Hello World!", "plain", "")
+	var err error
+	key, err = data.Insert("", "Hello World!", "plain", "")
 	if err != nil {
 		t.Error(err)
 	}
@@ -25,7 +28,7 @@ func TestInsert(t *testing.T) {
 }
 
 func TestQuery(t *testing.T) {
-	object, err := data.Query("100")
+	object, err := data.Query(key)
 	if err != nil {
 		t.Error(err)
 	}

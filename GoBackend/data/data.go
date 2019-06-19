@@ -56,7 +56,10 @@ func init() {
 		panic(err)
 	}
 	if !db.HasTable(&permanent.Permanent{}) {
-		if err := db.Debug().Set("gorm:table_options", "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=200").CreateTable(&permanent.Permanent{}).Error; err != nil {
+		if err := db.Set(
+			"gorm:table_options",
+			"ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=100",
+			).CreateTable(&permanent.Permanent{}).Error; err != nil {
 			panic(err)
 		}
 	}

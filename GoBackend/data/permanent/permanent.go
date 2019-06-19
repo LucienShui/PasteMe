@@ -39,7 +39,7 @@ func Insert(db *gorm.DB, lang string, content string, password string) (uint64, 
 
 func Query(db *gorm.DB, key uint64) (Permanent, error) {
 	permanent := Permanent{}
-	err := db.Debug().Where("key = ?", key).Find(&permanent).Error
+	err := db.Where("`key` = ?", key).Find(&permanent).Error
 	return permanent, err
 }
 
