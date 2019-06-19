@@ -13,8 +13,8 @@ import (
 	"fmt"
 	"github.com/LucienShui/PasteMe/GoBackend/data/permanent"
 	"github.com/LucienShui/PasteMe/GoBackend/util"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"time"
 )
 
