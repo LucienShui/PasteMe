@@ -1,4 +1,3 @@
----
 kind: pipeline
 name: frontend_latest_lint
 
@@ -11,6 +10,7 @@ steps:
   - npm run lint
 
 ---
+
 kind: pipeline
 name: frontend_version_lint
 
@@ -23,6 +23,7 @@ steps:
   - npm run lint
 
 ---
+
 kind: pipeline
 name: frontend_latest_build
 
@@ -35,6 +36,7 @@ steps:
   - npm run build
 
 ---
+
 kind: pipeline
 name: frontend_version_build
 
@@ -45,3 +47,16 @@ steps:
   - cd Frontend
   - npm install
   - npm run build
+
+---
+
+kind: pipeline
+name: gobackend_latest_build
+
+steps:
+- name: build
+  image: golang:latest
+  commands:
+  - cd GoBackend
+  - go test
+  - go build
