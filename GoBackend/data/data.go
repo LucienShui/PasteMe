@@ -22,7 +22,7 @@ const (
 	username = "username"
 	password = "password"
 	network  = "tcp"
-	server   = "lucien.local"
+	server   = "mysql"
 	port     = 3306
 	database = "pasteme"
 )
