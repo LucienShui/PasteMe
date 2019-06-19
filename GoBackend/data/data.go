@@ -15,8 +15,8 @@ import (
 	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"time"
 	"strconv"
+	"time"
 )
 
 const (
@@ -56,7 +56,7 @@ func init() {
 		panic(err)
 	}
 	if !db.HasTable(&permanent.Permanent{}) {
-		if err := db.Debug().Set("gorm:table_options", "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=200").CreateTable(&Permanent{}).Error; err != nil {
+		if err := db.Debug().Set("gorm:table_options", "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT=200").CreateTable(&permanent.Permanent{}).Error; err != nil {
 			panic(err)
 		}
 	}
@@ -67,7 +67,13 @@ func Insert(key string, lang string, content string, password string) (string, e
 	if key == "read_once" {
 		// TODO
 	} else if key == "" { // permanent
-		if key, err = permanent.Insert(db, lang, content, password); err != nil {
+		if key, err = func() (string, error) {
+			key, err := permanent.Insert(db, lang, content, password)
+			if err != nil {
+				return "", err
+			}
+			return strconv.FormatUint(key, 10), nil
+		}(); err != nil {
 			return "", err
 		}
 	} else { // temporary
@@ -78,22 +84,27 @@ func Insert(key string, lang string, content string, password string) (string, e
 
 func Query(key string) (Paste, error) {
 	table, err := util.ValidChecker(key)
+	paste := Paste{}
 	if err != nil {
-		return Paste{}, err
+		return paste, err
 	}
 	if table == "permanent" {
 		buf, err := strconv.ParseUint(key, 10, 64)
 		if err != nil {
-			return Paste{}, err
+			return paste, err
 		}
 		object, err := permanent.Query(db, buf)
 		if err != nil {
-			return Paste{}, err
+			return paste, err
 		}
 		return Paste{
-			Key: string(object.Key),
+			Key: util.Uint2string(object.Key),
+			Lang: object.Lang,
+			Content: object.Content,
+
 		}, err
 	} else { // temporary
 		// TODO
 	}
+	return paste, err
 }

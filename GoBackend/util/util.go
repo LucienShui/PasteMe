@@ -13,6 +13,7 @@ import (
 	"errors"
 	"math/rand"
 	"regexp"
+	"strconv"
 	"strings"
 )
 
@@ -62,4 +63,17 @@ func generator() (string, error) {
 func Generator() (string, error) {
 	// TODO
 	return "", nil
+}
+
+func Uint2string(value uint64) string {
+	return strconv.FormatUint(value, 10)
+}
+
+func String2uint(value string) uint64 {
+	ret, err := strconv.ParseUint(value, 10, 64)
+	if err != nil {
+		// TODO
+		return 0
+	}
+	return ret
 }
