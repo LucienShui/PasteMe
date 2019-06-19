@@ -12,7 +12,6 @@ package tests
 import (
 	"../data"
 	"encoding/json"
-	"fmt"
 	"testing"
 )
 
@@ -24,10 +23,10 @@ func TestInsert(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	t.Log(key)
 }
 
 func TestQuery(t *testing.T) {
+	t.Log(key)
 	object, err := data.Query(key)
 	if err != nil {
 		t.Error(err)
@@ -36,5 +35,12 @@ func TestQuery(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	fmt.Println(string(content))
+	t.Log(string(content))
+}
+
+func TestErase(t *testing.T) {
+	err := data.Delete(key)
+	if err != nil {
+		t.Error(err)
+	}
 }

@@ -15,7 +15,6 @@ import (
 	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"strconv"
 	"time"
 )
 
@@ -44,7 +43,7 @@ type Paste struct {
 	Content  string `json:"content"`
 	Password string `json:"password"`
 	CreateAt time.Time `json:"create_at"`
-	DeleteAt time.Time `json:"delete_at"`
+	DeleteAt *time.Time `json:"delete_at"`
 }
 
 var db *gorm.DB
@@ -55,6 +54,7 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
+	db = db.Debug() // DEBUG
 	if !db.HasTable(&permanent.Permanent{}) {
 		if err := db.Set(
 			"gorm:table_options",
@@ -75,7 +75,7 @@ func Insert(key string, lang string, content string, password string) (string, e
 			if err != nil {
 				return "", err
 			}
-			return strconv.FormatUint(key, 10), nil
+			return util.Uint2string(key), nil
 		}(); err != nil {
 			return "", err
 		}
@@ -92,11 +92,7 @@ func Query(key string) (Paste, error) {
 		return paste, err
 	}
 	if table == "permanent" {
-		buf, err := strconv.ParseUint(key, 10, 64)
-		if err != nil {
-			return paste, err
-		}
-		object, err := permanent.Query(db, buf)
+		object, err := permanent.Query(db, util.String2uint(key))
 		if err != nil {
 			return paste, err
 		}
@@ -104,10 +100,24 @@ func Query(key string) (Paste, error) {
 			Key: util.Uint2string(object.Key),
 			Lang: object.Lang,
 			Content: object.Content,
-
-		}, err
+			Password: object.Password,
+			CreateAt: object.CreatedAt,
+			DeleteAt: object.DeletedAt}, err
 	} else { // temporary
 		// TODO
 	}
 	return paste, err
+}
+
+func Delete(key string) error {
+	table, err := util.ValidChecker(key)
+	if err != nil {
+		return err
+	}
+	if table == "permanent" {
+		return permanent.Delete(db, util.String2uint(key))
+	} else { // temporary
+		// TODO
+	}
+	return err
 }
