@@ -36,11 +36,12 @@ func doGet(requests *gin.Context) {
 		key, password := util.Parse(token)
 		object, err := data.Query(key)
 		if err != nil {
+			panic(err)
 			// TODO
 		}
 		if object.Password == password { // key and password (if exist) is right
-			browser := requests.DefaultQuery("browser", "")
-			if browser == "" { // API request
+			browser := requests.DefaultQuery("browser", "empty")
+			if browser == "empty" { // API request
 				requests.JSON(200, gin.H {
 					"key":      key,
 					"password": password,
@@ -48,7 +49,8 @@ func doGet(requests *gin.Context) {
 				})
 			} else { // Browser request
 				requests.JSON(200, gin.H {
-					// TODO
+					"content": 	object.Content,
+					"lang": 	object.Lang,
 				})
 			}
 		} else { // key not found or password wrong
@@ -58,5 +60,16 @@ func doGet(requests *gin.Context) {
 }
 
 func doPost(requests *gin.Context) {
-	// TODO
+	key := requests.DefaultQuery("key", "")
+	lang := requests.Query("lang")
+	password := requests.DefaultQuery("password", "")
+	content := requests.Query("content")
+	key, err := data.Insert(key, lang, content, password)
+	if err != nil {
+		panic(err)
+		// TODO
+	}
+	requests.JSON(200, gin.H {
+		"key": key,
+	})
 }

@@ -15,7 +15,6 @@ import (
 	"github.com/LucienShui/PasteMe/GoBackend/util"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
-	"time"
 )
 
 const (
@@ -42,8 +41,6 @@ type Paste struct {
 	Lang     string `json:"lang"`
 	Content  string `json:"content"`
 	Password string `json:"password"`
-	CreateAt time.Time `json:"create_at"`
-	DeleteAt *time.Time `json:"delete_at"`
 }
 
 var db *gorm.DB
@@ -100,9 +97,7 @@ func Query(key string) (Paste, error) {
 			Key: util.Uint2string(object.Key),
 			Lang: object.Lang,
 			Content: object.Content,
-			Password: object.Password,
-			CreateAt: object.CreatedAt,
-			DeleteAt: object.DeletedAt}, err
+			Password: object.Password}, err
 	} else { // temporary
 		// TODO
 	}
