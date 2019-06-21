@@ -18,7 +18,7 @@ var key string
 
 func TestInsert(t *testing.T) {
 	var err error
-	key, err = Insert("", "plain", "<h1>Hello World!</h1>", "")
+	key, err = Insert(Paste{"", "plain", "<h1>Hello World!</h1>", ""})
 	if err != nil {
 		t.Error(err)
 	}

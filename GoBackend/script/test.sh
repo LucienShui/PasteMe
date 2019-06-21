@@ -14,3 +14,5 @@ for each in ${TEST_CASE}; do
         exit 1
     fi
 done
+
+echo "All test done"

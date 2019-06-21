@@ -1,6 +1,16 @@
+/*
+@File: server.go
+@Contact: lucien@lucien.ink
+@Licence: (C)Copyright 2019 Lucien Shui
+
+@Modify Time      @Author    @Version    @Description
+------------      -------    --------    -----------
+2019-06-21 08:37  Lucien     1.0         Init
+*/
 package server
 
 import (
+	"fmt"
 	"github.com/LucienShui/PasteMe/GoBackend/data"
 	"github.com/LucienShui/PasteMe/GoBackend/util"
 	"github.com/gin-gonic/gin"
@@ -11,14 +21,31 @@ var router *gin.Engine
 
 func init() {
 	router = gin.Default()
-	router.GET("", get)
-	router.POST("", post)
+	router.Use(cors)
+	router.GET("/", get)
+	router.POST("/", post)
 }
 
-func Run() {
-	if err := router.Run("0.0.0.0:8080"); err != nil {
+func Run(address string, port uint16) {
+	if err := router.Run(fmt.Sprintf("%s:%d", address, port)); err != nil {
 		panic(err)
 	}
+}
+
+func cors(c *gin.Context) {
+	method := c.Request.Method
+
+	c.Header("Access-Control-Allow-Origin", "*")
+	c.Header("Access-Control-Allow-Headers", "Content-Type,AccessToken,X-CSRF-Token, Authorization, Token")
+	c.Header("Access-Control-Allow-Methods", "POST, GET, OPTIONS")
+	c.Header("Access-Control-Expose-Headers", "Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Content-Type")
+	c.Header("Access-Control-Allow-Credentials", "true")
+
+	if method == "OPTIONS" {
+		c.AbortWithStatus(http.StatusNoContent)
+	}
+
+	c.Next()
 }
 
 func get(requests *gin.Context) {
@@ -51,11 +78,12 @@ func get(requests *gin.Context) {
 }
 
 func post(requests *gin.Context) {
-	key := requests.DefaultQuery("key", "")
-	lang := requests.Query("lang")
-	password := requests.DefaultQuery("password", "")
-	content := requests.Query("content")
-	key, err := data.Insert(key, lang, content, password)
+	paste := data.Paste{}
+	if err := requests.Bind(&paste); err != nil {
+		panic(err)
+		// TODO
+	}
+	key, err := data.Insert(paste)
 	if err != nil {
 		panic(err)
 		// TODO

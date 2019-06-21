@@ -62,13 +62,13 @@ func init() {
 	}
 }
 
-func Insert(key string, lang string, content string, password string) (string, error) {
+func Insert(paste Paste) (string, error) {
 	var err error
-	if key == "read_once" {
+	if paste.Key == "read_once" {
 		// TODO
-	} else if key == "" { // permanent
-		if key, err = func() (string, error) {
-			key, err := permanent.Insert(db, lang, content, password)
+	} else if paste.Key == "" { // permanent
+		if paste.Key, err = func() (string, error) {
+			key, err := permanent.Insert(db, paste.Lang, paste.Content, paste.Password)
 			if err != nil {
 				return "", err
 			}
@@ -79,7 +79,7 @@ func Insert(key string, lang string, content string, password string) (string, e
 	} else { // temporary
 		// TODO
 	}
-	return key, err
+	return paste.Key, err
 }
 
 func Query(key string) (Paste, error) {
