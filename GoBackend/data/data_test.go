@@ -7,11 +7,10 @@
 ------------      -------    --------    -----------
 2019-06-18 14:51  Lucien     1.0         Init
 */
-package tests
+package data
 
 import (
 	"encoding/json"
-	"github.com/LucienShui/PasteMe/GoBackend/data"
 	"testing"
 )
 
@@ -19,7 +18,7 @@ var key string
 
 func TestInsert(t *testing.T) {
 	var err error
-	key, err = data.Insert("", "Hello World!", "plain", "")
+	key, err = Insert("", "plain", "<h1>Hello World!</h1>", "")
 	if err != nil {
 		t.Error(err)
 	}
@@ -27,7 +26,7 @@ func TestInsert(t *testing.T) {
 
 func TestQuery(t *testing.T) {
 	t.Log(key)
-	object, err := data.Query(key)
+	object, err := Query(key)
 	if err != nil {
 		t.Error(err)
 	}
@@ -39,7 +38,7 @@ func TestQuery(t *testing.T) {
 }
 
 func TestErase(t *testing.T) {
-	err := data.Delete(key)
+	err := Delete(key)
 	if err != nil {
 		t.Error(err)
 	}

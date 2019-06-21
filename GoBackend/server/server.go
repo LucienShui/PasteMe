@@ -1,17 +1,18 @@
-package http
+package server
 
 import (
 	"github.com/LucienShui/PasteMe/GoBackend/data"
 	"github.com/LucienShui/PasteMe/GoBackend/util"
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 var router *gin.Engine
 
 func init() {
 	router = gin.Default()
-	router.GET("", doGet)
-	router.POST("", doPost)
+	router.GET("", get)
+	router.POST("", post)
 }
 
 func Run() {
@@ -20,10 +21,10 @@ func Run() {
 	}
 }
 
-func doGet(requests *gin.Context) {
+func get(requests *gin.Context) {
 	token := requests.DefaultQuery("token", "")
 	if token == "" { // empty request
-		requests.JSON(501, gin.H{
+		requests.JSON(http.StatusForbidden, gin.H{
 			"message": "Wrong params",
 		})
 	} else {
@@ -36,13 +37,9 @@ func doGet(requests *gin.Context) {
 		if object.Password == password { // key and password (if exist) is right
 			browser := requests.DefaultQuery("browser", "empty")
 			if browser == "empty" { // API request
-				requests.JSON(200, gin.H {
-					"key":      key,
-					"password": password,
-					// TODO
-				})
+				requests.String(http.StatusOK, object.Content)
 			} else { // Browser request
-				requests.JSON(200, gin.H {
+				requests.JSON(http.StatusOK, gin.H {
 					"content": 	object.Content,
 					"lang": 	object.Lang,
 				})
@@ -53,7 +50,7 @@ func doGet(requests *gin.Context) {
 	}
 }
 
-func doPost(requests *gin.Context) {
+func post(requests *gin.Context) {
 	key := requests.DefaultQuery("key", "")
 	lang := requests.Query("lang")
 	password := requests.DefaultQuery("password", "")
@@ -63,7 +60,7 @@ func doPost(requests *gin.Context) {
 		panic(err)
 		// TODO
 	}
-	requests.JSON(200, gin.H {
+	requests.JSON(http.StatusOK, gin.H {
 		"key": key,
 	})
 }

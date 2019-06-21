@@ -12,9 +12,9 @@
 package main
 
 import (
-	"github.com/LucienShui/PasteMe/GoBackend/http"
+	"github.com/LucienShui/PasteMe/GoBackend/server"
 )
 
 func main() {
-	http.Run()
+	server.Run()
 }

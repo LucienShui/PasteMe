@@ -1,7 +1,6 @@
-package tests
+package util
 
 import (
-	"github.com/LucienShui/PasteMe/GoBackend/util"
 	"testing"
 )
 
@@ -22,7 +21,7 @@ func TestValidChecker(t *testing.T) {
 		{"1000000000", ""},
 	}
 	for i, TestCase := range TestCases {
-		output, err := util.ValidChecker(TestCase.input)
+		output, err := ValidChecker(TestCase.input)
 		if output != TestCase.expected {
 			t.Errorf("Test %d | input: %s, expected: %s, output: %s\n", i, TestCase.input, TestCase.expected, output)
 		}

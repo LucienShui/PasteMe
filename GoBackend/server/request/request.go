@@ -1,4 +1,4 @@
-package http
+package request
 
 import (
 	"bytes"
@@ -25,8 +25,7 @@ func Get(uri string, router *gin.Engine) []byte {
 	w := httptest.NewRecorder() // 初始化响应
 	router.ServeHTTP(w, req) // 调用相应的handler接口
 	result := w.Result() // 提取响应
-	defer result.Body.Close()
-	body,_ := ioutil.ReadAll(result.Body) // 读取响应body
+	body, _ := ioutil.ReadAll(result.Body) // 读取响应body
 	return body
 }
 
@@ -36,7 +35,6 @@ func PostForm(uri string, param map[string]string, router *gin.Engine) []byte {
 	w := httptest.NewRecorder() // 初始化响应
 	router.ServeHTTP(w, req) // 调用相应handler接口
 	result := w.Result() // 提取响应
-	defer result.Body.Close()
 	body, _ := ioutil.ReadAll(result.Body) // 读取响应body
 	return body
 }
@@ -48,7 +46,6 @@ func PostJson(uri string, param map[string]interface{}, router *gin.Engine) []by
 	w := httptest.NewRecorder() // 初始化响应
 	router.ServeHTTP(w, req) // 调用相应的handler接口
 	result := w.Result() // 提取响应
-	defer result.Body.Close()
 	body,_ := ioutil.ReadAll(result.Body) // 读取响应body
 	return body
 }
