@@ -73,8 +73,8 @@ steps:
   commands:
   - sleep 15
   - cd GoBackend
-  - bash dep.sh
-  - go test ./tests
+  - bash script/dep.sh
+  - bash script/test.sh
 
 ---
 
@@ -89,5 +89,5 @@ steps:
   image: golang:latest
   commands:
   - cd GoBackend
-  - bash dep.sh
+  - bash script/dep.sh
   - go build -o pasteme_server
