@@ -18,14 +18,20 @@ import (
 var key string
 
 func TestPost(t *testing.T) {
-	body := request.Set(t, router, "", "plain", "Hello", "")
+	body := request.Set(
+		t,
+		router,
+		"",
+		"plain",
+		"HelloWorld!",
+		"")
 
 	type JsonResponse struct {
-		Key string `json:"content"`
+		Key string `json:"key"`
 	}
 
 	response := JsonResponse{}
-	if err := json.Unmarshal(body, response); err != nil {
+	if err := json.Unmarshal(body, &response); err != nil {
 		t.Fatal(err)
 	}
 
@@ -47,7 +53,7 @@ func TestGet(t *testing.T) {
 	}
 
 	response := &JsonResponse{}
-	if err := json.Unmarshal(body, response); err != nil {
+	if err := json.Unmarshal(body, &response); err != nil {
 		t.Fatal(err)
 	}
 

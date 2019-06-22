@@ -68,7 +68,10 @@ func postJson(t *testing.T, uri string, param map[string]interface{}, router *gi
 	w := httptest.NewRecorder()                                        // 初始化响应
 	router.ServeHTTP(w, req)                                           // 调用相应的handler接口
 	result := w.Result()                                               // 提取响应
-	body, _ := ioutil.ReadAll(result.Body)                             // 读取响应body
+	body, err := ioutil.ReadAll(result.Body)                             // 读取响应body
+	if err != nil {
+		t.Fatal(err)
+	}
 	return body
 }
 
@@ -81,18 +84,21 @@ func postPaste(t *testing.T, uri string, param data.Paste, router *gin.Engine) [
 	w := httptest.NewRecorder()                                        // 初始化响应
 	router.ServeHTTP(w, req)                                           // 调用相应的handler接口
 	result := w.Result()                                               // 提取响应
-	body, _ := ioutil.ReadAll(result.Body)                             // 读取响应body
+	body, err := ioutil.ReadAll(result.Body)                             // 读取响应body
+	if err != nil {
+		t.Fatal(err)
+	}
 	return body
 }
 
 func Set(t *testing.T, router *gin.Engine, Key string, Lang string, Content string, Password string) []byte {
 	uri := "/"
-	params := data.Paste{}
-	params.Key = Key
-	params.Lang = Lang
-	params.Content = Content
-	params.Password = Password
-	return postPaste(t, uri, params, router)
+	params := make(map[string]string)
+	params["Key"] = Key
+	params["Lang"] = Lang
+	params["Content"] = Content
+	params["Password"] = Password
+	return postForm(t, uri, params, router)
 }
 
 func Get(t *testing.T, router *gin.Engine, Key string, Password string) []byte {
