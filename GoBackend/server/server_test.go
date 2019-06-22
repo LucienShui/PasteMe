@@ -15,17 +15,42 @@ import (
 	"testing"
 )
 
+var key string
+
+func TestPost(t *testing.T) {
+	body := request.Set(t, router, "", "plain", "Hello", "")
+
+	type JsonResponse struct {
+		Key string `json:"content"`
+	}
+
+	response := JsonResponse{}
+	if err := json.Unmarshal(body, response); err != nil {
+		t.Fatal(err)
+	}
+
+	key = response.Key
+
+	content, err := json.Marshal(response)
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Log(string(content))
+}
+
 func TestGet(t *testing.T) {
-	uri := "/?token=100&browser="
-	body := request.Get(uri, router)
+	body := request.Get(t, router, key, "")
+
 	type JsonResponse struct {
 		Content string `json:"content"`
 		Lang string `json:"lang"`
 	}
+
 	response := &JsonResponse{}
 	if err := json.Unmarshal(body, response); err != nil {
 		t.Fatal(err)
 	}
+
 	content, err := json.Marshal(response)
 	if err != nil {
 		t.Fatal(err)

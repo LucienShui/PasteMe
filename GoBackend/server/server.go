@@ -21,9 +21,9 @@ var router *gin.Engine
 
 func init() {
 	router = gin.Default()
+	router.GET("/", query)
+	router.POST("/", insert)
 	router.Use(cors)
-	router.GET("/", get)
-	router.POST("/", post)
 }
 
 func Run(address string, port uint16) {
@@ -48,16 +48,39 @@ func cors(c *gin.Context) {
 	c.Next()
 }
 
-func get(requests *gin.Context) {
+func insert(requests *gin.Context) {
+	paste := data.Paste{}
+	if err := requests.Bind(&paste); err != nil {
+		panic(err)
+		// TODO
+	}
+	key, err := data.Insert(paste)
+	if err != nil {
+		panic(err)
+		// TODO
+	}
+	requests.JSON(http.StatusOK, gin.H {
+		"key": key,
+	})
+}
+
+func query(requests *gin.Context) {
 	token := requests.DefaultQuery("token", "")
 	if token == "" { // empty request
-		requests.JSON(http.StatusForbidden, gin.H{
+		requests.JSON(http.StatusForbidden, gin.H {
 			"message": "Wrong params",
 		})
 	} else {
 		key, password := util.Parse(token)
 		object, err := data.Query(key)
 		if err != nil {
+			if err.Error() == "record not found" {
+				requests.JSON(http.StatusNotFound, gin.H {
+					"key": key,
+					"message": "404 Not Found",
+				})
+				return
+			}
 			panic(err)
 			// TODO
 		}
@@ -75,20 +98,4 @@ func get(requests *gin.Context) {
 			// TODO
 		}
 	}
-}
-
-func post(requests *gin.Context) {
-	paste := data.Paste{}
-	if err := requests.Bind(&paste); err != nil {
-		panic(err)
-		// TODO
-	}
-	key, err := data.Insert(paste)
-	if err != nil {
-		panic(err)
-		// TODO
-	}
-	requests.JSON(http.StatusOK, gin.H {
-		"key": key,
-	})
 }

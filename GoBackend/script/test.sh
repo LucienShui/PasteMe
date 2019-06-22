@@ -9,7 +9,7 @@ util
 "
 
 for each in ${TEST_CASE}; do
-    go test -v ${BASE}${each}
+    go test -v -count=1 ${BASE}${each}
     if [[ $? != 0 ]]; then
         exit 1
     fi
