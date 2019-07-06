@@ -19,7 +19,7 @@
   </a>
 </p>
 <div align="center">
-  <h1>PasteMe 2.0</h1>
+  <h1>PasteMe 3.0 Beta</h1>
 </div>
 
 PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外的高亮功能。
@@ -38,40 +38,13 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 ## 一些场景
 
-+ 如果你要发布一个脚本，可以把 `Bash` 或者 `Python` 等脚本上传至 `PasteMe` ，然后通过 `curl` 和管道机制来进行优雅的发布，比如：`curl api.pasteme.cn?token=8219 | python3`
++ 如果你要发布一个脚本，可以把 `Bash` 或者 `Python` 等脚本上传至 `PasteMe` ，然后通过 `curl` 和管道机制来进行优雅的发布，比如：`curl api.pasteme.cn/8219 | python3`
 
 + 如果你要发给某人一些私密的信息，但是通过 QQ 、微信等聊天工具可能会被查水表，你可以将私密信息以阅后即焚形式上传至 `PasteMe` ，将产生的一次性链接分享给别人，别人查看一次之后这个链接就会失效。
 
-+ 阅后即焚的链接是可以自定义的，比如 [pasteme.cn/example](https://pasteme.cn/example) ，更多详情请查看 [帮助](#帮助)。
++ 想要向服务器内粘贴一段代码，但是苦于字符集，复制、上传上去之后有其它的字符，此时你可以上传至 `pasteme` ，然后通过 `wget api.pasteme.cn/<key> -O file_name` 来进行优雅的获取。
 
-## 2.0 Feature
-
-<details>
-
-1. 支持的高亮
-    <details>
-    <summary>查看当前支持的高亮</summary>
-
-    ```bash
-    C/C++
-    Java
-    Python
-    Bash
-    HTML
-    Markdown
-    ```
-    </details>
-2. 支持多语言切换（需要写 cookie 以保存语言变动）
-3. 前后端分离，前端去掉 png 和 ico 只有 200KB，后端只有 20KB，页面体积小
-4. 90% 的计算移至前端，无需经过网络层，提升用户体验
-5. 采用 `gzip` 传输 
-6. 如果部署在域名根目录的话和以前的部署方式无异
-
-</details>
-
-## 帮助
-
-[使用文档](./DOCUMENT.md)
++ 阅后即焚的链接是可以自定义的，比如 [pasteme.cn/example](https://pasteme.cn/example) ，更多详情请查看 [使用文档](./DOCUMENT.md)。
 
 ## 截图
 
@@ -95,12 +68,6 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 ## Deploy
 
 [部署文档](./DEPLOY.md)
-
-## 其它
-
-1. 数据库相比 `1.x` 版本没有变动
-2. 只支持现代浏览器
-3. 代码写的很烂，望轻喷
 
 ### 更新日志
 
@@ -144,6 +111,10 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 | [@EndangeredFish](https://github.com/EndangeredF1sh) | 9.90 | 2019-06-05 |
 | \*舟 | 1.00 | 2019-06-11 |
 | [@异或和](https://github.com/XorSum) | 6.60 | 2019-06-17 |
+| \*伟 | 2.00 | | 2019-06-18 |
+| \*楠 | 10.00 | 2019-06-27 |
+| \*. | 1.00 | 2019-07-03 |
+| \*栈 | 100.00 | 2019-07-06 |
 
 #### 谢谢老板
 

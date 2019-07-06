@@ -39,15 +39,11 @@ else:
 
 ## API
 
-```bash
-api.pasteme.cn?token=<key>,<passwd>
-```
+[API Document](https://github.com/LucienShui/PasteMeBackend/blob/master/API.md)
 
-其中 `key` 为索引，`passwd` 为索引的密码（如果有），中间以英文逗号分隔。
-
-比如：
+### Example
 
 ```bash
-curl 'api.pasteme.cn?token=100'
-curl 'api.pasteme.cn?token=101,123'
+curl api.pasteme.cn/100
+curl api.pasteme.cn/101,123456
 ```
