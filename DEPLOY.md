@@ -36,7 +36,7 @@
 ### `/etc/pastemed/config.sh`
 
 | 字段 | 描述 | 举例 |
-| :---: | :---: | --- | --- |
+| :---: | :---: | --- |
 | PASTEMED_DB_USERNAME | MySQL 用户名 | `username` |
 | PASTEMED_DB_PASSWORD | MySQL 密码 | `password` |
 | PASTEMED_DB_SERVER | MySQL 地址 | `localhost` |

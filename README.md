@@ -12,14 +12,14 @@
     <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="">
   </a>
   <a>
-    <img src="https://img.shields.io/badge/version-2.1.1-brightgreen.svg" alt="version">
+    <img src="https://img.shields.io/badge/version-3.0.1-brightgreen.svg" alt="version">
   </a>
   <a href="#谢谢老板">
     <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">
   </a>
 </p>
 <div align="center">
-  <h1>PasteMe 3.0 Beta</h1>
+  <h1>PasteMe 3.0.1 Beta</h1>
 </div>
 
 PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外的高亮功能。
@@ -111,7 +111,7 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 | [@EndangeredFish](https://github.com/EndangeredF1sh) | 9.90 | 2019-06-05 |
 | \*舟 | 1.00 | 2019-06-11 |
 | [@异或和](https://github.com/XorSum) | 6.60 | 2019-06-17 |
-| \*伟 | 2.00 | | 2019-06-18 |
+| \*伟 | 2.00 | 2019-06-18 |
 | \*楠 | 10.00 | 2019-06-27 |
 | \*. | 1.00 | 2019-07-03 |
 | \*栈 | 100.00 | 2019-07-06 |
