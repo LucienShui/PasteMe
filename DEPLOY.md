@@ -1,24 +1,81 @@
 # Deploy
 
+`2.x` 与 `3.x` 的数据库表结构并不相同，需要进行数据迁移，详见：[数据迁移](https://github.com/LucienShui/PasteMeBackend/blob/master/MIGRATE.md)
+
+## 结构
+
+![](./PasteMe-结构.svg)
+
 ## 一键部署
 
 系统中需要有 `wget` 和 `git`
 
 `wget https://raw.githubusercontent.com/LucienShui/PasteMe/master/install.sh && bash install.sh`
 
-### 目录
+1. 修改 `/etc/pasteme/conf.d/default.conf` 中的 `server_name` ，在 `Nginx` 中引入该配置文件
+2. 修改 `/etc/pasteme/usr/config.json`
+3. 修改 `/etc/pastemed/config.sh`
+4. 执行 `pastemectl start` 以启动后端
 
-如果你使用一键部署，那么：
-+ 前端：`/usr/local/pasteme/`
+更多关于后端控制器 `pastemectl` 的信息，详见：[pastemectl Document](https://github.com/LucienShui/PasteMeBackend/blob/master/PASTEMECTL_DOCUMENT.md)
+
+### 文件树
+
+#### 前端
+
+```plain
+/usr/local/pasteme
+├── conf.d
+│   └── nginx.conf # Nginx 配置文件
+├── css
+│   ├── app.xxx.css.gz
+│   ├── chunk-vendors.xxx.css.gz
+│   └── not_found.xxx.css.gz
+├── favicon.ico
+├── img
+│   └── donate.xxx.png
+├── index.html
+├── js
+│   ├── app.xxx.js.gz
+│   ├── chunk-vendors.xxx.js.gz
+│   ├── lang-en.xxx.js.gz
+│   └── not_found.xxx.js.gz
+├── LICENSE
+├── README.md
+└── usr
+    ├── config.example.json
+    ├── config.json # 前端配置文件
+    └── usr.js # 前端自定义 js
+```
+
+#### 后端
+
+```plain
+/usr/local/pastemed
+├── config.sh # 后端配置文件
+├── db_transfer
+├── LICENSE
+├── pastemectl.sh
+├── pastemed
+├── pastemed.service
+└── README.md
+```
+
+### 配置文件
 + 前端的配置文件：`/etc/pasteme/usr/config.json`
-+ 前端自定义 `js`：`/etc/pasteme/usr/usr.js`
-+ 后端：`/usr/local/pastemed/`
++ 前端自定义 js：`/etc/pasteme/usr/usr.js`
 + 后端的配置文件：`/etc/pastemed/config.sh`
-+ Nginx 的配置文件：`/etc/pasteme/conf.d/default.conf`
++ Nginx 的配置文件：`/etc/pasteme/conf.d/nginx.conf`
+
+## 手动部署
+
+详见：
++ [Frontend Deployment](https://github.com/LucienShui/PasteMeFrontend/blob/master/DEPLOY.md)
++ [Backend Deployment](https://github.com/LucienShui/PasteMeBackend/blob/master/DEPLOY.md)
 
 ## 配置文件说明
 
-### `/etc/pasteme/usr/config.json`
+### `config.json`
 
 | 字段 | 值 | 描述 | 举例 |
 | :---: | :---: | --- | --- |
@@ -29,11 +86,11 @@
 | footer.url | 完整的 URL | 链接的地址 | `http://blog.lucien.ink/go/csdn` |
 | footer.text | 字符串 | 链接显示的字 | `CSDN` |
 
-### `/etc/pasteme/usr/usr.js`
+### `usr.js`
 
 前端会始终通过 `<script>` 引入这个文件，默认为空
 
-### `/etc/pastemed/config.sh`
+### `config.sh`
 
 | 字段 | 描述 | 举例 |
 | :---: | :---: | --- |
@@ -43,6 +100,6 @@
 | PASTEMED_DB_PORT | MySQL 端口 | `3306` |
 | PASTEMED_DB_DATABASE | 数据库名  | `pasteme` |
 
-### `/etc/pasteme/conf.d/default.conf`
+### `nginx.conf`
 
-此配置文件为 `Nginx` 的配置文件，修改其中的 `server_name` 后在 `Nginx` 中引入该配置文件即可
+此配置文件为 `Nginx` 的配置文件，一般来说只需要更改 `server_name` 字段
