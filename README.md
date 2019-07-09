@@ -1,4 +1,4 @@
-# dbTrans from 0.0 to 1.1
+# dbTrans from 0.9 to 1.1
 
 将 `trans_0.9_to_1.1.php` 文件放在 `lib` 文件夹下，执行 `php trans_0.9_to_1.1.php` 即可，抑或是在网页中访问对应的路径，皆可。
 
