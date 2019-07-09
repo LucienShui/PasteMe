@@ -4,7 +4,7 @@
 
 ## 结构
 
-![](./PasteMe-结构.svg)
+![](./PasteMe-Architecture.svg)
 
 ## 一键部署
 
