@@ -23,7 +23,7 @@
 | 字段 | 值 | 描述 | 举例 |
 | :---: | :---: | --- | --- |
 | api | 完整的 URL | 后端 `API` 的地址 | `https://pasteme.cn/api/` |
-| base_url | 网页路径 | 前端去掉 `http(s)://` 后的地址 | `pasteme.cn/` |
+| base_url | 网页路径 | 前端去掉 `http(s)://` 后的地址 | `pasteme.cn/` |
 | protocol | `http` 或 `https` | 网页协议类型 | `https` |
 | footer | JSON 数组 | 自定义前端底部的链接 | `[]` |
 | footer.url | 完整的 URL | 链接的地址 | `http://blog.lucien.ink/go/csdn` |
