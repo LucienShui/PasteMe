@@ -2,7 +2,7 @@
 
 ## Version 3.0.1
 
-### 2019-07-10
+### 2019-07-12
 
 1. Add [DOCKER_DEPLOY.md](./DOCKER_DEPLOY.md)
 2. Add [.travis.yml](./.travis.yml) again
