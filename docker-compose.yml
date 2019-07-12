@@ -1,0 +1,61 @@
+version: "3"
+
+services:
+  pasteme-frontend:
+    image: registry.cn-hangzhou.aliyuncs.com/pasteme/frontend:latest
+    container_name: pasteme-frontend
+    depends_on:
+      - pasteme-backend
+    healthcheck:
+      test: ["CMD", "service", "nginx", "status"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    restart: always
+    ports:
+      - 80:8080
+    volumes:
+      - ./logs/:/var/lib/pasteme/
+      - ./usr/:/www/pasteme/usr/
+
+  pasteme-backend:
+    image: registry.cn-hangzhou.aliyuncs.com/pasteme/backend:latest
+    container_name: pasteme-backend
+    depends_on:
+      - pasteme-mysql
+    healthcheck:
+      # test: ["CMD", "wget", "--output-document=/dev/null", "localhost:8000/0"]
+      test: ["CMD", "lsof", "-i:8080", "|", "grep", "app"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    restart: always
+    environment:
+      PASTEMED_DB_USERNAME: username
+      PASTEMED_DB_PASSWORD: password
+      PASTEMED_DB_SERVER: pasteme-mysql
+      PASTEMED_DB_PORT: 3306
+      PASTEMED_DB_DATABASE: pasteme
+
+  pasteme-mysql:
+    image: mysql:8
+    container_name: pasteme-mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    restart: always
+    command: [
+      '--character-set-server=utf8mb4',
+      '--collation-server=utf8mb4_unicode_ci'
+    ]
+    environment:
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: pasteme
+      MYSQL_MAX_ALLOWED_PACKET: 128M
+      MYSQL_INNODB_LOG_FILE_SIZE: 64M
+    volumes:
+      - ./mysql:/var/lib/mysql
