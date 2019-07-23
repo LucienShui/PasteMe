@@ -67,7 +67,7 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 ## Deploy
 
-[部署文档](./DEPLOY.md)
+[部署文档](./DOCKER_DEPLOY.md)
 
 ### 更新日志
 

@@ -1,5 +1,7 @@
 # 使用 Docker 部署 PasteMe
 
+使用 Nginx 和 systemd 部署请移步：[Deploy](./DEPLOY.md)
+
 ## 环境准备
 
 ### Linux 环境
