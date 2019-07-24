@@ -2,10 +2,13 @@ language: bash
 
 script:
   - rm -rf .git
+  - mkdir pushdir
+  - git clone https://github.com/LucienShui/PasteMeFrontend.git -b build --depth=1 frontend
+  - cp -r frontend/usr pushdir
   - git clone https://${GH_REF} -b ${P_BRANCH} tmpdir
-  - cp DOCKER_DEPLOY.md tmpdir/README.md
-  - cp docker-compose.yml tmpdir/
-  - cd tmpdir/
+  - cp DOCKER_DEPLOY.md pushdir/README.md
+  - cp -r tmpdir/.git docker-compose.yml pushdir/
+  - cd pushdir/
   - git config user.name "${U_NAME}"
   - git config user.email "${U_EMAIL}"
   - git add --all

@@ -4,6 +4,8 @@
 
 `2.x` 与 `3.x` 的数据库表结构并不相同，需要进行数据迁移，详见：[数据迁移](https://github.com/LucienShui/PasteMeBackend/blob/master/MIGRATE.md)
 
+**推荐使用 docker 以避免诸多问题**
+
 Docker 部署请移步：[Docker Deploy](./DOCKER_DEPLOY.md)
 
 ## 结构

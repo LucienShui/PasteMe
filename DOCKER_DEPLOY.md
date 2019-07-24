@@ -41,23 +41,21 @@ Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请
 
 | 字段 | 值 | 描述 | 举例 |
 | :---: | :---: | --- | --- |
-| api | 完整的 URL | 后端 `API` 的地址 | `https://pasteme.cn/api/` |
-| base_url | 网页路径 | 前端去掉 `http(s)://` 后的地址 | `pasteme.cn/` |
-| protocol | `http` 或 `https` | 网页协议类型 | `https` |
+| api | 完整的 URL | 后端 `API` 的地址 | `/api/` |
 | footer | JSON 数组 | 自定义前端底部的链接 | `[]` |
 | footer.url | 完整的 URL | 链接的地址 | `http://blog.lucien.ink/go/csdn` |
 | footer.text | 字符串 | 链接显示的字 | `CSDN` |
 
 ### usr/usr.js
 
-前端会始终通过 `<script>` 引入这个文件，默认为空
+前端会始终通过 `<script>` 引入这个文件，可以通过这个文件加入百度统计、谷歌统计等代码，默认引入作者的 `daovoice`
 
 ## 开始安装
 
 1. 克隆此项目的 [docker 分支](https://github.com/LucienShui/PasteMe/tree/docker)，并进入克隆至本地的文件夹
 
     ```bash
-    git clone https://github.com/LucienShui/PasteMe.git -b docker pasteme
+    git clone https://github.com/LucienShui/PasteMe.git --depth=1 -b docker pasteme
     cd pasteme
     ```
 
