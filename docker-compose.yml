@@ -24,7 +24,6 @@ services:
     depends_on:
       - pasteme-mysql
     healthcheck:
-      # test: ["CMD", "wget", "--output-document=/dev/null", "localhost:8000/0"]
       test: ["CMD", "lsof", "-i:8080", "|", "grep", "app"]
       interval: 30s
       timeout: 3s

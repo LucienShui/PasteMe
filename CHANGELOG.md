@@ -1,5 +1,10 @@
 # Change Log
 
+### 2019-07-23
+
+1. Change default deploy to docker deploy
+2. Remove a comment from `docker-compose.yml`
+
 ## Version 3.0.1
 
 ### 2019-07-12
