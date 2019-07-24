@@ -1,5 +1,9 @@
 # Change Log
 
+### 2019-07-24
+
+1. Update `docker-compose.yml`
+
 ### 2019-07-23
 
 1. Change default deploy to docker deploy

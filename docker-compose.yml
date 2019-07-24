@@ -2,7 +2,7 @@ version: "3"
 
 services:
   pasteme-frontend:
-    image: registry.cn-hangzhou.aliyuncs.com/pasteme/frontend:latest
+    image: registry.cn-hangzhou.aliyuncs.com/pasteme/frontend:3.0.1
     container_name: pasteme-frontend
     depends_on:
       - pasteme-backend
@@ -19,12 +19,12 @@ services:
       - ./usr/:/www/pasteme/usr/
 
   pasteme-backend:
-    image: registry.cn-hangzhou.aliyuncs.com/pasteme/backend:latest
+    image: registry.cn-hangzhou.aliyuncs.com/pasteme/backend:3.0.1
     container_name: pasteme-backend
     depends_on:
       - pasteme-mysql
     healthcheck:
-      test: ["CMD", "lsof", "-i:8080", "|", "grep", "app"]
+      test: ["CMD", "wget", "localhost:8000?beat", "--output=/dev/null"]
       interval: 30s
       timeout: 3s
       retries: 3
@@ -37,7 +37,7 @@ services:
       PASTEMED_DB_DATABASE: pasteme
 
   pasteme-mysql:
-    image: mysql:8
+    image: mysql:5.5
     container_name: pasteme-mysql
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
