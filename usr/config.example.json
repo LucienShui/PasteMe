@@ -1,7 +1,5 @@
 {
-  "api": "https://pasteme.cn/api/",
-  "base_url": "pasteme.cn/",
-  "protocol": "https://",
+  "api": "/api/",
   "footer": [
     {
       "url": "http://blog.lucien.ink/go/csdn",
