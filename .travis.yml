@@ -14,6 +14,8 @@ script:
   - git add --all
   - git commit -m "build from travis-ci `TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S'`"
   - git push https://${GH_TOKEN}@${GH_REF} ${P_BRANCH}
+  - curl ${WEBHOOK}${FRONTEND_WEBHOOK_PATH}
+  - curl ${WEBHOOK}${BACKEND_WEBHOOK_PATH}
 
 branches:
   only:
