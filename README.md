@@ -137,6 +137,11 @@ Modern browsers and Internet Explorer 10+.
 
 Copyright &copy; 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
+## 特别鸣谢
+
++ 前端: [@Ryan Lee](https://github.com/ryanlee2014)
++ 后端: [@Irene Liu](https://github.com/ireneliuqaq)
+
 ## 免责声明
 
 本平台只提供文本分享的载体，与所有文本内容均没有任何联系。
