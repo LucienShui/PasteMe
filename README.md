@@ -46,7 +46,7 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 + 新装了一台没有图形化界面的服务器，没开 `sshd` 服务，没有可用的编辑器去编辑 `sources.list` 文件，直接用默认源安装一个编辑器又太慢，此时可以用 `curl api.pasteme.cn/<key> > /etc/apt/sources.list` 或 `wget api.pasteme.cn/<key> -O /etc/apt/sources.list` 来更新 `apt` 源，然后进行优雅的 `apt update`
 
-+ 阅后即焚的链接是可以自定义的，比如 [pasteme.cn/example](https://pasteme.cn/example) ，更多详情请查看 [使用文档](./DOCUMENT.md)
++ 阅后即焚的链接是可以自定义的，比如 [pasteme.cn/example](https://pasteme.cn/example) ，更多详情请查看 [使用文档](./doc/DOCUMENT.md)
 
 ## 截图
 
@@ -69,7 +69,7 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 ## Deploy
 
-[部署文档](./DOCKER_DEPLOY.md)
+[部署文档](./doc/DOCKER_DEPLOY.md)
 
 ### 更新日志
 
@@ -119,6 +119,7 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 | \*栈 | 100.00 | 2019-07-06 |
 | \*珊珊 | 1.50 | 2019-07-13 |
 | n\*l | 0.88 | 2019-07-14 |
+| R\*~ | 1.99 | 2019-08-14 |
 
 #### 谢谢老板
 
@@ -135,6 +136,11 @@ Modern browsers and Internet Explorer 10+.
 ## 版权所有
 
 Copyright &copy; 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
+
+## 特别鸣谢
+
++ 前端: [@Ryan Lee](https://github.com/ryanlee2014)
++ 后端: [@Irene Liu](https://github.com/ireneliuqaq)
 
 ## 免责声明
 

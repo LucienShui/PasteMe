@@ -6,7 +6,7 @@ script:
   - git clone https://github.com/LucienShui/PasteMeFrontend.git -b build --depth=1 frontend
   - cp -r frontend/usr pushdir
   - git clone https://${GH_REF} -b ${P_BRANCH} tmpdir
-  - cp DOCKER_DEPLOY.md pushdir/README.md
+  - cp doc/DOCKER_DEPLOY.md pushdir/README.md
   - cp -r tmpdir/.git docker-compose.yml pushdir/
   - cd pushdir/
   - git config user.name "${U_NAME}"
@@ -14,6 +14,8 @@ script:
   - git add --all
   - git commit -m "build from travis-ci `TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S'`"
   - git push https://${GH_TOKEN}@${GH_REF} ${P_BRANCH}
+  - curl -X POST ${WEBHOOK}${FRONTEND_WEBHOOK_PATH}
+  - curl -X POST ${WEBHOOK}${BACKEND_WEBHOOK_PATH}
 
 branches:
   only:

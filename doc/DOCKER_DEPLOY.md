@@ -83,7 +83,7 @@ Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请
     cd pasteme
     ```
 
-2. 更新 [docker-compose.yml](./docker-compose.yml)
+2. 更新 [docker-compose.yml](../docker-compose.yml)
 
     ```bash
     git pull
