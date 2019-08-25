@@ -1,5 +1,11 @@
 # Change Log
 
+### 2019-08-25
+
+1. Update doc
+2. Add webhook
+3. Update donate list
+
 ### 2019-07-24
 
 1. Update `docker-compose.yml`
