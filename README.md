@@ -2,7 +2,7 @@
   <img src="https://cdn.jsdelivr.net/gh/PasteUs/CDN@0.0.12/screenshot/pasteme/duck.png" alt="" width=200>
 </p>
 <p align="center">
-  <a href="https://github.com/LucienShui/PasteMe/tree/build">
+  <a href="https://github.com/LucienShui/PasteMe/tree/docker">
     <img src="https://travis-ci.com/LucienShui/PasteMe.svg?branch=master" alt="">
   </a>
   <a href="https://cloud.drone.io/LucienShui/PasteMe">
