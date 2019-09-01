@@ -1,5 +1,11 @@
 # Change Log
 
+## v3.1.0F-3.0.1B
+
+### 2019-09-02
+
+1. Using CDN for static file
+
 ## v3.0.3F-3.0.1B
 
 ### 2019-08-25
