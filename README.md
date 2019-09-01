@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://github.com/LucienShui/gitcdn/blob/master/duck.png?raw=true" alt="" width=200>
+  <img src="https://cdn.jsdelivr.net/gh/PasteUs/CDN@0.0.12/screenshot/pasteme/duck.png" alt="" width=200>
 </p>
 <p align="center">
-  <a href="https://github.com/LucienShui/PasteMe/tree/build">
+  <a href="https://github.com/LucienShui/PasteMe/tree/docker">
     <img src="https://travis-ci.com/LucienShui/PasteMe.svg?branch=master" alt="">
   </a>
   <a href="https://cloud.drone.io/LucienShui/PasteMe">
@@ -12,14 +12,17 @@
     <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="">
   </a>
   <a>
-    <img src="https://img.shields.io/badge/version-3.0.1-brightgreen.svg" alt="version">
+    <img src="https://img.shields.io/badge/Frontend-3.1.0-brightgreen.svg" alt="version">
+  </a>
+  <a>
+    <img src="https://img.shields.io/badge/Backend-3.0.1-lightblue.svg" alt="version">
   </a>
   <a href="#谢谢老板">
     <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">
   </a>
 </p>
 <div align="center">
-  <h1>PasteMe 3.0.1 Beta</h1>
+  <h1>PasteMe</h1>
 </div>
 
 PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外的高亮功能。
@@ -30,17 +33,13 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 + 在查看别人的内容时，可以一键复制所有文本。如果查看的是阅后即焚的内容，那么在网页加载完成之前，实体数据就已经不存在了。
 
-性能方面，PasteMe 2.0 采用了喜闻乐见的前后端分离，由于历史原因，目前后端是 PHP + MySQL ，前端是 Vue + Bootstrap ，主站点 [pasteme.cn](https://pasteme.cn) 已开启了全站 CDN 和 gzip 压缩传输。
-
-下一步的计划是用 `golang` 重构后端之后采用 `Docker` 进行打包/发布。
-
 各位老板 Star 、Issue 、PR 好不啦。**Orz**
 
 ## 一些场景
 
 + 如果你要发布一个脚本，可以把 `Bash` 或者 `Python` 等脚本上传至 `PasteMe` ，然后通过 `curl` 和管道机制来进行优雅的发布，比如：`curl api.pasteme.cn/8219 | python3`
 
-+ 如果你要发给某人一些私密的信息，但是通过 QQ 、微信等聊天工具可能会被查水表，你可以将私密信息以阅后即焚形式上传至 `PasteMe` ，将产生的一次性链接分享给别人，别人查看一次之后这个链接就会失效
++ 如果你要发给某人一些私密的信息，比如一段 `token`，但是通过 QQ 、微信等聊天工具可能会被 “查水表”，你可以将私密信息以阅后即焚形式上传至 `PasteMe` ，将一次性链接分享给别人，别人查看一次之后这个链接就会失效
 
 + 想要向服务器内粘贴一段代码，但是苦于字符集，复制、上传上去之后有其它的字符，此时你可以上传至 `pasteme` ，然后通过 `wget api.pasteme.cn/<key> -O file_name` 来进行优雅的拉取
 
@@ -52,19 +51,18 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 <details>
 
-![homePage](https://github.com/LucienShui/gitcdn/blob/master/pasteme_home2.0.png?raw=true)
+![homePage](https://cdn.jsdelivr.net/gh/PasteUs/CDN@0.0.12/screenshot/pasteme/home.png)
 
-![homePageEN](https://github.com/LucienShui/gitcdn/blob/master/pasteme_home_en2.0.png?raw=true)
+![read_once](https://cdn.jsdelivr.net/gh/PasteUs/CDN@0.0.12/screenshot/pasteme/read_once.png)
 
-![chat](https://github.com/LucienShui/gitcdn/blob/master/pasteme_chat2.0.png?raw=true)
+![success](https://cdn.jsdelivr.net/gh/PasteUs/CDN@0.0.12/screenshot/pasteme/success.png)
 
-![read_once](https://github.com/LucienShui/gitcdn/blob/master/pasteme_read_once2.0.png?raw=true)
+![qrcode](https://cdn.jsdelivr.net/gh/PasteUs/CDN@0.0.12/screenshot/pasteme/qrcode.png)
 
-![hello_world](https://github.com/LucienShui/gitcdn/blob/master/pasteme_hello_world2.0.png?raw=true)
+![markdown_parsed](https://cdn.jsdelivr.net/gh/PasteUs/CDN@0.0.12/screenshot/pasteme/markdown_parsed.png)
 
-![success](https://github.com/LucienShui/gitcdn/blob/master/pasteme_success2.0.png?raw=true)
+![markdown_source](https://cdn.jsdelivr.net/gh/PasteUs/CDN@0.0.12/screenshot/pasteme/markdown_source.png)
 
-![success_qrcode](https://github.com/LucienShui/gitcdn/blob/master/pasteme_success_qrcode2.0.png?raw=true)
 </details>
 
 ## Deploy

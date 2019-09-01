@@ -2,7 +2,7 @@ version: "3"
 
 services:
   pasteme-frontend:
-    image: registry.cn-hangzhou.aliyuncs.com/pasteme/frontend:3.0.3
+    image: registry.cn-hangzhou.aliyuncs.com/pasteme/frontend:3.1.0
     container_name: pasteme-frontend
     depends_on:
       - pasteme-backend
