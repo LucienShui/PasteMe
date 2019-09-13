@@ -3,4 +3,4 @@
 	url = https://github.com/LucienShui/PasteMeBackend.git
 [submodule "Frontend"]
 	path = Frontend
-	url = https://github.com/LucienShui/PasteMeFrontend.git
+	url = https://github.com/PasteUs/PasteMeFrontend.git
