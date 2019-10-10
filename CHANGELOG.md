@@ -1,5 +1,19 @@
 # Change Log
 
+## v3.1.0F-3.1.0B
+
+### 2019-10-10
+
+1. Add badge in `README.md`
+
+### 2019-07-24
+
+1. Add `github.com/gin-contrib/cors`
+
+### 2019-07-22
+
+1. Add beat
+
 ## v3.1.0F-3.0.1B
 
 ### 2019-09-02

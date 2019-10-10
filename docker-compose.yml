@@ -19,7 +19,7 @@ services:
       - ./usr/:/www/pasteme/usr/
 
   pasteme-backend:
-    image: registry.cn-hangzhou.aliyuncs.com/pasteme/backend:3.0.1
+    image: registry.cn-hangzhou.aliyuncs.com/pasteme/backend:3.1.0
     container_name: pasteme-backend
     depends_on:
       - pasteme-mysql
