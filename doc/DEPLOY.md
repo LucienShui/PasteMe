@@ -12,19 +12,6 @@ Docker 部署请移步：[Docker Deploy](./DOCKER_DEPLOY.md)
 
 ![](./PasteMe-Architecture.svg)
 
-## 一键部署
-
-系统中需要有 `wget` 和 `git`
-
-`wget https://raw.githubusercontent.com/LucienShui/PasteMe/master/install.sh && bash install.sh`
-
-1. 修改 `/etc/pasteme/conf.d/default.conf` 中的 `server_name` ，在 `Nginx` 中引入该配置文件
-2. 修改 `/etc/pasteme/usr/config.json`
-3. 修改 `/etc/pastemed/config.sh`
-4. 执行 `pastemectl start` 以启动后端
-
-更多关于后端控制器 `pastemectl` 的信息，详见：[pastemectl Document](https://github.com/LucienShui/PasteMeBackend/blob/master/PASTEMECTL_DOCUMENT.md)
-
 ### 文件树
 
 #### 前端
@@ -58,26 +45,23 @@ Docker 部署请移步：[Docker Deploy](./DOCKER_DEPLOY.md)
 
 ```plain
 /usr/local/pastemed
-├── config.sh # 后端配置文件
-├── db_transfer
-├── LICENSE
-├── pastemectl.sh
+├── config.example.json
 ├── pastemed
-├── pastemed.service
-└── README.md
+└── systemd
+    └── pastemed.service
 ```
 
 ### 配置文件
 + 前端的配置文件：`/etc/pasteme/usr/config.json`
 + 前端自定义 js：`/etc/pasteme/usr/usr.js`
-+ 后端的配置文件：`/etc/pastemed/config.sh`
++ 后端的配置文件：`/etc/pastemed/config.json`
 + Nginx 的配置文件：`/etc/pasteme/conf.d/nginx.conf`
 
 ## 手动部署
 
 详见：
-+ [Frontend Deployment](https://github.com/LucienShui/PasteMeFrontend/blob/master/DEPLOY.md)
-+ [Backend Deployment](https://github.com/LucienShui/PasteMeBackend/blob/master/DEPLOY.md)
++ [Frontend Deployment](https://github.com/PasteUs/PasteMeFrontend/blob/master/DEPLOY.md)
++ [Backend Deployment](https://github.com/PasteUs/PasteMeBackend/blob/master/DEPLOY.md)
 
 ## 配置文件说明
 
@@ -96,15 +80,19 @@ Docker 部署请移步：[Docker Deploy](./DOCKER_DEPLOY.md)
 
 前端会始终通过 `<script>` 引入这个文件，默认为空
 
-### `config.sh`
+### `config.json`
 
 | 字段 | 描述 | 举例 |
 | :---: | :---: | --- |
-| PASTEMED_DB_USERNAME | MySQL 用户名 | `username` |
-| PASTEMED_DB_PASSWORD | MySQL 密码 | `password` |
-| PASTEMED_DB_SERVER | MySQL 地址 | `localhost` |
-| PASTEMED_DB_PORT | MySQL 端口 | `3306` |
-| PASTEMED_DB_DATABASE | 数据库名  | `pasteme` |
+| `address` | 监听的地址 | `0.0.0.0` |
+| `port` | 监听的端口 | `8000` |
+| `debug` | 是否启用 Debug 模式 | `false` |
+| `database.type` | 数据源，填 `mysql` 表示使用 MySQL，填其它值都会一律使用 SQLite3 | `mysql` |
+| `database.username` | MySQL 用户名 | `username` |
+| `database.password` | MySQL 密码 | `password` |
+| `database.server` | MySQL 地址 | `localhost` |
+| `database.port` | MySQL 端口 | `3306` |
+| `database.database` | 数据库名 | `pasteme` |
 
 ### `nginx.conf`
 

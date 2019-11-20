@@ -19,7 +19,7 @@ services:
       - ./usr/:/www/pasteme/usr/
 
   pasteme-backend:
-    image: registry.cn-hangzhou.aliyuncs.com/pasteme/backend:3.1.0
+    image: registry.cn-hangzhou.aliyuncs.com/pasteme/backend:3.2.1
     container_name: pasteme-backend
     depends_on:
       - pasteme-mysql
@@ -29,12 +29,6 @@ services:
       timeout: 3s
       retries: 3
     restart: always
-    environment:
-      PASTEMED_DB_USERNAME: username
-      PASTEMED_DB_PASSWORD: password
-      PASTEMED_DB_SERVER: pasteme-mysql
-      PASTEMED_DB_PORT: 3306
-      PASTEMED_DB_DATABASE: pasteme
 
   pasteme-mysql:
     image: mysql:5.5
