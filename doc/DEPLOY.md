@@ -36,7 +36,6 @@ Docker 部署请移步：[Docker Deploy](./DOCKER_DEPLOY.md)
 ├── LICENSE
 ├── README.md
 └── usr
-    ├── config.example.json
     ├── config.json # 前端配置文件
     └── usr.js # 前端自定义 js
 ```
@@ -45,7 +44,7 @@ Docker 部署请移步：[Docker Deploy](./DOCKER_DEPLOY.md)
 
 ```plain
 /usr/local/pastemed
-├── config.example.json
+├── config.json # 后端配置文件
 ├── pastemed
 └── systemd
     └── pastemed.service

@@ -59,18 +59,19 @@ Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请
     cd pasteme
     ```
 
-2. 启动服务
+2. 修改配置文件
+
+    ```bash
+    cp frontend/usr/config.example.json frontend/usr/config.json
+    vim frontend/usr/config.json
+    cp backend/config/config.example.json backend/config/config.json
+    vim backend/config/config.json
+    ```
+
+3. 启动服务
 
     ```bash
     docker-compose up -d
-    ```
-
-3. 修改配置文件
-
-    ```bash
-    cd usr
-    cp config.example.json config.json
-    vim config.json
     ```
 
 命令执行完成后等待 `30s`（因为需要初始化数据库和等待 `healthy check`），然后运行 `docker ps -a`，当看到所有的容器的状态没有 `unhealthy` 或 `Exited (x) xxx` 就代表 PasteMe 已经启动成功
@@ -100,7 +101,6 @@ Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请
 
 + 前端 `Nginx` 日志位于 `pasteme/logs` 下
 + 后端日志通过 `docker logs pasteme-backend` 查看
-
 + 数据库日志通过 `docker logs pasteme-mysql` 查看
 
 ## 鸣谢
