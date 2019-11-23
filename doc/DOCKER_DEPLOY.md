@@ -99,7 +99,7 @@ Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请
 
 ## 日志
 
-+ 前端 `Nginx` 日志位于 `pasteme/logs` 下
++ 前端 `Nginx` 日志位于 `frontend/logs` 下
 + 后端日志通过 `docker logs pasteme-backend` 查看
 + 数据库日志通过 `docker logs pasteme-mysql` 查看
 

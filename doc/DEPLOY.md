@@ -60,11 +60,11 @@ Docker 部署请移步：[Docker Deploy](./DOCKER_DEPLOY.md)
 
 详见：
 + [Frontend Deployment](https://github.com/PasteUs/PasteMeFrontend/blob/master/DEPLOY.md)
-+ [Backend Deployment](https://github.com/PasteUs/PasteMeBackend/blob/master/DEPLOY.md)
++ [Backend Deployment](https://github.com/PasteUs/PasteMeBackend/blob/master/doc/DEPLOY.md)
 
 ## 配置文件说明
 
-### `config.json`
+### 前端 `config.json`
 
 | 字段 | 值 | 描述 | 举例 |
 | :---: | :---: | --- | --- |
@@ -79,13 +79,12 @@ Docker 部署请移步：[Docker Deploy](./DOCKER_DEPLOY.md)
 
 前端会始终通过 `<script>` 引入这个文件，默认为空
 
-### `config.json`
+### 后端 `config.json`
 
 | 字段 | 描述 | 举例 |
 | :---: | :---: | --- |
 | `address` | 监听的地址 | `0.0.0.0` |
 | `port` | 监听的端口 | `8000` |
-| `debug` | 是否启用 Debug 模式 | `false` |
 | `database.type` | 数据源，填 `mysql` 表示使用 MySQL，填其它值都会一律使用 SQLite3 | `mysql` |
 | `database.username` | MySQL 用户名 | `username` |
 | `database.password` | MySQL 密码 | `password` |

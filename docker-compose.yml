@@ -2,7 +2,7 @@ version: "3"
 
 services:
   pasteme-frontend:
-    image: registry.cn-hangzhou.aliyuncs.com/pasteme/frontend:3.1.0
+    image: registry.cn-hangzhou.aliyuncs.com/pasteus/pasteme-frontend:3.1.0
     container_name: pasteme-frontend
     depends_on:
       - pasteme-backend
@@ -15,11 +15,11 @@ services:
     ports:
       - 80:8080
     volumes:
-      - ./logs/:/var/lib/pasteme/
+      - ./frontend/logs/:/var/lib/pasteme/
       - ./frontend/usr/:/www/pasteme/usr/
 
   pasteme-backend:
-    image: registry.cn-hangzhou.aliyuncs.com/pasteme/backend:3.2.1
+    image: registry.cn-hangzhou.aliyuncs.com/pasteus/pasteme-go-backend:3.2.1
     container_name: pasteme-backend
     depends_on:
       - pasteme-mysql
@@ -30,7 +30,8 @@ services:
       retries: 3
     restart: always
     volumes:
-      - ./backend/config/:/config
+      - ./backend/config/:/config/
+      - ./backend/data/:/data/
 
   pasteme-mysql:
     image: mysql:5.5
