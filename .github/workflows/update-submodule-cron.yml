@@ -16,8 +16,8 @@ jobs:
           git clone https://github.com/${{ github.repository }}.git -b dev PasteMeDev --recursive
           cd PasteMeDev
           git submodule foreach git pull origin master
-          git config user.name "${{ github.event.head_commit.author.name }}"
-          git config user.email "${{ github.event.head_commit.author.email }}"
+          git config user.name "Lucien Shui"
+          git config user.email "lucien@lucien.ink"
           git add --all
           git commit -m "Sync submodule at `TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S'`"
           git push https://${GITHUB_TOKEN}@github.com/${{ github.repository }}.git dev
