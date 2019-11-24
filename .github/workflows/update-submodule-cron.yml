@@ -1,0 +1,23 @@
+name: Update submodule
+
+on:
+  schedule:
+    - cron: "5 * * * *"
+
+jobs:
+  update:
+    if: github.repository == 'LucienShui/PasteMe'
+    name: Update submodule
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone and update submodule
+        run: |
+          git clone https://github.com/${{ github.repository }}.git -b dev PasteMeDev --recursive
+          cd PasteMeDev
+          git submodule foreach git pull origin master
+          git config user.name "${{ github.event.head_commit.author.name }}"
+          git config user.email "${{ github.event.head_commit.author.email }}"
+          git add --all
+          git commit -m "Sync submodule at `TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S'`"
+          git push https://${GITHUB_TOKEN}@github.com/${{ github.repository }}.git dev
