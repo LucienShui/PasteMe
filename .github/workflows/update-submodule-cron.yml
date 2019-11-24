@@ -2,7 +2,7 @@ name: Update submodule
 
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   update:
@@ -19,5 +19,5 @@ jobs:
           git config user.name "Lucien Shui"
           git config user.email "lucien@lucien.ink"
           git add --all
-          git commit -m "Sync submodule at `TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S'`"
-          git push https://"${{ secrets.GITHUB_TOKEN }}"@"github.com/${{ github.repository }}.git" dev
+          if ! git commit -m "Sync submodule at `TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S'`"; then exit 0; fi
+          git push https://"${{ secrets.GITHUB_PASSWORD }}"@"github.com/${{ github.repository }}.git" dev
