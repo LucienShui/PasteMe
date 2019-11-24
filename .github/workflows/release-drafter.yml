@@ -1,0 +1,17 @@
+name: Release Drafter
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  draft_release:
+    if: github.repository == 'LucienShui/PasteMe'
+    name: Draft release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: toolmantim/release-drafter@v5.2.0
+        name: Draft
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_PASSWORD }}

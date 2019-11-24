@@ -5,9 +5,6 @@
   <a href="https://github.com/LucienShui/PasteMe/tree/docker">
     <img src="https://travis-ci.com/LucienShui/PasteMe.svg?branch=master" alt="">
   </a>
-  <a href="https://cloud.drone.io/LucienShui/PasteMe">
-    <img src="https://cloud.drone.io/api/badges/LucienShui/PasteMe/status.svg" />
-  </a>
   <a href="./LICENSE">
     <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="">
   </a>
@@ -15,7 +12,7 @@
     <img src="https://img.shields.io/badge/Frontend-3.1.0-brightgreen.svg" alt="version">
   </a>
   <a>
-    <img src="https://img.shields.io/badge/Backend-3.0.1-lightblue.svg" alt="version">
+    <img src="https://img.shields.io/badge/Backend-3.2.1-lightblue.svg" alt="version">
   </a>
   <a href="#谢谢老板">
     <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">
@@ -117,7 +114,15 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 | \*栈 | 100.00 | 2019-07-06 |
 | \*珊珊 | 1.50 | 2019-07-13 |
 | n\*l | 0.88 | 2019-07-14 |
-| R\*~ | 1.99 | 2019-08-14 |
+| Rhythm~ | 1.99 | 2019-08-14 |
+| \* 天翔 | 2.33 | 2019-08-28 |
+| \*景周 | 6.60 | 2019-09-09 |
+| 3402 | 5.00 | 2019-09-09 |
+| \*菡 | 10.00 | 2019-09-23 |
+| \*瑶 | 23.33 | 2019-10-14 |
+| \*晨 | 0.99 | 2019-11-08 |
+| 螃蟹 | 6.66 | 2019-11-13 |
+| \*库 | 2.33 | 2019-11-21 |
 
 #### 谢谢老板
 
@@ -127,9 +132,11 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 Modern browsers and Internet Explorer 10+.
 
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)</br>Safari |
-| --------- | --------- | --------- | --------- |
-| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions |
+## Browsers support
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>iOS Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/samsung-internet/samsung-internet_48x48.png" alt="Samsung" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Samsung | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br>Opera |
+| --------- | --------- | --------- | --------- | --------- | --------- | --------- |
+| IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
 ## 版权所有
 
@@ -137,8 +144,29 @@ Copyright &copy; 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reser
 
 ## 特别鸣谢
 
-+ 前端: [@Ryan Lee](https://github.com/ryanlee2014)
-+ 后端: [@Irene Liu](https://github.com/ireneliuqaq)
+> 按账号的字典序排序
+
+### 前端
+
++ [@whitelord](https://github.com/alexischiang)
++ [@Ryan Lee](https://github.com/ryanlee2014)
++ [@fishtwlve](https://github.com/yjy2019)
+
+### 后端
+
+#### Golang
+
++ [@bilibili2834451280](https://github.com/bilibili2834451280)
+
+#### Java
+
++ [@moyu Programmer](https://github.com/1059438020)
++ [@Acerkoo](https://github.com/Acerkoo)
++ [@Irene Liu](https://github.com/ireneliuqaq)
++ [@Ryan Lee](https://github.com/ryanlee2014)
++ [@UPCPHY](https://github.com/UPCPHY)
++ [@V-ioi-V](https://github.com/V-ioi-V)
++ [@Runn](https://github.com/XRZSJHHK)
 
 ## 免责声明
 

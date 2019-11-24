@@ -1,10 +1,12 @@
 language: bash
 
 script:
+  - git submodule update --init --recursive
   - rm -rf .git
-  - mkdir pushdir
-  - git clone https://github.com/LucienShui/PasteMeFrontend.git -b build --depth=1 frontend
-  - cp -r frontend/usr pushdir
+  - mkdir -p pushdir/frontend
+  - cp -r Frontend/public/usr pushdir/frontend
+  - mkdir -p pushdir/backend/config
+  - cp Backend/config.example.json pushdir/backend/config
   - git clone https://${GH_REF} -b ${P_BRANCH} tmpdir
   - cp doc/DOCKER_DEPLOY.md pushdir/README.md
   - cp -r tmpdir/.git docker-compose.yml pushdir/

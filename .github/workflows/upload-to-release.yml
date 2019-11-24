@@ -1,0 +1,40 @@
+name: PasteMe Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+
+  release:
+    if: github.repository == 'LucienShui/PasteMe'
+    name: Release on ${{ matrix.os }} and upload
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Update submodule
+        run: |
+          git submodule update --init --recursive
+
+      - name: Gzip
+        run: |
+          mkdir -p pasteme_docker/frontend
+          cp -r Frontend/public/usr pasteme_docker/frontend
+          mkdir -p pasteme_docker/backend/config
+          cp Backend/config.example.json pasteme_docker/backend/config
+          cp docker-compose.yml pasteme_docker
+          cp doc/DOCKER_DEPLOY.md pasteme_docker/README.md
+          tar -czvf pasteme_docker.tar.gz pasteme_docker
+
+      - name: Upload to release
+        uses: JasonEtco/upload-to-release@master
+        with:
+          args: pasteme_docker.tar.gz application/octet-stream
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
