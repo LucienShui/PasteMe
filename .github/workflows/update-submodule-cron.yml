@@ -20,4 +20,4 @@ jobs:
           git config user.email "lucien@lucien.ink"
           git add --all
           git commit -m "Sync submodule at `TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S'`"
-          git push https://${GITHUB_TOKEN}@github.com/${{ github.repository }}.git dev
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git dev
