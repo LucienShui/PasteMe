@@ -41,7 +41,8 @@ Windows 下的安装仅供体验，勿在生产环境使用。如有必要，请
 
 | 字段 | 值 | 描述 | 举例 |
 | :---: | :---: | --- | --- |
-| api | 完整的 URL | 后端 `API` 的地址 | `/api/` |
+| backendApi | 相对或绝对 URL | 后端 `API` 的地址 | `/api/` |
+| adminApi | 相对或绝对 URL | 后台开放 `API` 的地址，留空则会停用相关功能 | `` |
 | footer | JSON 数组 | 自定义前端底部的链接 | `[]` |
 | footer.url | 完整的 URL | 链接的地址 | `http://blog.lucien.ink/go/csdn` |
 | footer.text | 字符串 | 链接显示的字 | `CSDN` |

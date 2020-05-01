@@ -1,5 +1,11 @@
 # Change Log
 
+### 2019-05-01
+
+1. Remove travis badge in `README.md`
+2. Update Document
+3. Update donate list
+
 ## v3.1.0F-3.1.0B
 
 ### 2019-10-10
