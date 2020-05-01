@@ -2,7 +2,7 @@ name: Update submodule
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "0 */8 * * *"
 
 jobs:
   update:
