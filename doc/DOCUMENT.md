@@ -39,7 +39,7 @@ else:
 
 ## API
 
-[API Document](https://github.com/LucienShui/PasteMeBackend/blob/master/API.md)
+[API Document](https://github.com/PasteUs/PasteMeGoBackend/blob/master/doc/API.md)
 
 ### Example
 

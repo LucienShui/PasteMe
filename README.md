@@ -2,17 +2,17 @@
   <img src="https://cdn.jsdelivr.net/gh/PasteUs/CDN@0.0.12/screenshot/pasteme/duck.png" alt="" width=200>
 </p>
 <p align="center">
-  <a href="https://github.com/LucienShui/PasteMe/tree/docker">
-    <img src="https://travis-ci.com/LucienShui/PasteMe.svg?branch=master" alt="">
-  </a>
   <a href="./LICENSE">
     <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="">
   </a>
   <a>
-    <img src="https://img.shields.io/badge/Frontend-3.1.0-brightgreen.svg" alt="version">
+    <img src="https://img.shields.io/badge/Frontend-3.2.2-brightgreen.svg" alt="version">
   </a>
   <a>
-    <img src="https://img.shields.io/badge/Backend-3.2.1-lightblue.svg" alt="version">
+    <img src="https://img.shields.io/badge/GoBackend-3.2.1-lightblue.svg" alt="version">
+  </a>
+  <a>
+    <img src="https://img.shields.io/badge/Admin-0.0.2-yellow.svg" alt="version">
   </a>
   <a href="#谢谢老板">
     <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">
@@ -74,6 +74,8 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 #### 捐助名单
 
+> 2020 年 5 月 1 日更新
+
 小伙伴们在捐助的时候可以添加留言以告知自己的 `ID` ，如果是 `GitHub` 账号的话我会顺便 `@` 出来。
 
 > 以前捐助过的小伙伴请给我发个邮件（lucien@lucien.ink）告知一下自己的 `ID` ，我会加到列表里，之前的收款码看不了付款人 `ID` 的全称。
@@ -123,6 +125,10 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 | \*晨 | 0.99 | 2019-11-08 |
 | 螃蟹 | 6.66 | 2019-11-13 |
 | \*库 | 2.33 | 2019-11-21 |
+| \*橙 | 0.10 | 2019-12-21 |
+| [@NamelessAshone](https://github.com/NamelessAshone) | 20.00 | 2020-02-20 |
+| \*超 | 6.00 | 2020-02-28 |
+| [@Aphroq](https://github.com/Aphroq) | 6.66 | 2020-03-30 |
 
 #### 谢谢老板
 
