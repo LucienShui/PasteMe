@@ -1,6 +1,0 @@
-[submodule "Backend"]
-	path = Backend
-	url = https://github.com/PasteUs/PasteMeGoBackend.git
-[submodule "Frontend"]
-	path = Frontend
-	url = https://github.com/PasteUs/PasteMeFrontend.git
