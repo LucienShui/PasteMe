@@ -2,12 +2,12 @@ version: "3"
 
 services:
   pasteme-frontend:
-    image: registry.cn-hangzhou.aliyuncs.com/pasteus/pasteme-frontend:3.2.2
+    image: pasteme/frontend:latest
     container_name: pasteme-frontend
     depends_on:
       - pasteme-backend
     healthcheck:
-      test: ["CMD", "service", "nginx", "status"]
+      test: ["CMD", "curl", "-so", "/dev/null", "localhost:8080/usr/config.json"]
       interval: 45s
       timeout: 3s
       retries: 3
@@ -15,23 +15,27 @@ services:
     ports:
       - 80:8080
     volumes:
-      - ./frontend/logs/:/var/lib/pasteme/
-      - ./frontend/usr/:/www/pasteme/usr/
+      - ./data/nginx-logs/:/var/lib/pasteme/
+      - ./data/frontend-usr/:/www/pasteme/usr/
 
   pasteme-backend:
-    image: registry.cn-hangzhou.aliyuncs.com/pasteus/pasteme-go-backend:3.2.1
+    image: pasteme/go-backend:latest
     container_name: pasteme-backend
     depends_on:
       - pasteme-mysql
     healthcheck:
-      test: ["CMD", "wget", "localhost:8000/?method=beat", "--output=/dev/null"]
+      test: ["CMD", "wget", "-O", "/dev/null", "localhost:8000/?method=beat"]
       interval: 45s
       timeout: 3s
       retries: 3
     restart: always
     volumes:
-      - ./backend/config/:/config/
-      - ./backend/data/:/data/
+      - ./data/backend-config/:/etc/pastemed/
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "3"
+        max-size: "128m"
 
   pasteme-mysql:
     image: mysql:5.5
@@ -54,4 +58,9 @@ services:
       MYSQL_MAX_ALLOWED_PACKET: 128M
       MYSQL_INNODB_LOG_FILE_SIZE: 64M
     volumes:
-      - ./mysql:/var/lib/mysql
+      - ./data/mysql:/var/lib/mysql
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "3"
+        max-size: "128m"
