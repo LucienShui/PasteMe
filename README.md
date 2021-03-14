@@ -5,7 +5,7 @@
   <a href="./LICENSE">
     <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="">
   <a>
-    <img src="https://img.shields.io/badge/Frontend-3.2.4-brightgreen.svg" alt="version">
+    <img src="https://img.shields.io/badge/Frontend-3.2.5-brightgreen.svg" alt="version">
   </a>
   <a>
     <img src="https://img.shields.io/badge/GoBackend-3.3.1-lightblue.svg" alt="version">
