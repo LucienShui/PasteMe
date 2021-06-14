@@ -3,11 +3,11 @@
 </p>
 <p align="center">
   <a href="./LICENSE">
-    <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="">
-  <a>
+    <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="license">
+  <a href="https://github.com/PasteUs/PasteMeFrontend/releases/tag/release-v3.2.5">
     <img src="https://img.shields.io/badge/Frontend-3.2.5-brightgreen.svg" alt="version">
   </a>
-  <a>
+  <a href="https://github.com/PasteUs/PasteMeGoBackend/releases/tag/release-v3.3.1">
     <img src="https://img.shields.io/badge/GoBackend-3.3.1-lightblue.svg" alt="version">
   </a>
   <a href="#谢谢老板">
@@ -62,9 +62,13 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 </details>
 
+## 捐助名单
+
+[docs.pasteme.cn/#/other/donate](https://docs.pasteme.cn/#/other/donate)
+
 ## 版权所有
 
-Copyright &copy; 2017-2019 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
+Copyright &copy; 2017-2021 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
 
 ## 免责声明
 
