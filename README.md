@@ -4,8 +4,8 @@
 <p align="center">
   <a href="./LICENSE">
     <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="license">
-  <a href="https://github.com/PasteUs/PasteMeFrontend/releases/tag/release-v3.2.5">
-    <img src="https://img.shields.io/badge/Frontend-3.2.5-brightgreen.svg" alt="version">
+  <a href="https://github.com/PasteUs/PasteMeFrontend/releases/tag/release-v3.2.6">
+    <img src="https://img.shields.io/badge/Frontend-3.2.6-brightgreen.svg" alt="version">
   </a>
   <a href="https://github.com/PasteUs/PasteMeGoBackend/releases/tag/release-v3.3.1">
     <img src="https://img.shields.io/badge/GoBackend-3.3.1-lightblue.svg" alt="version">
