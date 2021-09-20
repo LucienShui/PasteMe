@@ -4,11 +4,11 @@
 <p align="center">
   <a href="./LICENSE">
     <img src="https://img.shields.io/eclipse-marketplace/l/notepad4e.svg" alt="license">
-  <a href="https://github.com/PasteUs/PasteMeFrontend/releases/tag/release-v3.2.6">
-    <img src="https://img.shields.io/badge/Frontend-3.2.6-brightgreen.svg" alt="version">
+  <a href="https://github.com/PasteUs/PasteMeFrontend/releases">
+    <img src="https://img.shields.io/github/v/release/PasteUs/PasteMeFrontend?color=brightgreen&label=frontend&sort=semver" alt="version">
   </a>
-  <a href="https://github.com/PasteUs/PasteMeGoBackend/releases/tag/release-v3.3.1">
-    <img src="https://img.shields.io/badge/GoBackend-3.3.1-lightblue.svg" alt="version">
+  <a href="https://github.com/PasteUs/PasteMeGoBackend/releases">
+    <img src="https://img.shields.io/github/v/release/PasteUs/PasteMeGoBackend?color=green&label=go-backend&sort=semver" alt="version">
   </a>
   <a href="#谢谢老板">
     <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">
@@ -18,13 +18,15 @@
   <h1>PasteMe</h1>
 </div>
 
-PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外的高亮功能。
+PasteMe（贴我鸭）是一个无需注册的文本分享平台，针对代码提供了额外的高亮功能。
 
-+ 在存储内容时，**设置密码** 和 **阅后即焚** 可以高度保证用户内容的安全性和私密性。
++ 用户上传的文本，称作「一贴」。
 
-+ 在将自己的内容分享给别人时，提供了一键复制链接和二维码分享等多种途径。
++ 在创建一贴时，**设置密码** 和 **自我销毁** 可以高度保证用户内容的安全与私密性。
 
-+ 在查看别人的内容时，可以一键复制所有文本。如果查看的是阅后即焚的内容，那么在网页加载完成之前，实体数据就已经不存在了。
++ 在将自己的一贴分享给别人时，提供了一键复制链接和二维码分享等多种途径。
+
++ 在查看别人的一贴时，可以一键复制所有文本。如果是自我销毁的一贴，则会在结束生命周期时从数据库 **物理删除**。
 
 各位老板，求 Star 和 PR。**Orz**
 
@@ -38,7 +40,15 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 + 新装了一台没有图形化界面的服务器，没开 `sshd` 服务，没有可用的编辑器去编辑 `sources.list` 文件，直接用默认源安装一个编辑器又太慢，此时可以用 `curl api.pasteme.cn/<key> > /etc/apt/sources.list` 或 `wget api.pasteme.cn/<key> -O /etc/apt/sources.list` 来更新 `apt` 源，然后进行优雅的 `apt update`
 
-+ 阅后即焚的链接是可以自定义的，比如 [pasteme.cn/example](https://pasteme.cn/example) ，更多详情请查看 [使用文档](https://docs.pasteme.cn/#/documentation)
+## 作者的话
+
+由于之前的永久存储具有传播性，被一些不法份子拿来传播一些不合规的内容，直接导致 PasteMe 被查水表了。（免责声明并没有用）
+
+新版本的 PasteMe 被迫增加了一些限制，未登录的用户只能发布 **自我销毁** 且附带限制的一贴，登陆后才能发布永久存储的一贴。
+
+而由于前端、后端开发资源的制约，目前是没有用户系统的，需要相当长的一段时间来做这件事情。
+
+欢迎有意参与开发的小伙伴联系我，为 PasteMe 的发展添砖加瓦。
 
 ## 文档
 
