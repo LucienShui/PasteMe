@@ -2,7 +2,7 @@ version: "3"
 
 services:
   pasteme-frontend:
-    image: pasteme/frontend:3.3.0
+    image: pasteme/frontend:3.4.0
     container_name: pasteme-frontend
     depends_on:
       - pasteme-backend
@@ -19,7 +19,7 @@ services:
       - ./data/frontend-usr/:/www/pasteme/usr/
 
   pasteme-backend:
-    image: pasteme/go-backend:3.4.0
+    image: pasteme/go-backend:3.5.0
     container_name: pasteme-backend
     depends_on:
       - pasteme-mysql
