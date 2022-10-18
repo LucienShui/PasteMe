@@ -18,7 +18,9 @@
   <h1>PasteMe</h1>
 </div>
 
-PasteMe（贴我鸭）是一个无需注册的文本分享平台，针对代码提供了额外的高亮功能。
+> 前后端代码存放于 [PasteMeFrontend](https://github.com/PasteUs/PasteMeFrontend) 和 [PasteMeGoBackend](https://github.com/PasteUs/PasteMeGoBackend)
+
+PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外的高亮功能。
 
 + 用户上传的文本，称作「一贴」。
 
