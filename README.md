@@ -87,3 +87,7 @@ Copyright &copy; 2017-2021 [Lucien Shui](http://www.lucien.ink) All Rights Reser
 本平台只提供文本分享的载体，与所有文本内容均没有任何联系。
 
 [pasteme_docs]: https://docs.pasteme.cn
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=LucienShui/PasteMe,PasteUs/PasteMeGoBackend,PasteUs/PasteMeFrontend&type=Date)](https://star-history.com/#LucienShui/PasteMe&PasteUs/PasteMeGoBackend&PasteUs/PasteMeFrontend&Date)
