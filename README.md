@@ -82,6 +82,8 @@ PasteMe 是一个无需注册的文本分享平台，针对代码提供了额外
 
 [docs.pasteme.cn/#/other/donate](https://docs.pasteme.cn/#/other/donate)
 
+[![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
+
 ## 版权所有
 
 Copyright &copy; 2017-2021 [Lucien Shui](http://www.lucien.ink) All Rights Reserved
