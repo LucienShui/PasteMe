@@ -3,6 +3,7 @@ name: pasteme
 services:
   frontend:
     image: pasteme/frontend:3.4.2
+    container_name: pasteme-frontend
     depends_on:
       - backend
     healthcheck:
@@ -19,6 +20,7 @@ services:
 
   backend:
     image: pasteme/go-backend:3.5.2
+    container_name: pasteme-backend
     depends_on:
       - mysql
     healthcheck:
@@ -37,6 +39,7 @@ services:
 
   mysql:
     image: mysql:5.5
+    container_name: pasteme-mysql
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       interval: 45s
