@@ -1,11 +1,10 @@
-version: "3"
+name: pasteme
 
 services:
-  pasteme-frontend:
+  frontend:
     image: pasteme/frontend:3.4.2
-    container_name: pasteme-frontend
     depends_on:
-      - pasteme-backend
+      - backend
     healthcheck:
       test: ["CMD", "curl", "-so", "/dev/null", "localhost:8080/usr/config.json"]
       interval: 45s
@@ -18,11 +17,10 @@ services:
       - ./data/nginx-logs/:/var/lib/pasteme/
       - ./data/frontend-usr/:/www/pasteme/usr/
 
-  pasteme-backend:
+  backend:
     image: pasteme/go-backend:3.5.2
-    container_name: pasteme-backend
     depends_on:
-      - pasteme-mysql
+      - mysql
     healthcheck:
       test: ["CMD", "wget", "-O", "/dev/null", "localhost:8000/api/v3/?method=beat"]
       interval: 45s
@@ -37,9 +35,8 @@ services:
         max-file: "3"
         max-size: "128m"
 
-  pasteme-mysql:
+  mysql:
     image: mysql:5.5
-    container_name: pasteme-mysql
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       interval: 45s
